@@ -1,0 +1,21 @@
+version: '3'
+
+shopt: [globstar]
+
+includes:
+  proto: ../taskfiles/proto.yml
+  go:
+    taskfile: ../taskfiles/proto_go.yml
+    flatten: true
+
+vars:
+  DEST: ~/miidas/miidas_go/m2/user/marketvalue/grpc/iface/
+  DEST_AICA_API: ~/miidas/miidas_aica_api/src/miidas_grpc/m2/user/marketvalue/grpc/iface/
+
+tasks:
+  default:
+    desc: protoファイルのコンパイル、コピー
+    cmds:
+      - task: compile
+      - task: copy
+      - task: copy_to_aica_api

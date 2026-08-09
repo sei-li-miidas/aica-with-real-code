@@ -1,0 +1,13 @@
+# cloudflare
+docker/files/ca/Cloudflare_Gateway_CA.pem
+# docker
+**/Dockerfile
+.dockerignore
+# env
+.env*
+# git
+.git
+.github
+.gitignore
+# vscode
+.vscode

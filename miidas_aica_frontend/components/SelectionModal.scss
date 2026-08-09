@@ -1,0 +1,121 @@
+.selection-modal__paper {
+  margin: 0;
+  max-width: 600px;
+  max-height: 100%;
+  height: 100%;
+}
+
+.selection-modal__content {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-modal__search {
+  padding: calc(2 * var(--mui-spacing));
+  border-bottom: 1px solid var(--mui-palette-divider);
+  flex-shrink: 0;
+}
+
+.selection-modal__search-row {
+  display: flex;
+  align-items: center;
+  gap: var(--mui-spacing);
+}
+
+.selection-modal__back {
+  flex-shrink: 0;
+}
+
+.selection-modal__list {
+  flex: 1;
+  overflow: auto;
+}
+
+.selection-modal__state {
+  padding: calc(4 * var(--mui-spacing));
+}
+
+.selection-modal__state--center {
+  text-align: center;
+}
+
+.selection-modal__state-message {
+  margin-top: calc(2 * var(--mui-spacing));
+}
+
+.selection-modal__state-message--left {
+  text-align: left;
+}
+
+.selection-modal__action {
+  padding: calc(2 * var(--mui-spacing));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.selection-modal__option-button {
+  padding-top: calc(2 * var(--mui-spacing));
+  padding-bottom: calc(2 * var(--mui-spacing));
+}
+
+.selection-modal__option-button--split {
+  padding-left: calc(2 * var(--mui-spacing));
+  padding-right: calc(2 * var(--mui-spacing));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.selection-modal__primary-text {
+  font-size: 1rem;
+  color: var(--mui-palette-text-primary);
+  flex: 1;
+}
+
+.selection-modal__primary-text--large {
+  font-size: 1.1rem;
+}
+
+.selection-modal__divider {
+  margin-left: calc(2 * var(--mui-spacing));
+  margin-right: calc(2 * var(--mui-spacing));
+  border-color: #e3f2fd;
+}
+
+.selection-modal__help {
+  margin-left: var(--mui-spacing);
+  color: var(--mui-palette-primary-main);
+  flex-shrink: 0;
+}
+
+.selection-modal__note {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.selection-modal__description-paper {
+  margin: calc(2 * var(--mui-spacing));
+  max-height: 80vh;
+}
+
+.selection-modal__description-content {
+  padding: calc(3 * var(--mui-spacing));
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.selection-modal__description-body {
+  line-height: 1.8;
+}
+
+.selection-modal__description-actions {
+  padding: calc(2 * var(--mui-spacing));
+  justify-content: center;
+}
+
+.selection-modal__description-close {
+  min-width: 100px;
+}

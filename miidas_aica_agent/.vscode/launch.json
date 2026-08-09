@@ -1,0 +1,296 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[Agent]Remote Debug",
+      "type": "debugpy", 
+      "request": "attach",
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/server/src/aica_agent",
+          "remoteRoot": "/home/app/web"
+        }
+      ],
+      "preLaunchTask": "start-debug-server",
+      "justMyCode": false
+    },
+    {
+      "name": "[Agent]Local Debug",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-server/bin/python",
+      "module": "uvicorn",
+      "cwd": "${workspaceFolder}/server/src/aica_agent",
+      "args": [
+        "application:app",
+        "--reload",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--limit-concurrency",
+        "100",
+        "--timeout-keep-alive",
+        "30"
+      ],
+      "preLaunchTask": "start-local-deps",
+      "envFile": "${workspaceFolder}/server/.env.local"
+    },
+    {
+      "name": "[E2E]Local Debug",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-e2e/bin/python",
+      "program": "${workspaceFolder}/e2e/src/aica_client/main.py",
+      "args": [
+        "--run-mode",
+        "${input:e2eRunMode}"
+      ],
+      "cwd": "${workspaceFolder}/e2e",
+      "envFile": "${workspaceFolder}/e2e/.env.local"
+    },
+    {
+      "name": "[Batch]Local Debug",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-cli/bin/python",
+      "program": "${workspaceFolder}/cli/src/aica_batch/main.py",
+      "args": ["${input:command}"],
+      "cwd": "${workspaceFolder}/cli/src/aica_batch",
+      "envFile": "${workspaceFolder}/cli/.env.local"
+    },
+    {
+      "name": "[Server]Run All Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-server/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "server",
+        "--cov=application",
+        "--cov=endpoints",
+        "--cov=repositories",
+        "--cov=services",
+        "--cov=utils",
+        "--cov=core",
+        "--cov=domain",
+        "--cov=security",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/server/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/server/src/aica_agent"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[Server]Run Unit Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-server/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "server/tests/unit",
+        "--cov=application",
+        "--cov=endpoints",
+        "--cov=repositories",
+        "--cov=services",
+        "--cov=utils",
+        "--cov=core",
+        "--cov=domain",
+        "--cov=security",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/server/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/server/src/aica_agent"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[Server]Run Integration Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-server/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "server/tests/integration",
+        "--cov=application",
+        "--cov=endpoints",
+        "--cov=repositories",
+        "--cov=services",
+        "--cov=utils",
+        "--cov=core",
+        "--cov=domain",
+        "--cov=security",
+        "--cov-branch",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/server/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/server/src/aica_agent"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[Server]Run Test",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-server/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "${relativeFile}",
+        "--cov=application",
+        "--cov=endpoints",
+        "--cov=repositories",
+        "--cov=services",
+        "--cov=utils",
+        "--cov=core",
+        "--cov=domain",
+        "--cov=security",
+        "--cov-branch",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/server/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/server/src/aica_agent"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[Server]Run Test (Node ID)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-server/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "${relativeFile}::${input:testNodeId}",
+        "--cov=application",
+        "--cov=endpoints",
+        "--cov=repositories",
+        "--cov=services",
+        "--cov=utils",
+        "--cov=core",
+        "--cov=domain",
+        "--cov=security",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/server/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/server/src/aica_agent"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[CLI]Run All Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-cli/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "cli/tests/unit",
+        "--cov=aica_batch",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/cli/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/cli/src/aica_batch"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[CLI]Run Test",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-cli/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "${relativeFile}",
+        "--cov=aica_batch",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/cli/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/cli/src/aica_batch"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "[CLI]Run Test (Node ID)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv-cli/bin/python",
+      "module": "pytest",
+      "args": [
+        "-v",
+        "${relativeFile}::${input:testNodeId}",
+        "--cov=aica_batch",
+        "--cov-report=term-missing",
+        "--cov-report=html"
+      ],
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/cli/.env.local",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/cli/src/aica_batch"
+      },
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "command",
+      "type": "pickString",
+      "description": "Select the command of the batch to debug",
+      "options": [
+        {
+          "label": "セッションクリーニング",
+          "value": "clean_session"
+        }
+      ]
+    },
+    {
+      "id": "testNodeId",
+      "type": "promptString",
+      "description": "Pytest node id (e.g. test_func or TestClass::test_func)",
+      "default": "test_name"
+    },
+    {
+      "id": "e2eRunMode",
+      "type": "pickString",
+      "description": "Select RUN_MODE for E2E debug",
+      "options": [
+        "DEBUG",
+        "TEST"
+      ],
+      "default": "DEBUG"
+    }
+  ]
+}

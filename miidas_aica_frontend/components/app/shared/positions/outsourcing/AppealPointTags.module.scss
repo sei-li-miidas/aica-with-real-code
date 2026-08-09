@@ -1,0 +1,117 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.sh-AppealPoint {
+  $colorImportantListBorder: #1bc2f5;
+  $colorImportantListBg: #effbff;
+  $colorImportantListText: #354659;
+  $colorOtherListText: #446287;
+  $colorOtherListSeparator: #dae3ec;
+  $gapNormal: 12px;
+  $gapNarrow: 8px;
+  $importantTitleOffset: 16px;
+  $iconSize: 18px;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &-withImportant {
+    margin-top: -$importantTitleOffset;
+  }
+
+  &_ImportantTitle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 29px;
+    padding: 4px 12px;
+    margin-left: $gapNormal;
+    background-color: variables.$white;
+    border: 1px solid $colorImportantListBorder;
+    border-radius: 92px;
+    font-size: 14px;
+    font-weight: bold;
+    color: variables.$colorPrimary;
+    transform: translate3d(0, $importantTitleOffset, 0);
+  }
+
+  &_ImportantList {
+    display: flex;
+    flex-direction: column;
+    padding: ($importantTitleOffset + $gapNormal - $gapNarrow) $gapNormal
+      $gapNormal $gapNormal;
+    background-color: $colorImportantListBg;
+    border: 1px solid $colorImportantListBorder;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    color: $colorImportantListText;
+
+    @include mixin.pcLayout {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &_ImportantListItem {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-top: $gapNarrow;
+
+    @include mixin.pcLayout {
+      margin-right: $gapNarrow;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &_ImportantListItemIcon {
+    width: $iconSize;
+    height: $iconSize;
+    margin-right: 6px;
+  }
+
+  &_Important + &_Other {
+    margin-top: $gapNormal;
+  }
+
+  &_OtherTitle {
+    font-size: 12px;
+    line-height: 1.5;
+    color: variables.$colorTextSub;
+  }
+
+  &_OtherList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  &_OtherListItem {
+    margin-top: 4px;
+    margin-right: $gapNarrow;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $colorOtherListText;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:after {
+      margin-left: $gapNarrow;
+      color: $colorOtherListSeparator;
+      content: "/";
+    }
+
+    &:last-of-type:after {
+      margin: 0;
+      content: "";
+    }
+  }
+}

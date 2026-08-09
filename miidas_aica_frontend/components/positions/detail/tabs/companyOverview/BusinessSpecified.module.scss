@@ -1,0 +1,15 @@
+@use "@/scss/utils/variables";
+
+.btiContentList {
+  > li + li {
+    margin-top: 16px;
+  }
+}
+
+.btiTitle {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: variables.$colorTextSub;
+}

@@ -1,0 +1,115 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[API]Remote Debug",
+      "type": "go",
+      "request": "attach",
+      "mode": "remote",
+      "port": 4000,
+      "host": "127.0.0.1",
+      "preLaunchTask": "start-debug-server",
+      "substitutePath": [
+        {
+          "to": "/go/src/aica",
+          "from": "${workspaceFolder}/src"
+        }
+      ]
+    },
+    {
+      "name": "[API]Local Debug",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "buildFlags": "${input:apiBuildFlags}",
+      "program": "${workspaceFolder}/src/api/mcptool/http",
+      "args": ["--debug", "--show-routes"],
+      "envFile": "${workspaceFolder}/.env.local",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "[Batch]Local Debug",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}/src/cli/main.go",
+      // "args": ["${input:command}", "--debug-log=true", "--provider=bedrock"],
+      "args": ["${input:command}", "--debug-log", "--provider=openai"],
+      "envFile": "${workspaceFolder}/.env.local"
+    },
+    {
+      "name": "Debug Go Test: Current Package",
+      "type": "go",
+      "request": "launch",
+      "mode": "test",
+      "program": "${fileDirname}",
+      "cwd": "${workspaceFolder}/src",
+      "buildFlags": "-cover -covermode=atomic",
+      "args": [
+        "-test.coverprofile=${workspaceFolder}/src/.coverage/current_package.out"
+      ],
+      "envFile": "${workspaceFolder}/.env.local"
+    },
+    {
+      "name": "Debug Go Test: Current File",
+      "type": "go",
+      "request": "launch",
+      "mode": "test",
+      "program": "${fileDirname}",
+      "cwd": "${workspaceFolder}/src",
+      "buildFlags": "-cover -covermode=atomic",
+      "args": [
+        "-test.run",
+        "${input:testRegex}",
+        "-test.coverprofile=${workspaceFolder}/src/.coverage/current_file.out"
+      ],
+      "envFile": "${workspaceFolder}/.env.local"
+    },
+    {
+      "name": "Run Go Test: All Packages",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cd ${workspaceFolder}/src && mkdir -p .coverage && go test ./... -covermode=atomic -coverprofile=.coverage/all_packages.out && go tool cover -func=.coverage/all_packages.out | tail -n 1"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "command",
+      "type": "pickString",
+      "description": "Select the name of the batch to debug",
+      "options": [
+        {
+          "label": "業界Embedding作成",
+          "value": "VectorizerIndustry"
+        },
+        {
+          "label": "ジョブタイプEmbedding作成",
+          "value": "VectorizerJobType"
+        },
+        {
+          "label": "ポジションEmbedding作成",
+          "value": "VectorizerPosition"
+        }
+      ]
+    },
+    {
+      "id": "testRegex",
+      "type": "promptString",
+      "description": "Go test regex (example: ^TestSummaries)",
+      "default": ".*"
+    },
+    {
+      "id": "apiBuildFlags",
+      "type": "pickString",
+      "description": "Go build flags for [API]Local Debug (example: -tags=mock)",
+      "options": [
+        "",
+        "-tags=mock"
+      ],
+      "default": ""
+    }
+  ]
+}

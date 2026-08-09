@@ -1,0 +1,73 @@
+{
+  "summary_scenarios": {
+    "independent_config": {
+      "_description": "summarize_position_detail_chat() uses the dedicated LLM summary entrypoint and persists the returned summary into the main chat handoff.",
+      "session_id": "test-session-summary-rollback",
+      "encrypted_position_id": "encrypted-summary-position-001",
+      "decrypted_position_id": "summary-position-001",
+      "fixed_timestamp": 1710000000,
+      "summary_model": {
+        "model": "openai/summary-contract-model",
+        "model_settings": {
+          "temperature": 0.25,
+          "max_output_tokens": 128
+        }
+      },
+      "position_chat_histories": [
+        {
+          "id": 1,
+          "active_agent": "PositionGuide",
+          "message_id": "msg-summary-history-001",
+          "role": "user",
+          "content": "募集職種は何ですか？"
+        },
+        {
+          "id": 2,
+          "active_agent": "PositionGuide",
+          "message_id": "msg-summary-history-002",
+          "role": "assistant",
+          "content": "バックエンドエンジニアの募集です。"
+        },
+        {
+          "id": 3,
+          "active_agent": "PositionGuide",
+          "message_id": "msg-summary-history-003",
+          "role": "user",
+          "content": "リモート勤務は可能ですか？"
+        }
+      ],
+      "summary_text": "求人情報エージェントからの引き継ぎ: ユーザーはバックエンドエンジニア職に興味を示し、募集内容とリモート勤務の可否を確認した。",
+      "expected_saved_history": {
+        "active_agent": "PositionGuide",
+        "role": "developer",
+        "message_id": "position_detail_chat_summary_summary-position-001_1710000000"
+      },
+      "expected_main_conversation_entry": {
+        "type": "message",
+        "role": "developer",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "求人情報エージェントからの引き継ぎ: ユーザーはバックエンドエンジニア職に興味を示し、募集内容とリモート勤務の可否を確認した。"
+          }
+        ]
+      }
+    },
+    "unaffected_by_variant": {
+      "_description": "legacy and real-refactored variants produce the same summary model call, persisted history, and main conversation handoff.",
+      "expected_snapshot": {
+        "session_status": "CHATTING",
+        "summary_model": "openai/summary-contract-model",
+        "summary_model_settings": {
+          "temperature": 0.25,
+          "max_output_tokens": 128
+        },
+        "saved_history_role": "developer",
+        "saved_history_content": "求人情報エージェントからの引き継ぎ: ユーザーはバックエンドエンジニア職に興味を示し、募集内容とリモート勤務の可否を確認した。",
+        "saved_history_message_id": "position_detail_chat_summary_summary-position-001_1710000000",
+        "main_conversation_role": "developer",
+        "main_conversation_text": "求人情報エージェントからの引き継ぎ: ユーザーはバックエンドエンジニア職に興味を示し、募集内容とリモート勤務の可否を確認した。"
+      }
+    }
+  }
+}

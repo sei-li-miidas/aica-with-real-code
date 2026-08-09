@@ -1,0 +1,1740 @@
+{
+  "info": {
+    "_postman_id": "b0627a33-3534-41fc-b11f-1d8dd701b2de",
+    "name": "Agentサーバ",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38824808"
+  },
+  "item": [
+    {
+      "name": "ヘルスチェック",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "過去会話履歴取得",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "79f7450d-bb85-4c3f-b657-4c1c017f7ea5",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://host.docker.internal:8000/aica/agent/chat/previous?before_id=non-exist",
+          "protocol": "http",
+          "host": [
+            "host",
+            "docker",
+            "internal"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "chat",
+            "previous"
+          ],
+          "query": [
+            {
+              "key": "before_id",
+              "value": "non-exist",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ポジション検索結果のもっと見る",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/positions/search/:search_key/offset",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "positions",
+            "search",
+            ":search_key",
+            "offset"
+          ],
+          "variable": [
+            {
+              "key": "search_key",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ポジション検索ツール再実行",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/positions/re-search/:tool_call_id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "positions",
+            "re-search",
+            ":tool_call_id"
+          ],
+          "variable": [
+            {
+              "key": "tool_call_id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ポジション詳細",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/positions/:encrypted_position_id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "positions",
+            ":encrypted_position_id"
+          ],
+          "variable": [
+            {
+              "key": "encrypted_position_id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "会社詳細",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/companies/detail/:encrypted_position_id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "companies",
+            "detail",
+            ":encrypted_position_id"
+          ],
+          "variable": [
+            {
+              "key": "encrypted_position_id",
+              "value": "wwww"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "業界詳細",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/businesses/:encrypted_position_id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "businesses",
+            ":encrypted_position_id"
+          ],
+          "variable": [
+            {
+              "key": "encrypted_position_id",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ポジション検索のおすすめ",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-SESSION-ID",
+            "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+            "type": "text"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/positions/recommendations/:search_key/:encrypted_theme",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "positions",
+            "recommendations",
+            ":search_key",
+            ":encrypted_theme"
+          ],
+          "variable": [
+            {
+              "key": "search_key",
+              "value": ""
+            },
+            {
+              "key": "encrypted_theme",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "応募開始",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "3575fd51-954d-47af-be01-f02d757ac9b9"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/apply/start/gAAAAABopxk9WSgC0QO3ZGC1LAfwMkZKej37EsEE_JEWVGDeN3yHgkX0uTcjWViBrfmfeOmHbvK12h8aC_Q4ErjoMx2bYZkVhA==",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "apply",
+            "start",
+            "gAAAAABopxk9WSgC0QO3ZGC1LAfwMkZKej37EsEE_JEWVGDeN3yHgkX0uTcjWViBrfmfeOmHbvK12h8aC_Q4ErjoMx2bYZkVhA=="
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "応募ポジション追加",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "3575fd51-954d-47af-be01-f02d757ac9b9"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/apply/gAAAAABopxk9WSgC0QO3ZGC1LAfwMkZKej37EsEE_JEWVGDeN3yHgkX0uTcjWViBrfmfeOmHbvK12h8aC_Q4ErjoMx2bYZkVhA==/add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "apply",
+            "gAAAAABopxk9WSgC0QO3ZGC1LAfwMkZKej37EsEE_JEWVGDeN3yHgkX0uTcjWViBrfmfeOmHbvK12h8aC_Q4ErjoMx2bYZkVhA==",
+            "add"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "市区町村検索",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"keyword\": \"東京\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/location/search/keyword",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "location",
+            "search",
+            "keyword"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "業界検索",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"keyword\": \"金融\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/industry/search/keyword",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "industry",
+            "search",
+            "keyword"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "職種検索",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"keyword\": \"東京\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/jobtype/search/keyword",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "jobtype",
+            "search",
+            "keyword"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "通勤エリア検索",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"location_type\": \"希望勤務地\",\n    \"prefecture_name\": \"東京都\",\n    \"city_name\": \"千代田\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/location/search/commuting_areas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "location",
+            "search",
+            "commuting_areas"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "都道府県・市区町村名検索",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "2e3f06f1-4642-4578-a66d-144c6421caff"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"locations\": [\n        {\n            \"prefecture_name\": \"東京都\",\n            \"city_name\": \"千代田\"\n        },\n        {\n            \"prefecture_name\": \"熊本県\",\n            \"city_name\": \"熊本市\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/location/verify/prefecture/city",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "location",
+            "verify",
+            "prefecture",
+            "city"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "マスターデータ取得",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250729185049.000875.611697"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/master/?names=SchoolType&names=LangLevel&names=DepartmentType&names=School&names=ProfessionalTrainingCollegeCategory",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "master",
+            ""
+          ],
+          "query": [
+            {
+              "key": "names",
+              "value": "SchoolType"
+            },
+            {
+              "key": "names",
+              "value": "LangLevel"
+            },
+            {
+              "key": "names",
+              "value": "DepartmentType"
+            },
+            {
+              "key": "names",
+              "value": "School"
+            },
+            {
+              "key": "names",
+              "value": "ProfessionalTrainingCollegeCategory"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/apply/start/gAAAAABoiJivkwX14Ar41th4w7MnQIE9xvyMAFpmnQaUYuDdLi4AXoBMj96Iagwyrnnh0vJuHbY8hDeiWBXBGJqIpER-gi1a6Q==' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250729185049.000875.611697' \\\n  -H 'X-SESSION-ID: 56f7ec35-b356-4429-a3e5-3ab49d72eab1' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "プロフィール取得",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806001733.000090.184094"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/profile/job_filter",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "profile",
+            "job_filter"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/profile/basic/20' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806001733.000090.184094' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"gender\":\"2\",\"last_name\":\"リ\",\"first_name\":\"名\",\"last_name_kana\":\"リ\",\"first_name_kana\":\"リ\",\"birthday\":\"1933-3-01\",\"email\":\"aaa@b.com\",\"password\":\"23q4wres\",\"phone_no\":\"0803333444\",\"prefecture\":\"13\",\"city\":\"132055\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "ポジション検索条件取得",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806001733.000090.184094"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"gender\":\"2\",\"last_name\":\"リ\",\"first_name\":\"名\",\"last_name_kana\":\"リ\",\"first_name_kana\":\"リ\",\"birthday\":\"1933-3-01\",\"email\":\"aaa@b.com\",\"password\":\"23q4wres\",\"phone_no\":\"0803333444\",\"prefecture\":\"13\",\"city\":\"132055\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/positions/search_filter/current",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "positions",
+            "search_filter",
+            "current"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/profile/basic/20' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806001733.000090.184094' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"gender\":\"2\",\"last_name\":\"リ\",\"first_name\":\"名\",\"last_name_kana\":\"リ\",\"first_name_kana\":\"リ\",\"birthday\":\"1933-3-01\",\"email\":\"aaa@b.com\",\"password\":\"23q4wres\",\"phone_no\":\"0803333444\",\"prefecture\":\"13\",\"city\":\"132055\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "基本情報保存",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806001733.000090.184094"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "370c9468-777b-41a9-8722-41125d1c6f0e"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"lastName\": \"リ\",\n    \"firstName\": \"名\",\n    \"lastNameKana\": \"カナ\",\n    \"firstNameKana\": \"リ\",\n    \"email\": \"a@b.com\",\n    \"phoneNo\": \"0803333444\",\n    \"gender\": \"1\",\n    \"password\": \"34w5ertsgdf\",\n    \"birthYear\": \"2000\",\n    \"birthMonth\": \"12\",\n    \"prefecture\": {\n        \"ID\": 13,\n        \"Name\": \"東京都\"\n    },\n    \"city\": {\n        \"ID\": 139999,\n        \"Name\": \"23区\"\n    },\n    \"firstLanguage\": 2,\n    \"driverLicense\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/profile/basic",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "profile",
+            "basic"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/profile/basic/20' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806001733.000090.184094' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"gender\":\"2\",\"last_name\":\"リ\",\"first_name\":\"名\",\"last_name_kana\":\"リ\",\"first_name_kana\":\"リ\",\"birthday\":\"1933-3-01\",\"email\":\"aaa@b.com\",\"password\":\"23q4wres\",\"phone_no\":\"0803333444\",\"prefecture\":\"13\",\"city\":\"132055\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "学歴保存",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806014845.000727.344539"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"schoolType\": \"1\",\n    \"schoolName\": \"東京医科大学大学院\",\n    \"departmentType\": {\n        \"ID\": 1,\n        \"Name\": \"法学・政策系\",\n        \"SortOrder\": 1\n    },\n    \"professionalTrainingCollegeCategory\": {\n        \"ID\": 0,\n        \"Name\": \"\"\n    },\n    \"graduationYear\": \"2002\",\n    \"englishLevel\": \"1\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/profile/education",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "profile",
+            "education"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/profile/education/20' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806014845.000727.344539' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"schoolType\":\"1\",\"schoolName\":\"東京医科大学大学院\",\"departmentType\":{\"ID\":1,\"Name\":\"法学・政策系\",\"SortOrder\":1},\"professionalTrainingCollegeCategory\":{\"ID\":0,\"Name\":\"\"},\"graduationYear\":\"2002\",\"englishLevel\":\"1\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "職歴保存",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806021400.000648.508294"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"expCompanyNum\": \"3\",\n    \"managementExpTerm\": \"1\",\n    \"managementPeopleNum\": \"2\",\n    \"companyName\": \"てsつお\",\n    \"industrySmall\": {\n        \"ID\": 101010,\n        \"Name\": \"メーカー（機械部品）\"\n    },\n    \"employeeNum\": \"2\",\n    \"employmentType\": \"2\",\n    \"jobTypeSmall\": {\n        \"ID\": 171711,\n        \"Name\": \"その他金融専門職\"\n    },\n    \"income\": \"111\",\n    \"joinYear\": \"2000\",\n    \"joinMonth\": \"2\",\n    \"retireYear\": \"\",\n    \"retireMonth\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/profile/experience",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "profile",
+            "experience"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/profile/experience/20' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806021400.000648.508294' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"expCompanyNum\":\"3\",\"managementPeopleNum\":\"2\",\"companyName\":\"てsつお\",\"industrySmall\":{\"ID\":101010,\"Name\":\"メーカー（機械部品）\"},\"employeeNum\":\"2\",\"employmentType\":\"2\",\"jobTypeSmall\":{\"ID\":171711,\"Name\":\"その他金融専門職\"},\"income\":\"111\",\"joinYear\":\"2000\",\"joinMonth\":\"2\",\"retireYear\":\"\",\"retireMonth\":\"\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "希望条件保存",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806024504.000908.483490"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"willIncome\": \"222\",\n    \"willWorkAddressesCities\": [\n        {\n            \"prefecture\": {\n                \"ID\": 13,\n                \"Name\": \"東京都\"\n            },\n            \"city\": {\n                \"ID\": 139999,\n                \"Name\": \"23区\"\n            }\n        }\n    ],\n    \"willJobChangePeriod\": \"1\",\n    \"willJobTypesSmalls\": [\n        {\n            \"ID\": 181710,\n            \"Name\": \"その他不動産専門職\"\n        }\n    ],\n    \"isRpoAgreement\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/profile/preferences",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "profile",
+            "preferences"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/profile/preferences/20' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806024504.000908.483490' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"willIncome\":\"222\",\"showCommutingAreas\":true,\"cities\":[],\"willJobChangePeriod\":\"1\",\"showJobTypesSmall\":true,\"willJobTypesSmalls\":[{\"ID\":181710,\"Name\":\"その他不動産専門職\"}],\"isRpoAgreement\":false}'"
+      },
+      "response": []
+    },
+    {
+      "name": "応募",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9,ja;q=0.8"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Length",
+            "value": "0"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:3000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:3000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36"
+          },
+          {
+            "key": "X-REQUEST-ID",
+            "value": "20250806214144.000906.845061"
+          },
+          {
+            "key": "X-SESSION-ID",
+            "value": "23b45a49-6c27-4825-a051-52c8ecb3b397"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?1"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Android\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/aica/agent/apply/finish",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "aica",
+            "agent",
+            "apply",
+            "finish"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:8000/agent/finish/apply' \\\n  -X 'POST' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,ja;q=0.8' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Length: 0' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: http://localhost:3000' \\\n  -H 'Referer: http://localhost:3000/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36' \\\n  -H 'X-REQUEST-ID: 20250806214144.000906.845061' \\\n  -H 'X-SESSION-ID: 66c7c9ac-df45-4eaf-bc70-aa300c8c29ea' \\\n  -H 'sec-ch-ua: \"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"' \\\n  -H 'sec-ch-ua-mobile: ?1' \\\n  -H 'sec-ch-ua-platform: \"Android\"'"
+      },
+      "response": []
+    }
+  ]
+}

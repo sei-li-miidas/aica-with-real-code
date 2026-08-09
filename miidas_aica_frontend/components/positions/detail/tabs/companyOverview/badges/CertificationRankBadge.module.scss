@@ -1,0 +1,13 @@
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/variables";
+
+.certificationBtn {
+  display: flex;
+  align-items: center;
+
+  > svg {
+    @include mixin.svgIcon(20px, variables.$colorBlueGray) {
+      margin-left: 4px;
+    }
+  }
+}

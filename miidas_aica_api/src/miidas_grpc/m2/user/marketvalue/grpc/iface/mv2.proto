@@ -1,0 +1,418 @@
+edition = "2023";
+
+package miidas.user.marketvalue;
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface";
+
+import "google/protobuf/timestamp.proto";
+
+import "mv2_user_will_company.proto";
+import "mv2_user_will_business.proto";
+import "mv2_user_will_position.proto";
+import "position/position.proto";
+import "company/company.proto";
+import "business/business.proto";
+import "user/profile.proto";
+
+service MarketValue {
+  rpc GetMenkakuOutsourcingPositionIDsByUserInfo(UserInfo) returns (PositionIDs);
+  rpc GetInterimValue(UserInfo) returns (InterimValue);
+  rpc GetMarketValueResult(MarketValueRequest) returns (MarketValueResult);
+
+  // ポジション一覧取得系
+  rpc GetOutsourcingPositionList(PositionListRequest) returns (PositionListResponse);
+
+  // ポジション詳細複数取得系(stream)
+  rpc GetMultiJobChangePositionDetailStream(PositionMultiDetailRequest) returns (stream MultiPositionDetailResponseStream);
+  rpc GetMultiOutsourcingPositionDetailStream(PositionMultiDetailRequest) returns (stream MultiOutsourcingPositionDetailResponseStream);
+  // ポジション詳細取得
+  rpc GetJobChangePositionDetail(PositionDetailRequest) returns (JobChangePositionDetailResponse);
+  rpc GetOutsourcingPositionDetail(PositionDetailRequest) returns (OutsourcingPositionDetailResponse);
+
+  // アクション済みポジションリスト
+  // 希望条件一致度と勤務地の希望条件が完全一致かは判断しない
+  rpc GetActionedPositionList(ActionedPositionListRequest) returns(stream PositionListEntry);
+
+  // 希望条件一致ポジションリスト
+  rpc GetWillPositionList(WillPositionListRequest) returns(stream PositionListEntry);
+
+  // 拡大希望条件一致ポジションリスト
+  rpc GetExpandWillPositionList(ExpandWillPositionListRequest) returns(stream PositionListEntry);
+
+  // テーマポジションリスト
+  // テーマの「予め系テーマポジション」データの取得では希望条件一致度と勤務地の希望条件が完全一致かは判断しない
+  rpc GetThemePositionList(ThemePositionListRequest) returns(stream PositionListEntry);
+
+  // 気になるに協調するポジションリスト
+  // 希望条件一致度と勤務地の希望条件が完全一致かは判断しない
+  rpc GetStarCollaborativePositionList(StarCollaborativePositionListRequest) returns(stream PositionListEntry);
+
+  // 企業詳細取得
+  rpc GetCompanies(CompanyRequest) returns(stream company.Company);
+
+  // 事業詳細取得
+  rpc GetBusinesses(BusinessRequest) returns(stream business.Business);
+
+  // ポジション詳細取得
+  rpc GetPositions(PositionRequest) returns(stream position.Position);
+
+  // ポジションマッチング情報取得
+  rpc GetWillMatchPosition(WillMatchPositionRequest) returns (WillMatchPositionResponse);
+}
+
+message JobChangePositionEvaluationRequest {
+  UserInfo user_info = 1;
+  repeated int32 position_id = 2;
+}
+
+message PositionEvaluationResponse {
+  int32 position_id = 1;
+  position.Fitting fitting = 2;
+}
+
+message UserInfo {
+  // 削除された項目
+  reserved 19;
+  // UserID *int
+  int32 user_id = 1 [features.field_presence = EXPLICIT];
+  // int
+  int32 age = 2;
+  // int
+  int32 annual_income = 3;
+  // Graduate     *GraduateInfo
+  // ポインタだがエラー時を除き必ずあるので普通に埋め込む
+  user.GraduateInfo graduate = 4;
+  // Job          *JobInfo
+  // ポインタだがエラー時を除き必ずあるので普通に埋め込む
+  user.JobInfo job = 5;
+  repeated user.Experience experiences = 6;
+  // Lang         *LangInfo
+  // ポインタだがエラー時を除き必ずあるので普通に埋め込む
+  user.LangInfo lang = 7;
+  // OfficeExcelSkillIDs  []ints
+  repeated int32 office_excel_skill_ids = 8;
+  // OfficeAccessSkillIDs []int
+  repeated int32 office_access_skill_ids = 9;
+  // CompanyNameIDs       []int
+  repeated int32 company_name_ids = 10;
+  // LicenceIDs           []int
+  repeated int32 licence_ids = 11;
+  // DriverLicence        DriverLicence
+  position.Matching.DriverLicence driver_licence = 12;
+  // HasResume            bool
+  bool has_resume = 13;
+  // HasPortfolio         bool
+  bool has_portfolio = 14;
+  // WorkedAbroad         bool
+  bool worked_abroad = 15;
+
+  // BlockCompanyNameIDs []int
+  repeated int32 block_company_name_ids = 16;
+  // WillValue 希望条件
+  WillValue will = 17;
+  user.Resume Resume = 18;
+  user.Competency Competency = 20;
+  user.Bias Bias = 21;
+  int32 prefecture_id = 22;
+  bool block_all_companies_flg = 23;
+  repeated int32 hp_apply_company_ids = 24;
+  google.protobuf.Timestamp registered_at = 25;
+  user.OutsourcingSearch outsourcing_search = 26;
+  repeated user.AllCareerJobTypeExpTerm all_career_job_type_and_exp_terms = 27;
+  int32 gender_id = 28 [features.field_presence = EXPLICIT]; // 性別ID
+}
+
+message WillValue {
+  Company company = 1;
+  Business business = 2;
+  Position position = 3;
+}
+
+message PositionIDs {
+  repeated int32 position_id = 1;
+}
+
+message InterimValue {
+  int32 corp_num = 1;
+  int32 job_num = 2;
+  int32 assume_offer_cnt = 3;
+  int32 assume_offer_min = 4;
+  int32 assume_offer_max = 5;
+}
+
+message MarketValueRequest {
+  UserInfo user = 1;
+}
+
+message MarketValueResult {
+  int32 corp_num = 1;
+  int32 job_num = 2;
+  int32 assume_offer_cnt = 3;
+  int32 assume_offer_min = 4;
+  int32 assume_offer_max = 5;
+}
+
+message PositionListRequest {
+  UserInfo user = 1;
+  repeated int32 position_ids = 2;
+  position.Filter filter = 3;
+  position.Sort sort = 4;
+  map<int32, google.protobuf.Timestamp> starred = 5;
+  map<int32, google.protobuf.Timestamp> trashed = 6;
+  map<int32, google.protobuf.Timestamp> browsed = 7;
+  bool is_summarize = 8;
+  repeated int32 blocked_company_name_ids = 9;
+  map<int32, float> recommend_scores = 10;
+  repeated int32 talked = 11;
+  repeated int32 scout_messages = 12;
+}
+
+/**
+ * 対象の選択
+ */
+enum Choice {
+  ALL = 0; // 全部
+  ONLY = 1; // 対象のみ
+  OTHER = 2; // 対象以外
+}
+
+/**
+ * アクション済みポジション一覧リクエスト
+ */
+message ActionedPositionListRequest {
+  repeated int32 position_ids = 1; // 対象のポジション
+  user.Profile profile = 2; // ユーザープロフィール（希望条件なし）
+}
+
+/**
+ * 希望条件一致ポジションリクエスト
+ */
+message WillPositionListRequest {
+  user.Profile profile = 1;
+  Company company_will = 2;
+  Business business_will = 3;
+  Position position_will = 4;
+
+  message Filter {
+    string word = 1; // キーワード
+    Choice certificated = 2; // ミイダス認定
+    Choice browsed = 3; // 閲覧
+    Choice scoutMessage = 4; // スカウトメッセージ
+    Choice starred_by_company = 5; // 企業から気になる
+  }
+  Filter filter = 5;
+}
+
+/**
+ * 拡大希望条件一致ポジションリクエスト
+ */
+ message ExpandWillPositionListRequest {
+  user.Profile profile = 1;
+  Company company_will = 2;
+  Business business_will = 3;
+  Position position_will = 4;
+
+  message Filter {
+    string word = 1; // キーワード
+    Choice certificated = 2; // ミイダス認定
+    Choice browsed = 3; // 閲覧
+    Choice scoutMessage = 4; // スカウトメッセージ
+    Choice starred_by_company = 5; // 企業から気になる
+  }
+  Filter filter = 5;
+
+  // 拡大した希望条件も持つ
+  Company expand_company_will = 6;
+  Business expand_business_will = 7;
+  Position expand_position_will = 8;
+
+  // 結果から通常希望条件の結果を除外するか
+  bool exclude_will_positions = 9;
+
+  // 人気ポジションを含めて返すか（3大一致のような拡大では使用しない想定）
+  bool include_popular_positions = 10;
+}
+
+/**
+ * テーマポジションリクエスト
+ */
+message ThemePositionListRequest {
+  string theme_id =  1; // 対象のテーマ
+  user.Profile profile = 2;
+  Company company_will = 3;
+  Business business_will = 4;
+  Position position_will = 5;
+}
+
+/**
+ * 気になるに協調するポジションリクエスト
+ */
+message StarCollaborativePositionListRequest {
+  repeated int32 position_ids = 1;
+  user.Profile profile = 2;
+}
+
+/**
+ * ポジション一覧の要素
+ */
+message PositionListEntry {
+  int32 company_id = 1;
+  int32 company_name_id = 2;
+  int32 business_id = 3;
+  int32 position_id = 4;
+
+  google.protobuf.Timestamp published_at = 5; // 公開日時
+
+  position.GuaranteedIncome guaranteed_income = 6; // 確約年収
+
+  bool is_menkaku = 7; // メンカク
+
+  int32 target_match_rank = 8; // 募集条件一致率ランク
+  int32 competency_match_rank = 9; // 活躍可能性ランク
+
+  // 希望条件に一致してるかどうか
+  bool is_will_satisfied = 10;
+
+  // 勤務地が一致してるかどうか
+  bool is_satisfied_work_address = 11;
+
+  int32 holiday = 12 [features.field_presence = EXPLICIT];       // 休日
+  int32 year_holidays = 13 [features.field_presence = EXPLICIT]; // 年間休日
+  int32 overtime_avg = 14 [features.field_presence = EXPLICIT];  // 平均残業時間
+
+  // メイン職種ID
+  int32 main_job_type_small_id = 15;
+
+  // 企業側いいね対象か
+  bool is_starred_by_company = 16;
+}
+
+/**
+ * 企業情報取得リクエスト
+ */
+message CompanyRequest {
+  repeated int32 company_ids = 1;
+}
+
+/**
+ * 事業情報取得リクエスト
+ */
+message BusinessRequest {
+  repeated int32 business_ids = 1;
+}
+
+/**
+ * ポジション情報取得リクエスト
+ */
+message PositionRequest {
+  repeated int32 position_ids = 1;
+}
+
+/**
+ * 希望条件ポジションマッチング情報リクエスト
+ */
+message WillMatchPositionRequest {
+  user.Profile profile = 1; // ユーザープロフィール（希望条件なし）
+  Company company_will = 2;
+  Business business_will = 3;
+  Position position_will = 4;
+}
+
+/**
+ * 希望条件ポジションマッチング情報レスポンス
+ * MatchPositionResponseをベースとした希望条件ポジション取得に合わせた構成で定義
+ */
+message WillMatchPositionResponse {
+  message MatchPosition {
+    message MatchPositionEntry {
+      int32 position_id = 1;
+      int32 company_name_id = 2;
+    }
+
+    repeated MatchPositionEntry target_not_gatches = 1;       // ホッケに合致していない
+    repeated MatchPositionEntry target_gatches = 2;           // ホッケに合致している
+    repeated MatchPositionEntry will_three_main_gatches = 3;  // 3大希望条件に合致している (will_gatch と重複あり)
+    repeated MatchPositionEntry will_gatches = 4;             // 希望条件に合致している
+    repeated MatchPositionEntry income_ups = 5;               // 年収UP
+    repeated MatchPositionEntry menkakus = 6;                 // メンカク
+  }
+
+  MatchPosition match_position = 1;
+}
+
+
+message PositionListResponse {
+  repeated Summarized summarized = 1;
+  Count count = 2;
+  Stats stats = 3;
+
+  message CountDetail {
+    int32 Charged = 1;
+    int32 Uncharged = 2;
+  }
+
+  message Count {
+    int32 All = 1;
+    CountDetail Satisfied = 2;
+    CountDetail Unsatisfied = 3;
+  }
+
+  message Stats {
+    TargetMatch target_match = 1;
+    CompetencyMatch competency_match = 2;
+    message TargetMatch {
+      repeated int32 RankA = 1;
+      repeated int32 RankB = 2;
+      repeated int32 RankC = 3;
+      repeated int32 RankD = 4;
+      repeated int32 RankE = 5;
+    }
+    message CompetencyMatch {
+      repeated int32 RankA = 1;
+      repeated int32 RankB = 2;
+      repeated int32 RankC = 3;
+    }
+  }
+}
+
+message Summarized {
+  int32 position_id = 1;
+  repeated int32 summarized_position_IDs = 2;
+}
+
+message PositionMultiDetailRequest {
+  UserInfo user = 1;
+  repeated int32 position_ids = 2;
+}
+
+message MultiPositionDetailResponseStream {
+  oneof one_of {
+    position.Position position = 1;
+    position.Fitting fitting = 2;
+    company.Company company = 3;
+    business.Business business = 4;
+  }
+}
+
+message MultiOutsourcingPositionDetailResponseStream {
+  oneof one_of {
+    position.Position position = 1;
+    position.OutsourcingFitting fitting = 2;
+    company.Company company = 3;
+    business.Business business = 4;
+  }
+}
+
+message PositionDetailRequest {
+  UserInfo user = 1;
+  int32 position_id = 2;
+}
+
+message JobChangePositionDetailResponse {
+  position.Fitting fitting = 1;
+}
+
+message OutsourcingPositionDetailResponse {
+  position.OutsourcingFitting fitting = 1;
+}

@@ -1,0 +1,20 @@
+{
+  "scenarios": {
+    "session_creation": {
+      "_description": "Chat session creation is properly persisted to DB",
+      "_expected_keys": ["session_input", "expected_db_state", "side_effects"]
+    },
+    "history_save": {
+      "_description": "Chat history (user/developer/LLM/tool messages) is properly saved to DB",
+      "_expected_keys": ["history_input", "expected_db_state", "message_types"]
+    },
+    "tool_output_update": {
+      "_description": "Tool output results are properly updated and persisted to DB",
+      "_expected_keys": ["tool_output", "expected_db_state", "update_validation"]
+    },
+    "retry_error_save": {
+      "_description": "Retry errors are properly logged and saved to DB",
+      "_expected_keys": ["retry_error", "expected_db_state", "error_persistence"]
+    }
+  }
+}

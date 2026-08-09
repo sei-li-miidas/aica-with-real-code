@@ -1,0 +1,126 @@
+{
+  "ToolName": "search_job_postings_for_it_engineer",
+  "SearchFilters": {
+    "Jobtypes": {
+      "search_job_postings": [
+        {
+          "Label": "営業企画",
+          "Value": "営業企画",
+          "Description": "営業戦略の立案や施策設計を担う職種です。",
+          "Selected": false
+        },
+        {
+          "Label": "法人営業",
+          "Value": "法人営業",
+          "Description": "法人顧客に対する提案営業を担う職種です。",
+          "Selected": false
+        }
+      ],
+      "search_job_postings_for_it_engineer": [
+        {
+          "Label": "ITコンサルタント（アプリ）",
+          "Value": "ITコンサルタント（アプリ）",
+          "Description": "アプリ領域のITコンサルティングを担う職種です。",
+          "Selected": true
+        },
+        {
+          "Label": "Webアプリ開発",
+          "Value": "Webアプリ開発",
+          "Description": "Webアプリケーションの設計・開発を担う職種です。",
+          "Selected": true
+        }
+      ],
+      "search_job_postings_for_sales_financial_sales": [
+        {
+          "Label": "金融営業（法人）",
+          "Value": "金融営業（法人）",
+          "Description": "法人向け金融商品の提案営業を担う職種です。",
+          "Selected": false
+        }
+      ]
+    },
+    "Locations": {
+      "Residence": {
+        "Address": {
+          "PrefectureName": "東京都",
+          "CityName": "港区"
+        },
+        "CommutingAreas": [
+          {
+            "Label": "東京都渋谷区",
+            "PrefectureName": "東京都",
+            "CityName": "渋谷区",
+            "Selected": true
+          }
+        ]
+      },
+      "WorkLocations": [
+        {
+          "Label": "東京都千代田区",
+          "PrefectureName": "東京都",
+          "CityName": "千代田区",
+          "Selected": true
+        }
+      ],
+      "RemoteWorkPossible": true
+    },
+    "Salary": 700,
+    "PositionKeyword": "backend",
+    "OtherFilters": {
+      "search_job_postings_for_it_engineer": [
+        {
+          "Key": "language",
+          "Name": "言語（all）",
+          "Type": "multi_select",
+          "Options": [
+            {
+              "Label": "Go",
+              "Value": "Go"
+            },
+            {
+              "Label": "TypeScript",
+              "Value": "TypeScript"
+            }
+          ]
+        }
+      ],
+      "search_job_postings_for_sales_financial_sales": [
+        {
+          "Key": "finance_product",
+          "Name": "取扱商材（金融商品）",
+          "Type": "multi_select",
+          "Options": [
+            {
+              "Label": "保険",
+              "Value": "保険"
+            },
+            {
+              "Label": "証券",
+              "Value": "証券"
+            }
+          ]
+        }
+      ]
+    },
+    "SelectedFilterOptions": {
+      "search_job_postings_for_it_engineer": {
+        "言語（all）": [
+          "Go"
+        ]
+      }
+    }
+  },
+  "JobtypeNamesWithSameSearchFilters": {
+    "search_job_postings": [
+      "営業企画",
+      "法人営業"
+    ],
+    "search_job_postings_for_it_engineer": [
+      "ITコンサルタント（アプリ）",
+      "Webアプリ開発"
+    ],
+    "search_job_postings_for_sales_financial_sales": [
+      "金融営業（法人）"
+    ]
+  }
+}

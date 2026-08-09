@@ -1,0 +1,10 @@
+{
+  // デフォルトフォーマッター
+  "[javascript][javascriptreact][typescript][typescriptreact][json][scss][css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // ファイル保存時に自動フォーマット
+  "editor.formatOnSave": true,
+  // node_modulesのPrettier利用
+  "prettier.prettierPath": "./node_modules/prettier"
+}

@@ -1,0 +1,8 @@
+@use "@/scss/utils/variables";
+
+.container {
+  // 子コンポーネントの要素の為タグ名で指定
+  a {
+    color: variables.$colorPrimary;
+  }
+}

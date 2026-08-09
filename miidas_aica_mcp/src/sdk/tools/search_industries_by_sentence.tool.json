@@ -1,0 +1,13 @@
+{
+  "name": "search_industries_by_sentence",
+  "description": "ユーザーの発言を元に、あなたが生成する『ユーザーからの業種名に関する質問についての短文』から、客観的な業種名を取得することができる意味情報検索ツールです。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "Sentence": {
+        "type": "string",
+        "description": "ここには、「ユーザーがやりたい業種」に関する発言を元にした説明文章を生成して渡してください。"
+      }
+    }
+  }
+}

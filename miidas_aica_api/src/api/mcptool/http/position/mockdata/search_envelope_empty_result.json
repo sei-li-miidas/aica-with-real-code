@@ -1,0 +1,100 @@
+{
+  "AllPositionIds": null,
+  "Positions": null,
+  "Recommendations": [
+    {
+      "Theme": "theme1",
+      "Title": "ワンランク上の収入を目指す求人",
+      "Description": "収入を増やしたい、高い年収の求人で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme2",
+      "Title": "プライベート充実！残業少なめ求人",
+      "Description": "プライベート充実！残業少なめ求人で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme3",
+      "Title": "思いを共有して働く企業",
+      "Description": "思いを共有して働く企業で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme4",
+      "Title": "長く安心して働ける企業",
+      "Description": "長く安心して働ける企業で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme5",
+      "Title": "育児休暇や在宅勤務ができる求人",
+      "Description": "育児休暇や在宅勤務ができる求人で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme6",
+      "Title": "産休や女性休暇がとれる企業",
+      "Description": "産休や女性休暇がとれる求人で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme7",
+      "Title": "働きやすい企業",
+      "Description": "働きやすい企業で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme8",
+      "Title": "女性比率が30%以上の企業",
+      "Description": "女性比率が30%以上の企業で新しい可能性を探してみませんか？"
+    },
+    {
+      "Theme": "theme9",
+      "Title": "フレックスタイムや時短勤務ができる求人",
+      "Description": "フレックスタイムや時短勤務ができる求人で新しい可能性を探してみませんか？"
+    }
+  ],
+  "SearchFilters": {
+    "Jobtypes": {
+      "search_job_postings": [
+        {
+          "Label": "医療営業（医療機器）",
+          "Value": "医療営業（医療機器）",
+          "Description": "",
+          "Selected": true
+        },
+        {
+          "Label": "医療営業（医療用品）",
+          "Value": "医療営業（医療用品）",
+          "Description": "",
+          "Selected": true
+        },
+        {
+          "Label": "フィールド／カスタマーサービス（医療機器）",
+          "Value": "フィールド／カスタマーサービス（医療機器）",
+          "Description": "",
+          "Selected": true
+        },
+        {
+          "Label": "プロダクトマネジャー（医療機器）",
+          "Value": "プロダクトマネジャー（医療機器）",
+          "Description": "",
+          "Selected": true
+        },
+        {
+          "Label": "クリニカルスペシャリスト（医療機器）",
+          "Value": "クリニカルスペシャリスト（医療機器）",
+          "Description": "",
+          "Selected": true
+        }
+      ]
+    },
+    "Locations": {
+      "Residence": {
+        "Address": {
+          "PrefectureName": "京都府",
+          "CityName": "京都市"
+        },
+        "CommutingAreas": null
+      },
+      "WorkLocations": null,
+      "RemoteWorkPossible": null
+    },
+    "Salary": 400,
+    "PositionKeyword": null
+  }
+}

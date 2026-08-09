@@ -1,0 +1,53 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+$color1: #24bee7;
+$color2: #d4dbe6;
+
+// --------------------------------------------------------------------------
+// ミイダス認定説明モーダルのコンポーネント
+// ---------------------------------------------------------------------------
+.content {
+  padding: 20px;
+  color: variables.$colorText;
+  text-align: left;
+}
+
+.description {
+  line-height: 1.7;
+
+  &:not(:first-of-type, :last-of-type) {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $color2;
+  }
+}
+
+.badge {
+  margin: 24px auto;
+  text-align: center;
+}
+
+.link {
+  @include mixin.pcLayout {
+    padding: 4px 25px;
+  }
+
+  // Note: childrenで受け取ったスタイルのオーバーライド
+  a {
+    display: block;
+    font-size: 14px;
+    color: $color1;
+    text-align: center;
+  }
+}
+
+.linkText {
+  padding-bottom: 8px;
+  font-size: 11px;
+  text-align: left;
+  letter-spacing: 0.2px;
+
+  @include mixin.pcLayout {
+    padding-bottom: 15px;
+  }
+}

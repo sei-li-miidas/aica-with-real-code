@@ -1,0 +1,139 @@
+.workflow-inline-item {
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+
+  .option-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-height: 45px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #fff;
+    user-select: none;
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      box-shadow 0.18s ease;
+
+    &.selected {
+      background: #f2f2fc;
+      border-color: #5e59ec;
+      box-shadow: inset 0 0 0 1px #5e59ec;
+    }
+
+    &:hover {
+      border-color: #cdc9dd;
+      background-color: #fbfbfe;
+    }
+
+    .option-checkbox-icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 2px;
+      background: #eef0f3;
+      box-shadow: inset 0.5px 0.5px 1px rgb(31 21 113 / 25%);
+    }
+
+    .option-checkbox-icon.selected {
+      background: #5e59ec;
+      box-shadow: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 4px;
+        height: 7px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: translate(-50%, -58%) rotate(45deg);
+      }
+    }
+
+    .option-label {
+      flex: 0 1 auto;
+
+      &.selected {
+        font-weight: bold;
+      }
+    }
+
+    .free-text-container {
+      flex: 1;
+      padding: 0px 8px;
+      min-width: 150px;
+
+      .workflow-free-text {
+        max-height: 100px;
+        overflow-y: auto;
+
+        &-input-root {
+          padding: 4px 10px;
+        }
+      }
+    }
+
+    .help-icon {
+      flex-shrink: 0;
+      border: 0;
+      color: #fff;
+      background: #91a6c5;
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+      border-radius: 999px;
+      margin-left: auto;
+      padding: 0;
+      cursor: pointer;
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: #7f96b7;
+      }
+    }
+  }
+
+  .action-footer {
+    margin-top: 16px;
+
+    .action-footer-button {
+      min-height: 50px;
+
+      &:hover {
+        background: #5550df;
+        box-shadow: 0 2px 8px rgb(94 89 236 / 22%);
+      }
+
+      &:disabled {
+        background: #5e59ec;
+        color: #fff;
+        opacity: 0.45;
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,341 @@
+edition = "2023";
+
+package miidas.user.marketvalue.user;
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/user";
+
+message PositionWill {
+  // GuaranteedIncome 年収
+  GuaranteedIncome GuaranteedIncome = 1;
+  // ModelAnnualIncome モデル年収
+  ModelAnnualIncome ModelAnnualIncome = 2;
+  // Job 職種
+  Job Job = 3;
+  // Skill 仕事内容（詳細）
+  Skill Skill = 4;
+  // WorkAddress 勤務地
+  WorkAddress WorkAddress = 5;
+  // Transference 国内転勤
+  Transference Transference = 6;
+  // TransferenceAbroad 海外転勤
+  TransferenceAbroad TransferenceAbroad = 7;
+  // OfficialTripFrequency 出張頻度
+  OfficialTripFrequency OfficialTripFrequency = 8;
+  // RemoteWork リモート勤務
+  RemoteWork RemoteWork = 9;
+  // EmploymentType 契約形態
+  EmploymentType EmploymentType = 10;
+  // EmploymentToRegularEmployee 正社員登用
+  EmploymentToRegularEmployee EmploymentToRegularEmployee = 11;
+  // EmploymentTypeChange 契約形態の変更
+  EmploymentTypeChange EmploymentTypeChange = 12;
+  // Post 役職
+  Post Post = 13;
+  // Worktime 勤務時間
+  Worktime Worktime = 14;
+  // OvertimeAvg 平均残業時間(月平均)
+  OvertimeAvg OvertimeAvg = 15;
+  // Holiday 休日
+  Holiday Holiday = 16;
+  // WorkingEnvironment 労働環境の特徴
+  WorkingEnvironment WorkingEnvironment = 17;
+  // BonusCount 賞与
+  BonusCount BonusCount = 18;
+  // PromotionCount 昇給・昇格
+  PromotionCount PromotionCount = 19;
+  // StockOption ストックオプション
+  StockOption StockOption = 20;
+  // Try トライ
+  Try Try = 21;
+  // HREvaluationType 評価基準の特徴s
+  HREvaluationType HREvaluationType = 22;
+  // HREvaluationCompetency 特に評価されるコンピテンシー
+  HREvaluationCompetency HREvaluationCompetency = 23;
+  // BaseMonthlySalary 基本月給
+  BaseMonthlySalary BaseMonthlySalary = 24;
+  // AccomplishmentImportance 業績目標達成思考
+  AccomplishmentImportance AccomplishmentImportance = 25;
+  // AccomplishmentRate 業績目標達成者率
+  AccomplishmentRate AccomplishmentRate = 26;
+  // SalesStyleDive 新規飛び込み
+  SalesStyleDive SalesStyleDive = 27;
+  // SalesStyleTelAppointment 新規テレアポ
+  SalesStyleTelAppointment SalesStyleTelAppointment = 28;
+  // SalesStyleHost 接待
+  SalesStyleHost SalesStyleHost = 29;
+  // CareerPath キャリアパス
+  CareerPath CareerPath = 30;
+  // OrgTrend 組織
+  OrgTrend OrgTrend = 31;
+  // WorkEnvironment 労働環境
+  WorkEnvironment WorkEnvironment = 32;
+  // DevelopmentTerm 開発スパン
+  DevelopmentTerm DevelopmentTerm = 33;
+  // DevelopmentProcess 開発手法
+  DevelopmentProcess DevelopmentProcess = 34;
+  // EmergencySupport 緊急対応
+  EmergencySupport EmergencySupport = 35;
+  // Menkaku 面接確約
+  Menkaku Menkaku = 36;
+  // CompetencyMatch 活躍可能性
+  CompetencyMatch CompetencyMatch = 37;
+  // TargetMatch 募集条件一致率
+  TargetMatch TargetMatch = 38;
+}
+message GuaranteedIncome {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message ModelAnnualIncome {
+  int32 importance = 1;
+  ModelAnnualIncomeValue value = 2;
+}
+message ModelAnnualIncomeValue {
+  int32 Twenties = 1 [features.field_presence = EXPLICIT];
+  int32 Thirties = 2 [features.field_presence = EXPLICIT];
+  int32 Forties = 3 [features.field_presence = EXPLICIT];
+}
+message Job {
+  int32 importance = 1;
+  bool exclude = 2;
+  JobValue value = 3;
+}
+message JobValue {
+  repeated int32 Larges = 1;
+  repeated int32 Middles = 2;
+  repeated int32 Smalls = 3;
+}
+message Skill {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+
+message WorkAddress {
+  int32 importance = 1;
+  WorkAddressValue value = 2;
+}
+message WorkAddressValue {
+  bool OverseasFlg = 1;
+  repeated int32 Prefectures = 2;
+  repeated int32 Cities = 3;
+}
+message Transference {
+  int32 importance = 1;
+  TransferenceValue value = 2;
+}
+message TransferenceValue {
+  repeated int32 Exists = 1;
+  repeated int32 Frequency = 2;
+}
+message TransferenceAbroad {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message OfficialTripFrequency {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message RemoteWork {
+  int32 importance = 1;
+  RemoteWorkValue value = 2;
+}
+message RemoteWorkValue {
+  repeated int32 Exists = 1;
+  repeated int32 OfficeFrequency = 2;
+}
+message EmploymentType {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message EmploymentToRegularEmployee {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message EmploymentTypeChange {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message Post {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message Worktime {
+  int32 importance = 1;
+  WorktimeValue value = 2;
+}
+message WorktimeValue {
+  int32 FixedOrShift = 1 [features.field_presence = EXPLICIT];
+  int32 NightShift = 2 [features.field_presence = EXPLICIT];
+}
+message OvertimeAvg {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message Holiday {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message WorkingEnvironment {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message BonusCount {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message PromotionCount {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message StockOption {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message Try {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message HREvaluationType {
+  int32 importance = 1;
+  HREvaluationTypeValue value = 2;
+}
+message HREvaluationTypeValue {
+  int32 MeritSystemOrSeniority = 1 [features.field_presence = EXPLICIT];
+  int32 StrongPointsOrDisadvantages = 2 [features.field_presence = EXPLICIT];
+  int32 OutcomeOrProcess = 3 [features.field_presence = EXPLICIT];
+  int32 IndividualityOrCooperation = 4 [features.field_presence = EXPLICIT];
+}
+message HREvaluationCompetency {
+  int32 importance = 1;
+  HREvaluationCompetencyValue value = 2;
+}
+message HREvaluationCompetencyValue {
+  // パーソナリティ
+  int32 management_style = 1 [features.field_presence = EXPLICIT]; // マネジメントスタイル
+  int32 vitality = 2 [features.field_presence = EXPLICIT]; // 活力
+  int32 sociability = 3 [features.field_presence = EXPLICIT]; // 人あたり
+  int32 teamwork = 4 [features.field_presence = EXPLICIT]; // チームワーク
+  int32 creativity = 5 [features.field_presence = EXPLICIT]; // 創造性
+  int32 problem_solving = 6 [features.field_presence = EXPLICIT]; // 問題解決力
+  int32 pressure_tolerance = 7 [features.field_presence = EXPLICIT]; // プレッシャーへの耐性
+  int32 coordination = 8 [features.field_presence = EXPLICIT]; // 調整力
+  int32 leadership = 9 [features.field_presence = EXPLICIT]; // リーダーシップ
+  int32 adaptability = 10 [features.field_presence = EXPLICIT]; // 対応力
+  int32 perseverance = 11 [features.field_presence = EXPLICIT]; // 粘り強さ
+  int32 focus = 12 [features.field_presence = EXPLICIT]; // 一点集中
+  int32 planning = 13 [features.field_presence = EXPLICIT]; // 計画性
+  int32 interpersonal_influence = 14 [features.field_presence = EXPLICIT]; // 対人影響
+  int32 goal_setting = 15 [features.field_presence = EXPLICIT]; // 目標の立て方
+  int32 decisiveness = 16 [features.field_presence = EXPLICIT]; // 決断力
+  int32 analytical_ability = 17 [features.field_presence = EXPLICIT]; // 分析力
+  int32 conceptualization = 18 [features.field_presence = EXPLICIT]; // 概念化
+  int32 continuity = 19 [features.field_presence = EXPLICIT]; // 継続力
+  int32 relationship_building = 20 [features.field_presence = EXPLICIT]; // 人間関係の構築
+  int32 empathy = 21 [features.field_presence = EXPLICIT]; // 共感力
+  int32 self_learning = 22 [features.field_presence = EXPLICIT]; // 自学
+
+  // 上司部下適正
+  int32 directive = 23 [features.field_presence = EXPLICIT]; // 指示型
+  int32 delegation = 24 [features.field_presence = EXPLICIT]; // 委任型
+  int32 listening = 25 [features.field_presence = EXPLICIT]; // 傾聴型
+  int32 dialogue = 26 [features.field_presence = EXPLICIT]; // 対話型
+  int32 negotiation = 27 [features.field_presence = EXPLICIT]; // 交渉型
+  int32 obedient = 28 [features.field_presence = EXPLICIT]; // 従順型
+  int32 autonomous = 29 [features.field_presence = EXPLICIT]; // 自律型
+  int32 cooperative = 30 [features.field_presence = EXPLICIT]; // 協調型
+  int32 proactive = 31 [features.field_presence = EXPLICIT]; // 提案型
+  int32 assertive = 32 [features.field_presence = EXPLICIT]; // 主張型
+
+  // ストレス要因
+  int32 uncertain_situations = 33 [features.field_presence = EXPLICIT]; // 不確実な状況
+  int32 response_to_sudden_changes = 34 [features.field_presence = EXPLICIT]; // 急な変化への対応
+  int32 hard_work = 35 [features.field_presence = EXPLICIT]; // ハードワーク
+  int32 lack_of_planning = 36 [features.field_presence = EXPLICIT]; // 計画性のなさ
+  int32 strict_management = 37 [features.field_presence = EXPLICIT]; // 厳しい管理
+  int32 lack_of_evaluation = 38 [features.field_presence = EXPLICIT]; // 評価の欠如
+  int32 inability_to_exercise_initiative = 39 [features.field_presence = EXPLICIT]; // 主体性が発揮できない
+  int32 exclusion_from_decision_making = 40 [features.field_presence = EXPLICIT]; // 意思決定に関与できない
+  int32 low_standards = 41 [features.field_presence = EXPLICIT]; // 要求水準が低い
+  int32 high_analysis = 42 [features.field_presence = EXPLICIT]; // 高度な分析
+  int32 lack_of_learning_opportunities = 43 [features.field_presence = EXPLICIT]; // 学習機会の不足
+  int32 following_precedents = 44 [features.field_presence = EXPLICIT]; // 前例踏襲
+  int32 routine_work = 45 [features.field_presence = EXPLICIT]; // 定型業務
+  int32 difficult_decisions = 46 [features.field_presence = EXPLICIT]; // 困難な決断
+  int32 negotiation_tasks = 47 [features.field_presence = EXPLICIT]; // 交渉業務
+  int32 consensus_building = 48 [features.field_presence = EXPLICIT]; // 合意形成
+  int32 conflict_with_others = 49 [features.field_presence = EXPLICIT]; // 周囲との対立
+  int32 dry_workplace = 50 [features.field_presence = EXPLICIT]; // ドライな職場
+  int32 caught_in_the_middle = 51 [features.field_presence = EXPLICIT]; // 板挟み状態
+  int32 collaborative_work = 52 [features.field_presence = EXPLICIT]; // 共同業務
+}
+message BaseMonthlySalary {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message AccomplishmentImportance {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message AccomplishmentRate {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message SalesStyleDive {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message SalesStyleTelAppointment {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message SalesStyleHost {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message CareerPath {
+  int32 importance = 1;
+  CareerPathValue value = 2;
+}
+message CareerPathValue {
+  int32 OutOfSiteExists = 1 [features.field_presence = EXPLICIT];
+  int32 WorkHeadOfficeExists = 2 [features.field_presence = EXPLICIT];
+}
+message OrgTrend {
+  int32 importance = 1;
+  OrgTrendValue value = 2;
+}
+message OrgTrendValue {
+  int32 EngineerManagerExists = 1 [features.field_presence = EXPLICIT];
+  repeated int32 AccountingLicenceExists = 2;
+  repeated int32 LegalLicenceExists = 3;
+  repeated int32 RelatedWithEngineer = 4;
+}
+message WorkEnvironment {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message DevelopmentTerm {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message DevelopmentProcess {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message EmergencySupport {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message Menkaku {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message CompetencyMatch {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message TargetMatch {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}

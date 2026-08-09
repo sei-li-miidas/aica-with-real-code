@@ -1,0 +1,13 @@
+.value {
+  & + & {
+    margin-top: 4px;
+  }
+}
+
+.placeListItem {
+  line-height: 1.5;
+
+  & + & {
+    margin-top: 8px;
+  }
+}

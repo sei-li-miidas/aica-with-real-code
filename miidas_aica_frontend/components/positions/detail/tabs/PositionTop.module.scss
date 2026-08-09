@@ -1,0 +1,110 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+$colorWorkExperience: #2158d4;
+$colorBorder: #c6e3ed;
+$colorBackground: #e2f5fd;
+
+$detailMaxWidth: 980px; // 求人詳細の最大幅
+
+.positionTags {
+  display: flex;
+  padding: 16px 12px 0;
+
+  > li + li {
+    margin-left: 8px;
+  }
+}
+
+.positionTag {
+  width: fit-content;
+  height: 19px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  color: variables.$white;
+  text-align: center;
+}
+
+.employmentTypeLabel {
+  background-color: variables.$miidas-secondary;
+  border-color: variables.$miidas-secondary;
+}
+
+.workExperienceLabel {
+  background-color: $colorWorkExperience;
+}
+
+.titleAndMatchRateRank {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 12px;
+
+  @include mixin.pcLayout {
+    width: $detailMaxWidth;
+    padding: 20px 12px;
+    margin: 0 auto;
+  }
+}
+
+.positionTitleWrap {
+  padding: 30px 10px 20px;
+
+  @include mixin.pcLayout {
+    width: $detailMaxWidth;
+    padding-top: 20px;
+    margin: 0 auto;
+  }
+}
+
+.positionTitleOutsourcingWrap {
+  padding: 8px 12px 16px;
+}
+
+.positionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.imageArea {
+  position: relative;
+}
+
+.matchRateRank {
+  position: absolute;
+  right: 10px;
+  bottom: -30px;
+
+  @include mixin.pcLayout {
+    right: calc(50% - 475px);
+    bottom: -18px;
+  }
+}
+
+.emphasisArea {
+  background-color: $colorBackground;
+  border-top: 1px solid $colorBorder;
+}
+
+.emphasisAreaItem {
+  padding: 16px 12px;
+
+  @include mixin.pcLayout {
+    width: $detailMaxWidth;
+    margin: 0 auto;
+  }
+}
+
+.workTypeAppealArea {
+  margin-top: 8px;
+}
+
+.appealPointTagsArea {
+  padding: 16px 12px 12px;
+  border-top: 1px solid $colorBorder;
+}

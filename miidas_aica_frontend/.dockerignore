@@ -1,0 +1,15 @@
+# docker
+**/Dockerfile
+.dockerignore
+# env
+.env*
+!.env.local
+# git
+.git
+.github
+.gitignore
+# vscode
+.vscode
+.next
+build
+node_modules

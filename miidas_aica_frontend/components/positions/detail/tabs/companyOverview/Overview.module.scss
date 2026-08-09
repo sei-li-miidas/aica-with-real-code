@@ -1,0 +1,21 @@
+@use "@/scss/utils/variables";
+
+$colorBorder: #bcc8d5;
+
+.salesOverseasRate {
+  font-size: 11px;
+  color: variables.$colorPrimary;
+}
+
+// DescriptionHorizontalListの詳細度よりも高くするため要素セレクタも追加
+li.hpmLabel {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link {
+  // 子コンポーネントの要素の為タグ名で指定
+  a {
+    color: variables.$colorPrimary;
+  }
+}

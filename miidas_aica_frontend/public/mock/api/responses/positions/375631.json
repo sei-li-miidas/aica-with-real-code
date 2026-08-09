@@ -1,0 +1,690 @@
+{
+  "Position": {
+    "ID": 375631,
+    "CompanyID": 356302,
+    "CompanySectionID": 281304,
+    "BusinessID": 504088,
+    "IsDetailShowable": true,
+    "CertificationRank": 3,
+    "CompanyTrashedAt": null,
+    "BossTypeScores": null,
+    "ApplyLimit": {
+      "PositionID": 375631,
+      "Enable": false,
+      "Capacity": 0
+    },
+    "PublishStatus": 1,
+    "Modified": "2021-11-24T01:00:06+09:00",
+    "Title": "★スペシャルオファー★★あなたのコンピテンシーと弊社のコンピテンシー一致しています！★",
+    "Post": {
+      "ID": 1,
+      "Name": "役職なし",
+      "Note": ""
+    },
+    "EmploymentType": {
+      "ID": 2,
+      "Name": "契約社員",
+      "Note": ""
+    },
+    "Jobs": [
+      {
+        "SmallID": 111012,
+        "Name": "販売スタッフ（小売）",
+        "Main": true,
+        "SkillGroups": [
+          {
+            "ID": 82,
+            "Name": "対象顧客（年代）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 624,
+                    "Name": "10代",
+                    "Main": false
+                  },
+                  {
+                    "ID": 623,
+                    "Name": "10歳未満",
+                    "Main": false
+                  },
+                  {
+                    "ID": 625,
+                    "Name": "20代",
+                    "Main": false
+                  },
+                  {
+                    "ID": 626,
+                    "Name": "30代",
+                    "Main": false
+                  },
+                  {
+                    "ID": 627,
+                    "Name": "40代",
+                    "Main": false
+                  },
+                  {
+                    "ID": 628,
+                    "Name": "50代以上",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 17,
+            "Name": "対象顧客（富裕層／一般層）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 61,
+                    "Name": "一般層",
+                    "Main": false
+                  },
+                  {
+                    "ID": 60,
+                    "Name": "富裕層",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 39,
+            "Name": "対象顧客（性別）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 370,
+                    "Name": "女性メイン",
+                    "Main": false
+                  },
+                  {
+                    "ID": 371,
+                    "Name": "性別不問",
+                    "Main": false
+                  },
+                  {
+                    "ID": 369,
+                    "Name": "男性メイン",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 40,
+            "Name": "顧客単価（小売／外食／サービス）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 372,
+                    "Name": "1,000円未満",
+                    "Main": false
+                  },
+                  {
+                    "ID": 373,
+                    "Name": "1,000円～1万円",
+                    "Main": false
+                  },
+                  {
+                    "ID": 374,
+                    "Name": "1万円～5万円",
+                    "Main": false
+                  },
+                  {
+                    "ID": 375,
+                    "Name": "5万円以上",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 45,
+            "Name": "取扱商材（流通／小売）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 1818,
+                    "Name": "PC／スマホ",
+                    "Main": false
+                  },
+                  {
+                    "ID": 1819,
+                    "Name": "電気／ガス／その他エネルギー",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "MainJobText": "通信キャリアの量販店や店舗での接客販売\n案件により在宅ワーク可能\n\n■希望を最大限考慮\n年収やお休みなど理想の働き方に合わせて担当案件を決定致します！",
+    "IncomeFromType": 4,
+    "ModelAnnualIncome": {
+      "Income20s": 300,
+      "Income30s": 400,
+      "Income40s": 600,
+      "Note": ""
+    },
+    "StockOption": {
+      "ID": 2,
+      "Name": "ストックオプション制度なし",
+      "Note": ""
+    },
+    "BonusCount": {
+      "ID": 2,
+      "Name": "年１回",
+      "Note": "不定期"
+    },
+    "PromotionCount": {
+      "ID": 1,
+      "Name": "なし",
+      "Note": "不定期"
+    },
+    "WorkAddress": {
+      "Values": [
+        {
+          "ID": 1121002,
+          "Name": "千葉県千葉市",
+          "Note": "他多数勤務地あり"
+        },
+        {
+          "ID": 1011002,
+          "Name": "北海道札幌市",
+          "Note": ""
+        },
+        {
+          "ID": 1012033,
+          "Name": "北海道小樽市",
+          "Note": ""
+        },
+        {
+          "ID": 1082015,
+          "Name": "茨城県水戸市",
+          "Note": ""
+        },
+        {
+          "ID": 1092011,
+          "Name": "栃木県宇都宮市",
+          "Note": ""
+        },
+        {
+          "ID": 1092088,
+          "Name": "栃木県小山市",
+          "Note": ""
+        },
+        {
+          "ID": 1102016,
+          "Name": "群馬県前橋市",
+          "Note": ""
+        },
+        {
+          "ID": 1102024,
+          "Name": "群馬県高崎市",
+          "Note": ""
+        },
+        {
+          "ID": 1102041,
+          "Name": "群馬県伊勢崎市",
+          "Note": ""
+        },
+        {
+          "ID": 1111007,
+          "Name": "埼玉県さいたま市",
+          "Note": "※埼玉県全域"
+        },
+        {
+          "ID": 1139999,
+          "Name": "東京都23区",
+          "Note": ""
+        },
+        {
+          "ID": 1141003,
+          "Name": "神奈川県横浜市",
+          "Note": "他多数勤務地あり"
+        },
+        {
+          "ID": 1151009,
+          "Name": "新潟県新潟市",
+          "Note": "他多数勤務地あり"
+        },
+        {
+          "ID": 1192015,
+          "Name": "山梨県甲府市",
+          "Note": ""
+        },
+        {
+          "ID": 1202011,
+          "Name": "長野県長野市",
+          "Note": ""
+        },
+        {
+          "ID": 1202029,
+          "Name": "長野県松本市",
+          "Note": ""
+        },
+        {
+          "ID": 1202061,
+          "Name": "長野県諏訪市",
+          "Note": ""
+        },
+        {
+          "ID": 1261009,
+          "Name": "京都府京都市",
+          "Note": ""
+        },
+        {
+          "ID": 1271004,
+          "Name": "大阪府大阪市",
+          "Note": ""
+        }
+      ],
+      "Note": ""
+    },
+    "RemoteWork": {
+      "ID": 2,
+      "Name": "リモート勤務OK（条件つき）",
+      "Note": ""
+    },
+    "RemoteWorkCondition": "非常時等は状況に応じてリモート勤務を許可しています。",
+    "RemoteWorkOfficeFrequency": {
+      "ID": 1,
+      "Name": "原則なし",
+      "Note": "状況に応じて変動"
+    },
+    "Holiday": {
+      "ID": 2,
+      "Name": "完全週休2日制",
+      "Note": "休日：業務により変動。土日の場合や平日の場合があります"
+    },
+    "WorkTime": "10:00～19:00 (実働8時間)",
+    "WorkTimeSystem": {
+      "ID": 2,
+      "Name": "シフト制",
+      "Note": ""
+    },
+    "WorkTimeNightsShift": {
+      "ID": 2,
+      "Name": "夜勤なし",
+      "Note": ""
+    },
+    "OvertimeAvg": {
+      "ID": 5,
+      "Name": "月平均残業40時間以内",
+      "Note": ""
+    },
+    "OfficialTripFrequency": {
+      "ID": 1,
+      "Name": "出張なし",
+      "Note": ""
+    },
+    "WorkEnvironment": [
+      {
+        "ID": 1,
+        "Name": "フレックスタイム",
+        "Note": ""
+      },
+      {
+        "ID": 2,
+        "Name": "時短勤務可能",
+        "Note": ""
+      },
+      {
+        "ID": 5,
+        "Name": "私服OK",
+        "Note": ""
+      },
+      {
+        "ID": 6,
+        "Name": "マイカー通勤可",
+        "Note": ""
+      },
+      {
+        "ID": 8,
+        "Name": "駅徒歩5分以内",
+        "Note": ""
+      },
+      {
+        "ID": 9,
+        "Name": "駅徒歩10分以内",
+        "Note": ""
+      }
+    ],
+    "TransferenceExists": {
+      "ID": 3,
+      "Name": "国内転勤あり",
+      "Note": ""
+    },
+    "TransferenceFrequency": {
+      "ID": 4,
+      "Name": "めったにない",
+      "Note": ""
+    },
+    "TransferenceAbroadExists": {
+      "ID": 2,
+      "Name": "海外転勤なし（予定もなし）",
+      "Note": ""
+    },
+    "TransferenceAbroadEnglishIsUnused": null,
+    "HREvaluationType": {
+      "Type1": 2,
+      "Type2": 2,
+      "Type3": 1,
+      "Type4": 3,
+      "Note": ""
+    },
+    "HREvaluationCompetency": {
+      "Axes": [
+        {
+          "Axis": "Sociability",
+          "Value": 2
+        },
+        {
+          "Axis": "Teamwork",
+          "Value": 2
+        },
+        {
+          "Axis": "Coordination",
+          "Value": 2
+        }
+      ],
+      "Note": ""
+    },
+    "PR": "・インセンティブ（業績給）あり！\n・あなたの頑張り次第で給料UPのチャンスがあります！\n・完全実力主義（年功序列はありません）\n・事前研修によりスキルアップが可能です\n・稼働後も引き続きフォローアップの研修がございます\n・頑張っている方には代表からのサプライズも・・・！！\n・従業員同士が高め合う環境です",
+    "SmokeFree": {
+      "ID": 1,
+      "Name": "あり",
+      "Note": ""
+    },
+    "SmokeFreeEnvironment": {
+      "ID": 2,
+      "Name": "喫煙室設置",
+      "Note": ""
+    },
+    "AccomplishmentImportance": {
+      "ID": 4,
+      "Note": "",
+      "Options": [
+        {
+          "ID": 4,
+          "Name": "業績目標未達成者に対し、周囲は励まし、次のトライを賞賛する文化"
+        },
+        {
+          "ID": 5,
+          "Name": "業績目標はあくまで目標であり、重視されてない（もしくはない）"
+        },
+        {
+          "ID": 1,
+          "Name": "業績目標未達成者に対し、周囲の評価は厳しく、いづらくなる雰囲気"
+        },
+        {
+          "ID": 2,
+          "Name": "業績目標未達成者に対し、周囲の評価は厳しく、次のチャレンジを賞賛する"
+        },
+        {
+          "ID": 3,
+          "Name": "業績目標未達成者に対し、周囲は励ますが、いづらくなる雰囲気"
+        }
+      ]
+    },
+    "AccomplishmentRate": null,
+    "SalesStyleDive": null,
+    "SalesStyleTelAppointment": null,
+    "SalesStyleHost": null,
+    "BaseMonthlySalary": {
+      "ID": 30,
+      "Name": "30",
+      "Note": "詳細テキスト詳細テキスト...."
+    },
+    "OvertimeSalary": {
+      "HasOvertimeSalary": 1,
+      "MonthlyAmount": 5,
+      "ExpectedHours": 20
+    },
+    "CareerPathOutOfSiteExists": {
+      "ID": 1,
+      "Name": "現場以外のキャリアパスあり",
+      "Note": ""
+    },
+    "CareerPathWorkHeadOfficeExists": null,
+    "OrgTrendEngineerManagerExists": null,
+    "OrgTrendSectionMemberQty": null,
+    "OrgTrendAccountingLicenceExists": null,
+    "OrgTrendLegalLicenceExists": null,
+    "OrgTrendRelatedWithEngineer": null,
+    "ITEngineerWorkEnvironment": null,
+    "DevelopmentTerm": null,
+    "DevelopmentProcess": null,
+    "EmergencySupport": null,
+    "JoinedReserve": 0,
+    "EmploymentToRegularEmployee": {
+      "ID": 4,
+      "Name": "正社員雇用前提（将来的に）",
+      "Note": ""
+    },
+    "Probation": {
+      "ID": 1,
+      "Name": "なし",
+      "Note": ""
+    },
+    "ContractPeriod": {
+      "ID": 3,
+      "Name": "3ヶ月",
+      "Note": "案件により変動\n基本は長期での更新"
+    },
+    "ContractExtension": null,
+    "TryID": {
+      "ID": 1,
+      "Name": "不可"
+    },
+    "TryReward": null,
+    "TryDetail": "",
+    "TryDays": null,
+    "TryHours": null,
+    "TryPlace": "",
+    "JobChange": {
+      "Income": {
+        "From": 505,
+        "To": 700,
+        "Note": ""
+      }
+    },
+    "RegularOutsourcing": null,
+    "SpotOutsourcing": null,
+    "SpotJobDescription": "",
+    "CommissionOutsourcing": null,
+    "OutsourcingAppeal": null,
+    "Interview": {
+      "Shared": {
+        "EstimatedTerm": "1週間程度",
+        "InterviewTimes": 2,
+        "SelectionAptitudeTestExists": false,
+        "SelectionPaperTestExists": false,
+        "SelectionPracticalTestExists": false,
+        "SelectionOtherTestExists": false,
+        "SelectionRemarks": "",
+        "CasualDressFlg": false,
+        "Interviewers": [
+          {
+            "ID": 2,
+            "Name": "役員"
+          }
+        ],
+        "OtherInterviewer": ""
+      },
+      "Meeting": {
+        "EnableFlg": false,
+        "PossibleWeekdayHourFrom": 10,
+        "PossibleWeekdayHourTo": 19,
+        "PossibleWeekendFlg": false,
+        "PossibleTimeComplement": "",
+        "Minutes": 60,
+        "PlaceOptions": ["東京都渋谷区初台１丁目３７番１号大和ビル５階"],
+        "TransportationPaymentFlg": false,
+        "TransportationPaymentRemarks": ""
+      },
+      "Online": {
+        "EnableFlg": true,
+        "PossibleWeekdayHourFrom": 10,
+        "PossibleWeekdayHourTo": 19,
+        "PossibleWeekendFlg": false,
+        "PossibleTimeComplement": "",
+        "Minutes": 60
+      },
+      "Phone": {
+        "EnableFlg": false,
+        "PossibleWeekdayHourFrom": 10,
+        "PossibleWeekdayHourTo": 19,
+        "PossibleWeekendFlg": false,
+        "PossibleTimeComplement": "",
+        "Minutes": 60
+      },
+      "WorkExperience": {
+        "Pattern": {
+          "ID": 2,
+          "Name": "希望者のみ実施する"
+        },
+        "Timing": {
+          "ID": 1,
+          "Name": "最終面接後に実施"
+        },
+        "TimingRemarks": "",
+        "OtherTimingText": "",
+        "WorkTypes": [
+          {
+            "ID": 1,
+            "Name": "職場見学"
+          }
+        ],
+        "WorkContent": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+        "Timeframe": {
+          "ID": 2,
+          "Name": "平日の夜"
+        },
+        "TimeframeRemarks": "",
+        "NeedTime": {
+          "ID": 2,
+          "Name": "単日（１日）/３時間以上"
+        },
+        "NeedTimeRemarks": "",
+        "Reward": {
+          "ID": 2,
+          "Name": "報酬あり"
+        },
+        "RewardValue": 1110,
+        "RewardRemarks": ""
+      }
+    },
+    "Images": [
+      {
+        "URL": "https://picsum.photos/710/474",
+        "DisplayType": 1
+      },
+      {
+        "URL": "https://picsum.photos/710/474",
+        "DisplayType": 2
+      },
+      {
+        "URL": "https://picsum.photos/710/474",
+        "DisplayType": 2
+      }
+    ]
+  },
+  "Company": {
+    "Withdrawal": false,
+    "Name": "アークプロモーション株式会社"
+  },
+  "ActionStatus": {
+    "StarredAt": null,
+    "ReadAt": null,
+    "TrashedAt": null,
+    "PartnerAppliedAt": null
+  },
+  "Fitting": {
+    "IsMenkaku": false,
+    "TargetMatchRank": 5,
+    "CompetencyMatchRank": 2
+  },
+  "Target": {
+    "Job": {
+      "JobTypeLarge": {},
+      "JobTypeMiddle": {
+        "1110": {
+          "Label": "販売（小売）",
+          "ExpTermID": 0
+        }
+      },
+      "JobTypeSmall": {},
+      "Skills": {}
+    },
+    "Management": null,
+    "Licence": null,
+    "English": null,
+    "Lang": null,
+    "Graduate": null,
+    "Office": null,
+    "Other": null,
+    "Competency": {
+      "ManagementStyle": 0,
+      "Vitality": 0,
+      "Sociability": 0,
+      "Teamwork": 0,
+      "Creativity": 0,
+      "ProblemSolving": 0,
+      "PressureTolerance": 0,
+      "Coordination": 0,
+      "Leadership": 0,
+      "Directive": 0,
+      "Delegation": 0,
+      "Listening": 0,
+      "Dialogue": 0,
+      "Negotiation": 0,
+      "Obedient": 0,
+      "Autonomous": 0,
+      "Cooperative": 0,
+      "Proactive": 0,
+      "Assertive": 0,
+      "UncertainSituations": 0,
+      "ResponseToSuddenChanges": 0,
+      "HardWork": 0,
+      "LackOfPlanning": 0,
+      "StrictManagement": 0,
+      "LackOfEvaluation": 0,
+      "InabilityToExerciseInitiative": 0,
+      "ExclusionFromDecisionMaking": 0,
+      "LowStandards": 0,
+      "HighAnalysis": 0,
+      "LackOfLearningOpportunities": 0,
+      "FollowingPrecedents": 0,
+      "RoutineWork": 0,
+      "DifficultDecisions": 0,
+      "NegotiationTasks": 5,
+      "ConsensusBuilding": 0,
+      "ConflictWithOthers": 0,
+      "DryWorkplace": 0,
+      "CaughtInTheMiddle": 0,
+      "CollaborativeWork": 0,
+      "SolitaryWork": 0
+    },
+    "Bias": null
+  },
+  "Talk": null,
+  "Messages": []
+}

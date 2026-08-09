@@ -1,0 +1,778 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:math";
+@use "./zindex";
+@use "variables";
+
+$colorBtnPrimary: #1bc2f5;
+$colorTextBase: #26303b;
+$colorHelpBalloonBg: rgba($colorTextBase, 0.9);
+$colorShadowLight: rgba($colorTextBase, 0.2);
+$colorGrayBase: #8999ab;
+$colorRadioBorder: #ced3db;
+
+// メディアクエリのmixin
+@mixin pcLayout {
+  @media (min-width: variables.$breakPointPC) {
+    @content;
+  }
+}
+
+@mixin spLayout {
+  @media (max-width: (variables.$breakPointPC - 1)) {
+    @content;
+  }
+}
+
+// ポジション画像カルーセルのmixin
+@mixin positionImagesPcAndTabletLayout {
+  @media (min-width: variables.$breakPointTablet) {
+    @content;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ ボタン
+--------------------------------------------------------------------------- */
+@mixin btn($bg: variables.$miidas-primary, $width: 100%) {
+  position: relative;
+  display: block;
+  width: $width;
+  height: 60px;
+  background: $bg;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px 0 rgba(16, 23, 39, 0.17);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+
+  @content;
+
+  appearance: none;
+
+  &:hover {
+    background: color.adjust($bg, $lightness: -8%);
+  }
+
+  &.disabled {
+    background: #c4cfdf;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 740px) {
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    line-height: 50px;
+  }
+}
+
+@mixin buttonBase(
+  $bg: $colorBtnPrimary,
+  $color: variables.$white,
+  $width: 100%,
+  $height: 52px,
+  $outline: false
+) {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background: $bg;
+
+  @if ($outline) {
+    border: 1px solid $color;
+    box-shadow: none;
+  } @else {
+    border: 0;
+    box-shadow: 0 2px 2px 0 rgba(37, 70, 105, 0.2);
+  }
+
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: $height;
+  color: $color;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  // TODO: 新CSSガイドライン移行完了まで「&-disabled」「&.disabled」が混在します
+  &:disabled,
+  &-disabled,
+  &.disabled {
+    box-shadow: none;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @content;
+}
+
+/* --------------------------------------------------------------------------
+ アローアイコン
+--------------------------------------------------------------------------- */
+@mixin icoArrow($direction, $color: #ffffff, $size: 12px) {
+  &:before {
+    display: block;
+    width: $size;
+    min-width: $size;
+    height: $size;
+    min-height: $size;
+    border: 2px solid $color;
+    content: "";
+    transform: rotate(-45deg);
+
+    @if $direction == "top" {
+      border-bottom-width: 0;
+      border-left-width: 0;
+    } @else if $direction == "right" {
+      border-top-width: 0;
+      border-left-width: 0;
+    } @else if $direction == "bottom" {
+      border-top-width: 0;
+      border-right-width: 0;
+    } @else if $direction == "left" {
+      border-right-width: 0;
+      border-bottom-width: 0;
+    }
+  }
+
+  &:hover:before {
+    border-color: color.adjust($color, $lightness: -8%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+ Mac用スクロールバー
+--------------------------------------------------------------------------- */
+@mixin pseudoScrollbar {
+  // このプロパティの値がtouchになっているとpseudoScrollbarが表示されないためautoに指定
+  -webkit-overflow-scrolling: auto;
+  backface-visibility: hidden;
+  // Macでスクロールバーを非表示にできるがデザインがスクロールバー表示前提のため、
+  // webkit時のみスクロールバーを常に表示するようにスタイルで担保(スクロール幅はIEに合わせる)
+  &::-webkit-scrollbar {
+    width: variables.$scrollbarWidth;
+    background-color: #fafafa;
+    border-right: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+    text-align: center;
+
+    @content;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 11px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ 共通inputパーツ
+--------------------------------------------------------------------------- */
+// -------------------
+// テキストボックス
+// -------------------
+@mixin textboxStyle($width: 100%) {
+  width: $width;
+  padding: 14px 16px;
+  background-color: #ffffff;
+  border: 1px solid #aab6c4;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #25b8e5;
+  resize: none;
+
+  &:focus {
+    border: 1px solid #25b8e5;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: #8999ab;
+  }
+
+  &:invalid:not(:focus, :placeholder-shown) {
+    border-color: #f37979;
+    color: #f37979;
+  }
+
+  &:invalid:focus:not(:placeholder-shown) {
+    border-color: #f37979;
+  }
+}
+
+// 背景青用
+@mixin blueBackTextboxStyle($width: 100%) {
+  width: $width;
+  padding: 12px;
+
+  &[type="password"] {
+    padding-right: (12px * 2) + 22px;
+  }
+
+  background-color: #ffffff;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 2;
+  color: #354659;
+  resize: none;
+
+  &:focus {
+    padding: 10px;
+    border: 2px solid #25b8e5;
+
+    &[type="password"] {
+      padding-right: (10px * 2) + 22px;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: #8999ab;
+  }
+
+  &-isInvalid:not(:focus) {
+    padding: 10px;
+    border: 2px solid #ffbebe;
+    color: #ff5757;
+
+    &[type="password"] {
+      padding-right: (10px * 2) + 22px;
+    }
+  }
+
+  &-isInvalid:focus {
+    background-color: #ffedf0;
+    border-color: #ff5757;
+  }
+}
+
+// -------------------
+// セレクトボックス
+// -------------------
+@mixin selectBox($width: 100%) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: $width;
+  height: 52px;
+  background-color: #ffffff;
+  border: 1px solid #aab6c4;
+  border-radius: 2px;
+  color: #354659;
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    z-index: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #43516e;
+    border-right: 7px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 7px solid transparent;
+    pointer-events: none;
+    content: "";
+    transform: translateY(-50%);
+  }
+
+  select {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px 34px 12px 17px;
+    color: #354659;
+    cursor: pointer;
+    appearance: none;
+  }
+}
+
+// -------------------
+// テキストエリア
+// -------------------
+@mixin textareaStyle($minHeight: 250px) {
+  width: 100%;
+  min-height: $minHeight;
+  padding: 8px 13px;
+  border: 1px solid #aab6c4;
+  border-radius: 1px;
+  color: inherit;
+  resize: none;
+
+  &:focus {
+    border: 1px solid #25b8e5;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: #8999ab;
+  }
+
+  &:invalid:not(:focus, :placeholder-shown) {
+    border-color: #f37979;
+    color: #f37979;
+  }
+
+  &:invalid:focus:not(:placeholder-shown) {
+    border-color: #f37979;
+  }
+}
+
+// --------------------------------------------------- //
+// ツールチップ
+// --------------------------------------------------- //
+
+// 吹き出し用アニメーション
+@keyframes tooltipBalloon {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin toolTipShow {
+  display: block;
+  animation-name: tooltipBalloon;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@mixin toolTip($width: 100px, $right: -50px, $direction: bottom) {
+  position: absolute;
+  right: $right;
+  z-index: list.index(zindex.$elements, tooltipBalloon);
+  display: none;
+  width: $width;
+  padding: 12px;
+  background: $colorHelpBalloonBg;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 $colorShadowLight;
+
+  > p,
+  > div {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.5;
+    color: variables.$white;
+    text-align: left;
+
+    &:after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      content: "";
+
+      @if ($direction == bottom) {
+        // 下に矢印
+        right: calc(#{$width} / 2 - 5px);
+        bottom: -22px;
+        border-top: 5px solid $colorHelpBalloonBg;
+      } @else if ($direction == top) {
+        top: -22px;
+        // 上に矢印
+        right: calc(#{$width} / 2 - 5px);
+        border-bottom: 5px solid $colorHelpBalloonBg;
+      } @else if ($direction == left) {
+        // 左に矢印
+        top: calc(50% - 5px);
+        left: -22px;
+        border-right: 5px solid $colorHelpBalloonBg;
+      } @else if ($direction == right) {
+        // 右に矢印
+        top: calc(50% - 5px);
+        right: -22px;
+        border-left: 5px solid $colorHelpBalloonBg;
+      }
+    }
+  }
+
+  @content;
+}
+
+// ポジション詳細、トーク詳細、企業詳細画面で利用するページタイトル
+@mixin detailPageHeader {
+  padding: 6px 16px;
+  background: #dae3ec;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+
+  @include pcLayout {
+    padding: 14px 25px;
+  }
+}
+
+// ポジション詳細、トーク詳細、企業詳細画面で利用するセクションタイトル
+@mixin detailSectionHeader {
+  padding-bottom: 5px;
+  margin: 0 15px;
+  border-bottom: solid 4px #aab6c3;
+  font-size: 13px;
+  font-weight: bold;
+
+  @include pcLayout {
+    padding-bottom: 6px;
+    margin: 0 25px;
+    font-size: 15px;
+  }
+}
+
+@mixin svgIcon($size, $color, $hoverColor: none) {
+  box-sizing: border-box;
+  width: $size;
+  height: $size;
+  fill: $color;
+  transition: all 0.2s;
+
+  @content;
+
+  @if ($hoverColor != none) {
+    &:hover {
+      fill: $hoverColor;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+ SEサイズ用にfont-sizeを変換 (改行を維持しつつ崩れ対策。デザイン幅との比率でfont-sizeを縮小する。)
+--------------------------------------------------------------------------- */
+@mixin convertFontSizeWhenSE($fontSize, $designSize: 375) {
+  @media screen and (max-width: calc(#{$designSize}px - 1px)) {
+    font-size: calc(#{$fontSize} * (320 / #{$designSize}));
+  }
+}
+
+/* --------------------------------------------------------------------------
+ フェードインアニメーション
+--------------------------------------------------------------------------- */
+@mixin fadeIn($duration) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation-name: fadeIn;
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+}
+
+/* --------------------------------------------------------------------------
+ スライドアニメーション（TransitionGroup + CSSTransition前提）
+--------------------------------------------------------------------------- */
+$slideEasing: cubic-bezier(
+  0.165,
+  0.84,
+  0.44,
+  1
+); // スライド系のイージング（質問やアンケートの横スライド、上部の市場価値のスライドイン）
+
+@mixin slideFromRight($duration: 300ms) {
+  // 新ガイドライン対応で独立したクラス追加
+  &.enter,
+  &-enter,
+  &.appear,
+  &-appear {
+    left: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all $duration $slideEasing;
+  }
+
+  // 新ガイドライン対応で独立したクラス追加
+  &.enterActive,
+  &-enterActive,
+  &.appearActive,
+  &-appearActive {
+    left: 0;
+    opacity: 1;
+  }
+
+  // 新ガイドライン対応で独立したクラス追加
+  &.exit,
+  &-exit {
+    left: 0;
+    opacity: 1;
+    pointer-events: none;
+    transition: all $duration $slideEasing;
+  }
+
+  // 新ガイドライン対応で独立したクラス追加
+  &.exitActive,
+  &-exitActive {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@mixin slideFromLeft($duration: 300ms) {
+  // 新ガイドライン対応で独立したクラス追加
+  &.enter,
+  &-enter,
+  &.appear,
+  &-appear {
+    right: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all $duration $slideEasing;
+  }
+
+  // 新ガイドライン対応で独立したクラス追加
+  &.enterActive,
+  &-enterActive,
+  &.appearActive,
+  &-appearActive {
+    right: 0;
+    opacity: 1;
+  }
+
+  // 新ガイドライン対応で独立したクラス追加
+  &.exit,
+  &-exit {
+    right: 0;
+    opacity: 1;
+    pointer-events: none;
+    transition: all $duration $slideEasing;
+  }
+
+  // 新ガイドライン対応で独立したクラス追加
+  &.exitActive,
+  &-exitActive {
+    right: -100%;
+    opacity: 0;
+  }
+}
+
+// sqrtを計算する関数
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - math.div($x0 * $x0 - math.abs($r), 2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+/* --------------------------------------------------------------------------
+ 閉じるボタン
+--------------------------------------------------------------------------- */
+@mixin closeButton(
+  $size,
+  $padding,
+  $strokeWidth: 2px,
+  $bgColor: $colorGrayBase
+) {
+  box-sizing: border-box;
+  display: inline-block;
+  width: $size + $padding;
+  height: $size + $padding;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: block;
+    width: calc((#{$size} * #{sqrt(2)}) - 2px);
+    height: $strokeWidth;
+    margin: auto;
+    background-color: $bgColor;
+    content: "";
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+/* --------------------------------------------------------------------------
+モーダル用の閉じるボタン
+--------------------------------------------------------------------------- */
+@mixin buttonCloseModal {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  @include closeButton(14.1px, 9.9px, 2px, $colorGrayBase);
+}
+
+/* --------------------------------------------------------------------------
+ アローアイコン
+--------------------------------------------------------------------------- */
+@mixin icoArrowAnimation($direction, $color: variables.$white, $size: 12px) {
+  &:before {
+    display: block;
+    width: $size;
+    min-width: $size;
+    height: $size;
+    min-height: $size;
+    border: 2px solid $color;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    content: "";
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transform: rotate(-45deg);
+
+    @if $direction == "top" {
+      border-bottom-width: 0;
+      border-left-width: 0;
+    } @else if $direction == "right" {
+      transform: rotate(-315deg);
+    } @else if $direction == "bottom" {
+      transform: rotate(-225deg);
+    } @else if $direction == "left" {
+      transform: rotate(-135deg);
+    }
+  }
+
+  &:hover:before {
+    border-color: color.adjust($color, $lightness: -8%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+ ラジオボタン
+--------------------------------------------------------------------------- */
+@mixin RadioStyle($display: inline-block) {
+  display: $display;
+
+  input {
+    display: none;
+
+    + span {
+      position: relative;
+      display: block;
+      min-height: 30px;
+      padding-left: 38px;
+
+      // OFF
+      &:before {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        display: $display;
+        width: 26px;
+        height: 26px;
+        margin-right: 16px;
+        border: solid 2px $colorRadioBorder;
+        border-radius: 50%;
+        vertical-align: middle;
+        content: "";
+      }
+    }
+
+    // ON
+    &:checked + span {
+      font-weight: bold;
+      color: variables.$colorPrimary;
+
+      &:after {
+        position: absolute;
+        top: 6px;
+        left: 9px;
+        width: 12px;
+        height: 12px;
+        background-color: $colorBtnPrimary;
+        border-radius: 50%;
+        content: "";
+      }
+    }
+  }
+
+  @include pcLayout {
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+ 文中の注釈"※"に使用
+--------------------------------------------------------------------------- */
+@mixin supNote {
+  font-size: 10px;
+  line-height: 1;
+  vertical-align: text-top;
+}
+
+/* --------------------------------------------------------------------------
+　行数制限
+--------------------------------------------------------------------------- */
+@mixin line-clamp($font-size, $line-height, $line-num) {
+  display: -webkit-box;
+  max-height: calc(#{$font-size} * #{$line-height} * #{$line-num});
+  overflow: hidden;
+  font-size: $font-size;
+  line-height: $line-height;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-num;
+}

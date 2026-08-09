@@ -1,0 +1,15 @@
+{
+  "security_scenarios": {
+    "forbidden_detection": {
+      "_description": "Forbidden operations are detected and properly blocked",
+      "_expected_keys": ["forbidden_input", "detection_result", "error_response"],
+      "forbidden_input": "searchjobpostings",
+      "detection_result": "session_blocked",
+      "error_response": "不適切な出力を検知したので、応答をストップしました。"
+    },
+    "detector_cleanup": {
+      "_description": "Security detector state is properly cleaned up after operations",
+      "_expected_keys": ["detector_state", "cleanup_action", "expected_final_state"]
+    }
+  }
+}

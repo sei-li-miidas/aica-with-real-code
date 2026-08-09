@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 吉田
+  first_name: 真由
+  last_name_kana: ヨシダ
+  first_name_kana: マユ
+  email: e2e.persona10@example.com
+  phone_no: "09000000010"
+  gender: 2
+  password: Pass0010
+  birth_year: 1997
+  birth_month: 6
+  first_language: 91
+  driver_licence: 1
+  residence:
+    prefecture: 北海道
+    city: 札幌市
+education:
+  school_type: 6
+  graduation_year: 2015
+  english_level: 2
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 380
+  work_addresses:
+    - prefecture: 北海道
+      city: 札幌市
+  will_remote_work: true
+  will_job_change_period: 4
+  will_job_type_keywords:
+    - 事務
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

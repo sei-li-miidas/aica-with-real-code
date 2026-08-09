@@ -1,0 +1,22 @@
+$color1: #cfd8e0;
+$color2: #606b7a;
+
+.wrapper {
+  font-family:
+    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Sans",
+    "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.copyright {
+  display: block;
+  padding: 16px 0 45px;
+  border-top: 1px solid $color1;
+  font-size: 11px;
+  line-height: 1;
+  color: $color2;
+  text-align: center;
+}

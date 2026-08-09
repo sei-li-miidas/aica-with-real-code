@@ -1,0 +1,7 @@
+@use "@/scss/utils/variables";
+
+.nameWithHelp {
+  display: inline-flex;
+  flex-wrap: wrap;
+  line-break: anywhere;
+}

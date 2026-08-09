@@ -1,0 +1,33 @@
+@use "@/scss/utils/variables";
+
+.collapse {
+  overflow: hidden;
+
+  &.isReadMore {
+    transition: max-height 0.3s ease;
+  }
+}
+
+// トグルボタン
+.collapseToggleBtn {
+  font-size: 13px;
+  color: variables.$colorPrimary;
+  text-decoration: underline;
+
+  &:after {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-right: 2px solid variables.$colorPrimary;
+    border-bottom: 2px solid variables.$colorPrimary;
+    content: "";
+    transform: translateY(-3px) rotate(45deg);
+  }
+
+  &.hide {
+    &:after {
+      transform: translateY(2px) rotate(225deg);
+    }
+  }
+}

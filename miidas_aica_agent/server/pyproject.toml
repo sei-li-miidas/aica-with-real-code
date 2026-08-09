@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "AICA-Agent"
+version = "0.0.1"
+description = "エージェントサーバー"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+classifiers = [
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "aiohttp~=3.14.1",
+    "backoff~=2.2.1",
+    "cryptography~=48.0.1",
+    "dependency-injector~=4.48.3",
+    "email-validator~=2.3.0",
+    "fastapi~=0.136.0",
+    "python-multipart~=0.0.31",
+    "starlette~=1.3.1",
+    "gunicorn~=23.0.0",
+    "mcp~=1.23.2",
+    "any-llm-sdk~=1.17.0",
+    "openai-agents~=0.13.0",
+    "psycopg~=3.3.2",
+    "psycopg-binary~=3.3.2",
+    "PyYAML~=6.0.3",
+    "types-PyYAML~=6.0.12.20250915",
+    "python-json-logger~=4.0.0",
+    "redis~=7.1.0",
+    "SQLAlchemy~=2.0.44",
+    "uvicorn~=0.38.0",
+    "websockets~=15.0.1",
+]
+
+[project.optional-dependencies]
+# LiteLLM は fallback provider 用の opt-in extra。Python 3.14 では 1.83.7 までしか
+# 入らず aiohttp/python-dotenv を脆弱版に固定するため、既定の install からは外す。
+# AICA_COMPLETIONS_PROVIDER=litellm で利用する場合のみ追加で install する。
+litellm = [
+    "litellm~=1.83.7",
+]
+test = [
+    "pytest~=9.0.2",
+    "pytest-asyncio~=1.3.0",
+    "pytest-cov~=7.0.0",
+    "fakeredis~=2.33.0"
+]
+dev = [
+    "pre-commit~=4.5.0",
+]
+
+[project.urls]
+Repository = "https://github.com/MIIDAS-Company/miidas_aica_agent"
+Issues = "https://github.com/MIIDAS-Company/miidas_aica_agent/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["aica_agent"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+markers = [
+    "rollback_endpoint_config: Gate A startup config and endpoint boundary rollback subset",
+    "rollback_di: Gate A DI lifecycle rollback subset",
+    "rollback_runner: Gate A runner rollback subset",
+    "rollback_security: Gate A security rollback subset",
+    "rollback_summary: Gate A summary rollback subset",
+    "pre_extraction_bootstrap: Gate A bootstrap subset before extraction",
+    "pre_extraction_parity: Gate A pre-extraction parity subset",
+    "completions_runner_internal: Gate B completions runner internal invariants",
+    "completions_contract: Gate B completions config / contract matrix",
+    "rollback_api_style: Gate B api_style rollback subset",
+]

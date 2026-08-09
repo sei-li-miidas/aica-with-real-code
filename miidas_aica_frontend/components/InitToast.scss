@@ -1,0 +1,74 @@
+.version-toast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    width: 90vw;
+    max-width: 700px;
+    margin: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    animation: version-toast-animation 0.5s ease-out forwards;
+
+    /* PCの場合の最大幅は500px */
+    @media screen and (min-width: 1000px) {
+      max-width: 500px;
+    }
+
+    .card-content {
+      font-size: 90%;
+      display: flex;
+      padding: 1rem !important;
+
+      .info {
+        margin-right: 1rem;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .text-container {
+        flex: 1;
+
+        h4 {
+          margin: 10px 0;
+        }
+
+        ul {
+          margin: 0 1rem;
+          li {
+            list-style-type: disc;
+          }
+        }
+
+        .footer {
+          margin-top: 4rem;
+          text-align: center;
+
+          button {
+            background-color: var(--variant-outlinedBorder);
+          }
+        }
+      }
+    }
+  }
+
+  .citation {
+    margin: 40px 0;
+    font-size: 90%;
+    color: var(--mui-palette-text-primary);
+  }
+}
+
+@keyframes version-toast-animation {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

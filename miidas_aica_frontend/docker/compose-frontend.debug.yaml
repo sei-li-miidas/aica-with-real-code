@@ -1,0 +1,17 @@
+name: ai-ca
+services:
+  frontend-debug:
+    container_name: aica-frontend
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.debug
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/app
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Tokyo
+
+volumes:
+  node_modules:

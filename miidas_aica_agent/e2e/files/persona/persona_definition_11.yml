@@ -1,0 +1,48 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 田中
+  first_name: 花子
+  last_name_kana: タナカ
+  first_name_kana: ハナコ
+  email: e2e.persona11@example.com
+  phone_no: "09000000011"
+  gender: 2
+  password: Pass0011
+  birth_year: 1995
+  birth_month: 6
+  first_language: 91
+  driver_licence: 2
+  residence:
+    prefecture: 大阪府
+    city: 大阪市
+education:
+  school_type: 6
+  graduation_year: 2014
+  english_level: 1
+career:
+  exp_company_num: 2
+  management_exp_term: 1
+  company_name: テスト株式会社
+  industry_keyword: IT
+  employee_num: 1
+  employment_type: 1
+  employment_post: 1
+  job_type_keyword: エンジニア
+  job_type_exp_term: 2
+  all_career_job_type_exp_term: 2
+  income: 350
+  join_year: 2018
+  join_month: 4
+will:
+  will_income: 350
+  work_addresses:
+    - prefecture: 大阪府
+      city: 大阪市
+  will_remote_work: true
+  will_job_change_period: 3
+  will_job_type_keywords:
+    - 未経験歓迎
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position

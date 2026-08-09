@@ -1,0 +1,9 @@
+{
+  "replay_items": [
+    {
+      "type": "function_call_output",
+      "call_id": "tool-call-1",
+      "output": "tool output replay"
+    }
+  ]
+}

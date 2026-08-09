@@ -1,0 +1,15 @@
+@use "@/scss/utils/mixin";
+
+.badgeList {
+  display: flex;
+  align-items: flex-end;
+
+  > li + li {
+    margin-left: 8px;
+  }
+
+  @include mixin.spLayout {
+    // SP表示では中央揃え
+    justify-content: center;
+  }
+}

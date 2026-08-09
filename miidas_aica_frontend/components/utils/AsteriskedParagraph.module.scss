@@ -1,0 +1,10 @@
+.paragraph {
+  margin-left: calc(1em + 4px);
+  text-align: left;
+  text-indent: calc(-1em - 4px);
+
+  &:before {
+    margin-right: 4px;
+    content: "※";
+  }
+}

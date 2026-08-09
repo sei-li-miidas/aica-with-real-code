@@ -1,0 +1,12 @@
+name: ai-ca
+services:
+  frontend:
+    container_name: aica-frontend
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Tokyo

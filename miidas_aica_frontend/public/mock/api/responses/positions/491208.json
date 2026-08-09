@@ -1,0 +1,546 @@
+{
+  "Position": {
+    "ID": 491208,
+    "CompanyID": 104162,
+    "CompanySectionID": 402439,
+    "BusinessID": 274533,
+    "IsDetailShowable": true,
+    "CertificationRank": 1,
+    "CompanyTrashedAt": null,
+    "BossTypeScores": null,
+    "ApplyLimit": {
+      "PositionID": 491208,
+      "Enable": true,
+      "Capacity": 20
+    },
+    "PublishStatus": 1,
+    "Modified": "2022-02-28T16:04:37+09:00",
+    "Title": "ＣＡＤ設計　中大規模木造 MPCAD8使用 hsbcad予定",
+    "Post": {
+      "ID": 1,
+      "Name": "役職なし",
+      "Note": "経験・実績に応じて。"
+    },
+    "EmploymentType": {
+      "ID": 1,
+      "Name": "正社員",
+      "Note": ""
+    },
+    "Jobs": [
+      {
+        "SmallID": 251210,
+        "Name": "製図／CADオペレーター（建築）",
+        "Main": true,
+        "SkillGroups": [
+          {
+            "ID": 6,
+            "Name": "経験物件（建築）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 1918,
+                    "Name": "その他",
+                    "Main": false
+                  },
+                  {
+                    "ID": 982,
+                    "Name": "アパート／マンション（リフォーム）",
+                    "Main": false
+                  },
+                  {
+                    "ID": 981,
+                    "Name": "アパート／マンション（新築）",
+                    "Main": false
+                  },
+                  {
+                    "ID": 1917,
+                    "Name": "倉庫物流施設",
+                    "Main": false
+                  },
+                  {
+                    "ID": 983,
+                    "Name": "公共施設",
+                    "Main": false
+                  },
+                  {
+                    "ID": 986,
+                    "Name": "商業施設",
+                    "Main": false
+                  },
+                  {
+                    "ID": 984,
+                    "Name": "工場",
+                    "Main": false
+                  },
+                  {
+                    "ID": 980,
+                    "Name": "戸建（リフォーム）",
+                    "Main": false
+                  },
+                  {
+                    "ID": 978,
+                    "Name": "戸建（分譲）",
+                    "Main": false
+                  },
+                  {
+                    "ID": 979,
+                    "Name": "戸建（注文）",
+                    "Main": false
+                  },
+                  {
+                    "ID": 985,
+                    "Name": "病院／福祉施設",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ID": 141,
+            "Name": "CADソフト（建築土木）",
+            "DummyGroups": [
+              {
+                "Name": "",
+                "Skills": [
+                  {
+                    "ID": 1538,
+                    "Name": "AutoCAD",
+                    "Main": false
+                  },
+                  {
+                    "ID": 1539,
+                    "Name": "JW-CAD",
+                    "Main": false
+                  },
+                  {
+                    "ID": 1542,
+                    "Name": "その他3D-CAD",
+                    "Main": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "MainJobText": "中大規模木造建築物を中心に、プレカットする為の加工データをＭＰ－ＣＡＤ８で作成します。　　ｈｓｂｃａｄも使用予定\n　\n　日常の業務は見積もり用図面作成、営業打合せ後の図面訂正と質疑、承認後の加工用データと書類作成、工場加工と社内大工手加工の指示などが主な仕事です。\n　\n　中大規模物件の場合は上記に加え、全体スケジュールの把握と、加工方法の検討や加工時間の確保、加工機械と場所の選定、協力会社との加工打合せなどを主動していきます。\n　　　職務や社内環境に慣れるまで親切にフォーローします。",
+    "IncomeFromType": 4,
+    "ModelAnnualIncome": {
+      "Income20s": 400,
+      "Income30s": 500,
+      "Income40s": 600,
+      "Note": "実績・能力に応じて。"
+    },
+    "StockOption": {
+      "ID": 2,
+      "Name": "ストックオプション制度なし",
+      "Note": ""
+    },
+    "BonusCount": {
+      "ID": 3,
+      "Name": "年２回",
+      "Note": "実績・業績に応じて。"
+    },
+    "PromotionCount": {
+      "ID": 2,
+      "Name": "年１回",
+      "Note": "実績・業績に応じて。"
+    },
+    "WorkAddress": {
+      "Values": [
+        {
+          "ID": 1122033,
+          "Name": "千葉県市川市",
+          "Note": "市川営業所\n千葉県市川市二俣１丁目12-1 石元ビル2F 205・206"
+        },
+        {
+          "ID": 1042153,
+          "Name": "宮城県大崎市",
+          "Note": "古川CADセンター\n宮城県大崎市古川字竹ノ内159-1"
+        },
+        {
+          "ID": 1072036,
+          "Name": "福島県郡山市",
+          "Note": "郡山CADセンター\n福島県郡山市中野1丁目29 中野ビル102号"
+        },
+        {
+          "ID": 1082015,
+          "Name": "茨城県水戸市",
+          "Note": "水戸営業所\n茨城県水戸市元吉田町1041-4サン・ビルヂング3階"
+        },
+        {
+          "ID": 1082201,
+          "Name": "茨城県つくば市",
+          "Note": "つくば営業所\n茨城県つくば市諏訪C14-9 1F"
+        },
+        {
+          "ID": 1082236,
+          "Name": "茨城県潮来市",
+          "Note": "潮来CADセンター\n茨城県潮来市潮来89-2"
+        },
+        {
+          "ID": 1092045,
+          "Name": "栃木県佐野市",
+          "Note": "佐野営業所\n栃木県佐野市堀米町608-8 オフィス堀米102"
+        },
+        {
+          "ID": 1092053,
+          "Name": "栃木県鹿沼市",
+          "Note": "本社\n栃木県鹿沼市さつき町１６－１"
+        },
+        {
+          "ID": 1092061,
+          "Name": "栃木県日光市",
+          "Note": "日光営業所\n栃木県日光市土沢1855-5"
+        },
+        {
+          "ID": 1092096,
+          "Name": "栃木県真岡市",
+          "Note": "真岡営業所\n栃木県真岡市松山町26-4　（テクノＯＮＥ内）"
+        },
+        {
+          "ID": 1102024,
+          "Name": "群馬県高崎市",
+          "Note": "高崎営業所\n群馬県高崎市新保町665-1 反町ビル1-C"
+        },
+        {
+          "ID": 1102059,
+          "Name": "群馬県太田市",
+          "Note": "太田営業所\n群馬県太田市西本町41-14 OKビル201"
+        },
+        {
+          "ID": 1111007,
+          "Name": "埼玉県さいたま市",
+          "Note": "さいたま見沼営業所orさいたま見沼CADセンター\n埼玉県さいたま市見沼区大字風渡野255 NKコーポ102"
+        },
+        {
+          "ID": 1112241,
+          "Name": "埼玉県戸田市",
+          "Note": "埼玉営業所or首都圏営業本部\n埼玉県戸田市新曽554 丸中ビル2F"
+        },
+        {
+          "ID": 1112321,
+          "Name": "埼玉県久喜市",
+          "Note": "久喜営業所\n埼玉県久喜市久喜東1丁目9-6 LHCビル1F"
+        },
+        {
+          "ID": 1112381,
+          "Name": "埼玉県蓮田市",
+          "Note": "蓮田営業所\n埼玉県蓮田市東5丁目8-61まつしまやビル3F-B"
+        },
+        {
+          "ID": 1132241,
+          "Name": "東京都多摩市",
+          "Note": "多摩営業所\n東京都三鷹市上連雀8-18-11 Mビル201"
+        },
+        {
+          "ID": 1139999,
+          "Name": "東京都23区",
+          "Note": "足立営業所\n東京都足立区保塚町8-29 ブルーウッド保塚2 1F"
+        },
+        {
+          "ID": 1141003,
+          "Name": "神奈川県横浜市",
+          "Note": "神奈川営業所\n神奈川県横浜市瀬谷区橋戸3-5-9 青木ビル1階"
+        },
+        {
+          "ID": 1152021,
+          "Name": "新潟県長岡市",
+          "Note": "新潟営業所\n新潟県長岡市下柳2丁目1番地23号"
+        }
+      ],
+      "Note": ""
+    },
+    "RemoteWork": {
+      "ID": 2,
+      "Name": "リモート勤務OK（条件つき）",
+      "Note": ""
+    },
+    "RemoteWorkCondition": "能力、および通常勤務と同等の業務遂行可能が条件。",
+    "RemoteWorkOfficeFrequency": {
+      "ID": 1,
+      "Name": "原則なし",
+      "Note": "相談の上。"
+    },
+    "Holiday": {
+      "ID": 3,
+      "Name": "週休2日制",
+      "Note": "年間105日（土曜日は会社カレンダーによる）。年末年始、GW、お盆休み有り。特別休暇有り（就業規則による）"
+    },
+    "WorkTime": "8時00分〜17時20分\n実働：8時間\n休憩時間：80分",
+    "WorkTimeSystem": {
+      "ID": 1,
+      "Name": "固定制",
+      "Note": ""
+    },
+    "WorkTimeNightsShift": {
+      "ID": 2,
+      "Name": "夜勤なし",
+      "Note": ""
+    },
+    "OvertimeAvg": {
+      "ID": 3,
+      "Name": "月平均残業20時間以内",
+      "Note": "月平均10～15時間"
+    },
+    "OfficialTripFrequency": {
+      "ID": 1,
+      "Name": "出張なし",
+      "Note": ""
+    },
+    "WorkEnvironment": [
+      {
+        "ID": 5,
+        "Name": "私服OK",
+        "Note": ""
+      },
+      {
+        "ID": 6,
+        "Name": "マイカー通勤可",
+        "Note": "駐車場無料"
+      }
+    ],
+    "TransferenceExists": {
+      "ID": 1,
+      "Name": "国内転勤なし",
+      "Note": ""
+    },
+    "TransferenceFrequency": null,
+    "TransferenceAbroadExists": {
+      "ID": 2,
+      "Name": "海外転勤なし（予定もなし）",
+      "Note": ""
+    },
+    "TransferenceAbroadEnglishIsUnused": null,
+    "HREvaluationType": {
+      "Type1": 2,
+      "Type2": 3,
+      "Type3": 2,
+      "Type4": 4,
+      "Note": ""
+    },
+    "HREvaluationCompetency": {
+      "Axes": [
+        {
+          "Axis": "Creativity",
+          "Value": 1
+        },
+        {
+          "Axis": "ProblemSolving",
+          "Value": 2
+        },
+        {
+          "Axis": "Coordination",
+          "Value": 2
+        }
+      ],
+      "Note": ""
+    },
+    "PR": "住宅着工数が年々減少傾向にある中、中大規模木造建築物の推進は、脱炭素社会の実現に向け、国土交通省が振興施策の一つとして力を入れている分野です。今後益々、中大規模木造建築物の需要が見込まれ、募集の職務内容は将来性が高い仕事です。意匠設計や構造設計を形にする為に調整をする重要な役割で、集中力と思考力が必要になります。\nパソコン向かって黙々とＣＡＤを進め、図面を見つめて質疑をして、問題を発見して相談して、加工を指示して確認して、建て方完了を目指します。\n担当物件により、数日では終わらない事が多々ありますので、最後まで気を抜かず仕事をやり抜ける、意欲的な方の応募をお待ちしております。",
+    "SmokeFree": {
+      "ID": 1,
+      "Name": "あり",
+      "Note": ""
+    },
+    "SmokeFreeEnvironment": {
+      "ID": 2,
+      "Name": "喫煙室設置",
+      "Note": ""
+    },
+    "AccomplishmentImportance": null,
+    "AccomplishmentRate": null,
+    "SalesStyleDive": null,
+    "SalesStyleTelAppointment": null,
+    "SalesStyleHost": null,
+    "BaseMonthlySalary": null,
+    "OvertimeSalary": null,
+    "CareerPathOutOfSiteExists": null,
+    "CareerPathWorkHeadOfficeExists": null,
+    "OrgTrendEngineerManagerExists": null,
+    "OrgTrendSectionMemberQty": null,
+    "OrgTrendAccountingLicenceExists": null,
+    "OrgTrendLegalLicenceExists": null,
+    "OrgTrendRelatedWithEngineer": null,
+    "ITEngineerWorkEnvironment": null,
+    "DevelopmentTerm": null,
+    "DevelopmentProcess": null,
+    "EmergencySupport": null,
+    "JoinedReserve": 0,
+    "EmploymentToRegularEmployee": null,
+    "Probation": {
+      "ID": 4,
+      "Name": "3ヶ月",
+      "Note": ""
+    },
+    "ContractPeriod": null,
+    "ContractExtension": null,
+    "TryID": {
+      "ID": 1,
+      "Name": "不可"
+    },
+    "TryReward": null,
+    "TryDetail": "",
+    "TryDays": null,
+    "TryHours": null,
+    "TryPlace": "",
+    "JobChange": {
+      "Income": {
+        "From": 590,
+        "To": 650,
+        "Note": "上限以上については、業務内容に応じて要相談。"
+      }
+    },
+    "RegularOutsourcing": null,
+    "SpotOutsourcing": null,
+    "SpotJobDescription": "",
+    "CommissionOutsourcing": null,
+    "OutsourcingAppeal": null,
+    "Interview": {
+      "Shared": {
+        "EstimatedTerm": "面接後 2週内",
+        "InterviewTimes": 1,
+        "SelectionAptitudeTestExists": false,
+        "SelectionPaperTestExists": false,
+        "SelectionPracticalTestExists": false,
+        "SelectionOtherTestExists": true,
+        "SelectionRemarks": "無し",
+        "CasualDressFlg": false,
+        "Interviewers": [
+          {
+            "ID": 3,
+            "Name": "現場責任者"
+          }
+        ],
+        "OtherInterviewer": ""
+      },
+      "Meeting": {
+        "EnableFlg": true,
+        "PossibleWeekdayHourFrom": 9,
+        "PossibleWeekdayHourTo": 17,
+        "PossibleWeekendFlg": true,
+        "PossibleTimeComplement": "要相談",
+        "Minutes": 60,
+        "PlaceOptions": [
+          "栃木県真岡市 真岡営業所",
+          "福島県郡山市 郡山CADセンター",
+          "茨城県水戸市 水戸営業所",
+          "栃木県鹿沼市 本社",
+          "群馬県太田市 太田営業所",
+          "栃木県日光市 日光営業所"
+        ],
+        "TransportationPaymentFlg": false,
+        "TransportationPaymentRemarks": ""
+      },
+      "Online": {
+        "EnableFlg": false,
+        "PossibleWeekdayHourFrom": 9,
+        "PossibleWeekdayHourTo": 18,
+        "PossibleWeekendFlg": false,
+        "PossibleTimeComplement": "",
+        "Minutes": 60
+      },
+      "Phone": {
+        "EnableFlg": false,
+        "PossibleWeekdayHourFrom": 9,
+        "PossibleWeekdayHourTo": 18,
+        "PossibleWeekendFlg": false,
+        "PossibleTimeComplement": "",
+        "Minutes": 30
+      },
+      "WorkExperience": {
+        "Pattern": {
+          "ID": 2,
+          "Name": "希望者のみ実施する"
+        },
+        "Timing": {
+          "ID": 1,
+          "Name": "最終面接後に実施"
+        },
+        "TimingRemarks": "",
+        "OtherTimingText": "",
+        "WorkTypes": [
+          {
+            "ID": 1,
+            "Name": "職場見学"
+          }
+        ],
+        "WorkContent": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+        "Timeframe": {
+          "ID": 2,
+          "Name": "平日の夜"
+        },
+        "TimeframeRemarks": "",
+        "NeedTime": {
+          "ID": 2,
+          "Name": "単日（１日）/３時間以上"
+        },
+        "NeedTimeRemarks": "",
+        "Reward": {
+          "ID": 2,
+          "Name": "報酬あり"
+        },
+        "RewardValue": 1110,
+        "RewardRemarks": ""
+      }
+    },
+    "Images": [
+      {
+        "URL": "https://picsum.photos/710/474",
+        "DisplayType": 1
+      },
+      {
+        "URL": "https://picsum.photos/710/474",
+        "DisplayType": 2
+      },
+      {
+        "URL": "https://picsum.photos/710/474",
+        "DisplayType": 2
+      }
+    ]
+  },
+  "Company": {
+    "Withdrawal": false,
+    "Name": "テクノウッドワークス株式会社"
+  },
+  "ActionStatus": {
+    "StarredAt": null,
+    "ReadAt": "2022-11-18T11:59:25+09:00",
+    "TrashedAt": null,
+    "PartnerAppliedAt": null
+  },
+  "Fitting": {
+    "IsMenkaku": false,
+    "TargetMatchRank": 5,
+    "CompetencyMatchRank": 2
+  },
+  "Target": {
+    "Job": null,
+    "Management": null,
+    "Licence": null,
+    "English": null,
+    "Lang": null,
+    "Graduate": null,
+    "Office": null,
+    "Other": null,
+    "Competency": null,
+    "Bias": null
+  },
+  "Talk": {
+    "State": "Talk",
+    "ID": 5164965,
+    "ApproachType": 7,
+    "TalkStatus": 5
+  },
+  "Messages": [
+    {
+      "ID": 1,
+      "Message": "はじめまして。\nパーソルキャリア株式会社、ミイダスカンパニー採用責任者の森川と申します。\nこの度、法人営業のご経験があるあなたに限定して、当社の【Inside Sales】の求人でオファーいたします。\nInside Salesは、このミイダスのサービスを企業の人事担当者や経営層に提案する法人営業です。",
+      "Type": 1,
+      "SentAt": "2023-05-12T10:42:56+09:00"
+    }
+  ]
+}

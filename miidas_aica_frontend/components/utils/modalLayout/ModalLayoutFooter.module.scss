@@ -1,0 +1,24 @@
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/variables";
+
+.content {
+  padding: 12px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  &.single {
+    @include mixin.pcLayout {
+      display: inline-block;
+      min-width: 232px;
+    }
+  }
+}
+
+.errorText {
+  margin-bottom: 12px;
+  color: variables.$miidas-danger;
+}

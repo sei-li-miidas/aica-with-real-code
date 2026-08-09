@@ -1,0 +1,68 @@
+{
+  "Business": {
+    "ID": 735393,
+    "CompanyID": 640278,
+    "Name": "共通トレイトを全部入力した事業",
+    "EmployeeQty": {
+      "ID": 2,
+      "Name": "10〜29人",
+      "Note": "事業の従業員数の補足テキストです"
+    },
+    "EstablishmentYear": {
+      "ID": 1,
+      "Name": "設立5年以内",
+      "Note": "事業の設立の補足テキストです"
+    },
+    "SalesScale": {
+      "ID": 1,
+      "Name": "売上3億未満",
+      "Note": "事業の売上規模の補足テキストです"
+    },
+    "Industries": {
+      "Industries": [
+        {
+          "SmallID": 101010,
+          "Name": "メーカー（機械部品）",
+          "IsMain": true
+        },
+        {
+          "SmallID": 101011,
+          "Name": "メーカー（金属部品）",
+          "IsMain": false
+        }
+      ],
+      "Note": "事業内容の詳細テキストです"
+    },
+    "Stage": {
+      "ID": 1,
+      "Name": "シードステージ",
+      "Note": "事業ステージの補足テキストです"
+    },
+    "Product": {
+      "Share": {
+        "ID": 1,
+        "Name": "業界シェア1位",
+        "Note": "商品シェアの補足テキストです"
+      },
+      "HasOwnProducts": {
+        "Flg": {
+          "On": true,
+          "Name": "本事業の商材・サービスあり"
+        },
+        "Note": "商材・サービスの補足テキストです"
+      },
+      "Tangibleness": {
+        "Tangible": {
+          "On": true,
+          "Name": "有形商材"
+        },
+        "Intangible": {
+          "On": true,
+          "Name": "無形商材"
+        },
+        "Note": "有形・無形商材の補足テキストです"
+      }
+    },
+    "ForeignNationalityRecruiting": true
+  }
+}

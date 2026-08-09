@@ -1,0 +1,26 @@
+@use "@/scss/utils/variables";
+
+$colorBorder: #effbff;
+
+.content {
+  padding: 12px 12px 12px 25px;
+  margin-top: 12px;
+  background-color: $colorBorder;
+  border: solid 1px variables.$colorSecondaryBlue1;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.presetTextHeader {
+  margin-bottom: 8px;
+  text-indent: -1em;
+}
+
+.presetTextIntroduction,
+.declarationText {
+  word-break: break-all;
+}
+
+.presetTextIntroduction {
+  margin-bottom: 8px;
+}

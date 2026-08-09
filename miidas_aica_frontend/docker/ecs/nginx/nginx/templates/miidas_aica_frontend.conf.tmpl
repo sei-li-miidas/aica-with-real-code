@@ -1,0 +1,31 @@
+server {
+    listen                  80;
+    # タスク定義の環境変数を参照
+    server_name             ${MIIDAS_DOMAIN_AICA_FRONT};
+    client_max_body_size    10M;
+    absolute_redirect       off;
+
+    add_header Cache-Control  "no-cache, no-store, must-revalidate, private" always;
+    add_header Pragma no-cache always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Content-Security-Policy "frame-ancestors 'self'" always;
+
+    include /etc/nginx/server_conf.d/*.conf;
+
+    location / {
+        root    /var/www/html/miidas_aica_frontend/public;
+        index   index.html index.htm;
+        try_files $uri $uri.html $uri/index.html =404;
+    }
+
+    # ALB Health Check
+    location = /health {
+        return 200;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/server/src/aica_agent",
+        "${workspaceFolder}/cli/src/aica_batch",
+        "${workspaceFolder}/e2e/src/aica_client"
+    ],
+    "python.terminal.activateEnvironment": true,
+    "search.useIgnoreFiles": true,
+}

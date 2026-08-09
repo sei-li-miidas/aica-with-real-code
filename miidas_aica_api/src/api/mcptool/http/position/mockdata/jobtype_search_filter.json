@@ -1,0 +1,24 @@
+{
+  "OtherFilters": [
+    {
+      "Key": "language",
+      "Name": "言語（all）",
+      "Type": "multi_select",
+      "Options": [
+        {
+          "Label": "Go",
+          "Value": "Go"
+        },
+        {
+          "Label": "TypeScript",
+          "Value": "TypeScript"
+        }
+      ]
+    }
+  ],
+  "SelectedFilterOptions": {
+    "言語（all）": [
+      "Go"
+    ]
+  }
+}

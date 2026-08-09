@@ -1,0 +1,31 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.header {
+  position: relative;
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$colorText;
+}
+
+.backBtn {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  fill: variables.$colorBlueGray;
+
+  &:hover {
+    opacity: 0.7;
+    fill: variables.$colorTextSub;
+  }
+}
+
+.closeBtn {
+  @include mixin.buttonCloseModal;
+}

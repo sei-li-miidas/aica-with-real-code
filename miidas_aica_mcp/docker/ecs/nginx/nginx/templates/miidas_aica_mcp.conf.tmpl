@@ -1,0 +1,62 @@
+upstream mcpserver {
+    server localhost:8080;
+}
+
+server {
+    listen                  9106;
+    # タスク定義の環境変数を参照
+    server_name             ${MIIDAS_DOMAIN_AICA_MCP_LOCAL} ${MIIDAS_DOMAIN_AICA_MCP_LOCAL_OLD};
+    client_max_body_size    10M;
+    absolute_redirect       off;
+
+    #add_header X-Frame-Options SAMEORIGIN always;
+    #add_header Cache-Control  "no-cache, no-store, must-revalidate, private" always;
+    #add_header Pragma no-cache always;
+    #add_header X-XSS-Protection "1; mode=block" always;
+    #add_header X-Content-Type-Options nosniff always;
+
+    include /etc/nginx/server_conf.d/*.conf;
+
+    location /message {
+        # SSEサーバーのアドレスを指定
+        proxy_pass http://mcpserver;
+
+        # HTTP/1.1を使用
+        proxy_http_version 1.1;
+
+        # Connectionヘッダーを空にし、接続を維持
+        proxy_set_header Connection '';
+
+        # SSEのリアルタイム性を保つためバッファリングを無効化
+        proxy_buffering off;
+
+        proxy_redirect      off;
+        proxy_set_header    Host $host;
+    }
+
+    location /sse {
+        # SSEサーバーのアドレスを指定
+        proxy_pass http://mcpserver;
+
+        # HTTP/1.1を使用
+        proxy_http_version 1.1;
+
+        # Connectionヘッダーを空にし、接続を維持
+        proxy_set_header Connection '';
+
+        # SSEのリアルタイム性を保つためバッファリングを無効化
+        proxy_buffering off;
+
+        proxy_redirect      off;
+        proxy_set_header    Host $host;
+    }
+
+    # ALB Health Check
+    location = /health {
+        return 200;
+    }
+
+    location / {
+        return 404;
+    }
+}

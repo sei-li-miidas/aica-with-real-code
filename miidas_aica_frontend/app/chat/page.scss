@@ -1,0 +1,33 @@
+.main-container {
+  display: block;
+  width: 100%;
+  max-width: var(--main-content-max-width);
+  height: 100%;
+}
+
+.chat-survey-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.chat-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.chat-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pt-60 {
+  padding-top: calc(var(--mui-spacing) * 4);
+}

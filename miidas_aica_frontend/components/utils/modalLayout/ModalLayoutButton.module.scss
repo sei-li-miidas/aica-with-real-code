@@ -1,0 +1,23 @@
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/variables";
+
+.button {
+  flex: 1;
+  padding: 0 16px;
+
+  &.outlined {
+    @include mixin.buttonBase(
+      variables.$white,
+      variables.$miidas-primary,
+      $outline: true
+    );
+  }
+
+  &.grayFill {
+    @include mixin.buttonBase(variables.$miidas-cancel);
+  }
+
+  &.blueFill {
+    @include mixin.buttonBase;
+  }
+}

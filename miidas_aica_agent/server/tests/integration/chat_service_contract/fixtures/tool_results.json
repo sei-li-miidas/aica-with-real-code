@@ -1,0 +1,76 @@
+{
+  "tool_results": {
+    "position_search": {
+      "_description": "Position search tool result response shape: chat() must yield a ChatStreamResponseModel with response_type=position_search_result when Runner emits a position search ToolCallOutputItem",
+      "_expected_keys": [
+        "session_id",
+        "session_status",
+        "request_type",
+        "response_type",
+        "role",
+        "message_id",
+        "position_id",
+        "is_maintenance",
+        "message"
+      ],
+      "_expected_message_keys": [
+        "SearchConditions",
+        "AllPositionIds",
+        "PositionCount"
+      ],
+      "response_type": "position_search_result"
+    },
+    "job_type_search": {
+      "_description": "Job type search tool result response shape: chat() must yield a ChatStreamResponseModel with response_type=jobtype_search_result when Runner emits a job type search ToolCallOutputItem",
+      "_expected_keys": [
+        "session_id",
+        "session_status",
+        "request_type",
+        "response_type",
+        "role",
+        "message_id",
+        "position_id",
+        "is_maintenance",
+        "message"
+      ],
+      "_expected_message_keys": [
+        "ToolCall",
+        "Keyword",
+        "Jobtypes"
+      ],
+      "_expected_jobtypes_entry_keys": [
+        "ID",
+        "Name"
+      ],
+      "response_type": "jobtype_search_result"
+    },
+    "workflow_start": {
+      "_description": "Workflow start tool result response shape: chat() must yield a ChatStreamResponseModel with response_type=workflow when Runner emits a start_workflow ToolCallOutputItem",
+      "_expected_keys": [
+        "session_id",
+        "session_status",
+        "request_type",
+        "response_type",
+        "role",
+        "message_id",
+        "position_id",
+        "is_maintenance",
+        "message"
+      ],
+      "_expected_message_keys": [
+        "id",
+        "name",
+        "displayType",
+        "steps"
+      ],
+      "_expected_step_keys": [
+        "id",
+        "options",
+        "question",
+        "questionPrompt",
+        "selectionType"
+      ],
+      "response_type": "workflow"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@use "@/scss/utils/mixin";
+
+$detailMaxWidth: 980px; // 求人詳細の最大幅
+
+.section {
+  @include mixin.pcLayout {
+    width: $detailMaxWidth;
+    margin: 0 auto;
+  }
+}

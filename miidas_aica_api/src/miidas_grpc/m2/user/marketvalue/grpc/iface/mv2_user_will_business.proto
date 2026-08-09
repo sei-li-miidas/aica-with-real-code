@@ -1,0 +1,242 @@
+edition = "2023";
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface";
+
+package miidas.user.marketvalue;
+message Business {
+    // Industry 業種
+    Industry Industry = 1;
+    // DecisionType 意思決定と裁量
+    DecisionType DecisionType = 2;
+    // EmployeeCharacter 組織・社員の特徴
+    EmployeeCharacter EmployeeCharacter = 3;
+    // HREvaluationPromotionSpeed 昇給昇格スピード
+    HREvaluationPromotionSpeed HREvaluationPromotionSpeed = 4;
+    // EmployeeAverageAge 平均年齢
+    EmployeeAverageAge EmployeeAverageAge = 5;
+    // EmployeeMidCareerRate 中途入社社員比率
+    EmployeeMidCareerRate EmployeeMidCareerRate = 6;
+    // EmployeeWomanRate 女性社員比率
+    EmployeeWomanRate EmployeeWomanRate = 7;
+    // EmployeeForeignNationalityRate 外国籍社員比率
+    EmployeeForeignNationalityRate EmployeeForeignNationalityRate = 8;
+    // ForeignNationalityRecruiting 外国籍社員積極採用
+    ForeignNationalityRecruiting ForeignNationalityRecruiting = 9;
+    // BusinessEmployeeQty 事業の従業員数
+    BusinessEmployeeQty EmployeeQty = 10;
+    // BusinessEstablishmentYear 事業の設立
+    BusinessEstablishmentYear EstablishmentYear = 11;
+    // BusinessSalesScale 事業の売上規模
+    BusinessSalesScale SalesScale = 12;
+    // Stage 事業ステージ
+    Stage Stage = 13;
+    // ProductsShare 業界シェア
+    ProductsShare ProductsShare = 14;
+    // HasOwnProducts 自社商材・サービス
+    HasOwnProducts HasOwnProducts = 15;
+    // ProductsTangibleness 商材
+    ProductsTangibleness ProductsTangibleness = 16;
+    // TargetCustomer 対象顧客s
+    TargetCustomer TargetCustomer = 17;
+    // TargetCustomerBtoB [BtoB] 主な顧客の業界
+    TargetCustomerBtoB TargetCustomerBtoB = 18;
+    // TargetCustomerBtoC [BtoC] 主な顧客の属性
+    TargetCustomerBtoC TargetCustomerBtoC = 19;
+    // TrendKeyword トレンドキーワード
+    TrendKeyword TrendKeyword = 20;
+    // MarketProspect マーケット
+    MarketProspect MarketProspect = 21;
+    // Strategy 戦略
+    Strategy Strategy = 22;
+    // Advantage 事業の強み
+    Advantage Advantage = 23;
+    // MedicalAdvantageField メディカル系のこだわり条件 > 得意領域
+    MedicalAdvantageField MedicalAdvantageField = 24;
+    // SIType システムインテグレーターのこだわり条件 > SI種別
+    SIType SIType = 25;
+    // SIAdvantageIndustry システムインテグレーターのこだわり条件 > 得意領域
+    SIAdvantageIndustry SIAdvantageIndustry = 26;
+    // CarPartsTier メーカー（自動車部品）のこだわり条件 > Tier
+    CarPartsTier CarPartsTier = 27;
+    // ContractCompanyProfitSource 請負会社のこだわり条件 > 主な収益源
+    ContractCompanyProfitSource ContractCompanyProfitSource = 28;
+    // ContractCompanyProjectTerm 請負会社のこだわり条件 > プロジェクト期間
+    ContractCompanyProjectTerm ContractCompanyProjectTerm = 29;
+    // ContractCompanyClientResident 請負会社のこだわり条件 > 客先常駐
+    ContractCompanyClientResident ContractCompanyClientResident = 30;
+    // ContractCompanyResident 請負会社のこだわり条件 > 常駐携帯
+    ContractCompanyResident ContractCompanyResident = 31;
+}
+message Industry {
+    int32 importance = 1;
+    bool main_only = 2;
+    bool exclude = 3;
+    IndustryValue value = 4;
+}
+message IndustryValue {
+    repeated int32 larges = 1;
+    repeated int32 middle = 2;
+    repeated int32 small = 3;
+}
+message DecisionType {
+    int32 importance = 1;
+    DecisionTypeValue value = 2;
+}
+message DecisionTypeValue {
+    // 1:トップダウン型, 2:ボトムアップ型
+    int32 decision_type = 1 [features.field_presence = EXPLICIT];
+    // 1:論理・規則に従う, 2:感情・調和に従う
+    int32 logic_or_emotion = 2 [features.field_presence = EXPLICIT];
+    // 1:中央集権型, 2:現場重視型
+    int32 authority = 3 [features.field_presence = EXPLICIT];
+    // 1:仕事の進め方にルールがある, 2:自分のやり方で進められる
+    int32 work_procedures = 4 [features.field_presence = EXPLICIT];
+}
+message EmployeeCharacter {
+    int32 importance = 1;
+    EmployeeCharacterValue value = 2;
+}
+message EmployeeCharacterValue {
+    // 1:若手が活躍する, 2:中堅・ベテランが活躍する
+    int32 AgeOfActivity = 1 [features.field_presence = EXPLICIT];
+    // 1:挑戦的な社風, 2:堅実な社風
+    int32 ChallengeLevelOfCorporateCulture = 2 [features.field_presence = EXPLICIT];
+    // 1:活気がある, 2:落ち着いている
+    int32 WorkplaceVibrancy = 3 [features.field_presence = EXPLICIT];
+    // 1:上下関係が明確, 2:上下関係がフラット
+    int32 HierarchicalRelationship = 4 [features.field_presence = EXPLICIT];
+    // 1:ビジネスライク, 2:アットホーム
+    int32 WorkplaceAtmosphere = 5 [features.field_presence = EXPLICIT];
+    // 1:アナログ組織運営, 2:デジタル組織運営
+    int32 OrganizationManagement = 6 [features.field_presence = EXPLICIT];
+    // 1:体育会系, 2:頭脳系
+    int32 MilitaryLikeOrBrain = 7 [features.field_presence = EXPLICIT];
+    // 1:仕事重視, 2:プライベート重視
+    int32 WorkOrPersonalLife = 8 [features.field_presence = EXPLICIT];
+    // 1:社内イベントが多い, 2:社内イベントが少ない
+    int32 CompanyEvents = 9 [features.field_presence = EXPLICIT];
+    // 1:上司との飲み会が多い, 2:上司との飲み会が少ない
+    int32 DrinkingPartyWithBoss = 10 [features.field_presence = EXPLICIT];
+    // 1:同僚との飲み会が多い, 2:同僚との飲み会が少ない
+    int32 DrinkingPartyWithColleague = 11 [features.field_presence = EXPLICIT];
+    // 1:企業理念・ビジョンが浸透している, 2:企業理念・ビジョンが浸透していない
+    int32 CorporatePhilosophyPenetrance = 12 [features.field_presence = EXPLICIT];
+}
+message HREvaluationPromotionSpeed {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message EmployeeAverageAge {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message EmployeeMidCareerRate {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message EmployeeWomanRate {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message EmployeeForeignNationalityRate {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message ForeignNationalityRecruiting {
+    int32 importance = 1;
+    int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message BusinessEmployeeQty {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message BusinessEstablishmentYear {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message BusinessSalesScale {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message Stage {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message ProductsShare {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message HasOwnProducts {
+    int32 importance = 1;
+    int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message ProductsTangibleness {
+    int32 importance = 1;
+    int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message TargetCustomer {
+    int32 importance = 1;
+    int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message TargetCustomerBtoB {
+    int32 importance = 1;
+    TargetCustomerBtoBValue value = 2;
+}
+message TargetCustomerBtoBValue {
+    repeated int32 TargetCustomerLarges = 1;
+    repeated int32 TargetCustomerMiddles = 2;
+    repeated int32 TargetCustomerSmalls = 3;
+}
+message TargetCustomerBtoC {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message TrendKeyword {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message MarketProspect {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message Strategy {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message Advantage {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message MedicalAdvantageField {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message SIType {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message SIAdvantageIndustry {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message CarPartsTier {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message ContractCompanyProfitSource {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message ContractCompanyProjectTerm {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message ContractCompanyClientResident {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}
+message ContractCompanyResident {
+    int32 importance = 1;
+    repeated int32 value = 2;
+}

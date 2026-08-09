@@ -1,0 +1,17 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+$borderBottomColor: #dfe6f0;
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  padding: 13px 0 13px 8px;
+  margin-bottom: 24px;
+  background-color: variables.$colorBlueGray50;
+  border-top: 5px solid variables.$colorSecondaryBlue1;
+  border-bottom: 1px solid $borderBottomColor;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}

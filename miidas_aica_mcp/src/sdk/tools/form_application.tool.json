@@ -1,0 +1,18 @@
+{
+  "name": "form_application",
+  "description": "ユーザーが求人に応募する場合、このツールを必ず使用して下さい。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "PositionID": {
+        "type": "integer",
+        "description": "応募する求人のIDを格納して下さい。"
+      },
+      "ApplicationType": {
+        "type": "string",
+        "enum": ["面接選考", "カジュアル面談"],
+        "description": "面接選考ではない応募はすべてカジュアル面談に指定してください"
+      }
+    }
+  }
+}

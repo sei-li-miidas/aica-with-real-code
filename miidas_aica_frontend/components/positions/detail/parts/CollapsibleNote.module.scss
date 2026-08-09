@@ -1,0 +1,52 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+@use "@/components/offers/mixin" as offers_mixin;
+
+$colorNote: #596674;
+$fontSize: 12px;
+$lineHeight: 1.7;
+
+.wrapper {
+  // ヘッダー(fixed)の高さ + 求人詳細のタブバー(sticky)の高さ
+  // NOTE: それぞれ表示されたタイミングで実測値を保持しているため、プレビュー画面など非表示の場合の考慮も含んでいる
+  scroll-margin-top: calc(
+    var(--header-height, 0px) + var(--position-detail-tab-bar-height, 0px)
+  );
+}
+
+.note {
+  overflow: hidden;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $colorNote;
+
+  // #68332: 企業側ポジションプレビューでの印刷時は、折りたたみのボックスを常に展開して表示させたいため
+  @media print {
+    max-height: unset !important;
+  }
+
+  &.expanded {
+    transition: max-height 0.3s ease;
+  }
+
+  &.collapsed {
+    @include offers_mixin.line-clamp($fontSize, $lineHeight, 2);
+  }
+}
+
+// トグルボタン
+.collapseToggleBtn {
+  display: block;
+  margin: 4px 0 0 auto;
+  background-color: variables.$white;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: variables.$colorTextSub;
+  text-decoration: underline;
+
+  @include mixin.pcLayout {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

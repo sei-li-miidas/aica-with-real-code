@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "AICA-Batch"
+version = "0.0.1"
+description = "AICAエージェントバッチ"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+classifiers = [
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "cryptography~=48.0.1",
+    "dependency-injector~=4.48",
+    "markdown-it-py~=4.0",
+    "psycopg~=3.3",
+    "psycopg-binary~=3.3",
+    "Pygments~=2.19",
+    "pydantic~=2.12",
+    "PyYAML~=6.0",
+    "rich~=14.2",
+    "shellingham~=1.5",
+    "SQLAlchemy~=2.0",
+    "typer~=0.20",
+    "typing_extensions~=4.15",
+    "redis~=7.1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest~=9.0.2",
+    "pytest-asyncio~=1.3.0",
+    "pytest-cov~=7.0.0",
+]
+dev = [
+    "pre-commit~=4.5.0",
+]
+
+[project.urls]
+Repository = "https://github.com/MIIDAS-Company/miidas_aica_agent"
+Issues = "https://github.com/MIIDAS-Company/miidas_aica_agent/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["aica_batch"]
+
+[tool.hatch.metadata]
+allow-direct-references = true

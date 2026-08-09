@@ -1,0 +1,14 @@
+expected_default_agent_model: openai/gpt-4.1
+expected_default_api_style: responses
+config:
+  agent_runtime:
+    service_variant: legacy
+    api_style: responses
+    agent_model: openai/gpt-4.1
+  model_list:
+    - model: gpt-4.1-2025-04-14
+      use_for:
+        - summary
+    - model: openai/gpt-4.1
+      use_for:
+        - agent

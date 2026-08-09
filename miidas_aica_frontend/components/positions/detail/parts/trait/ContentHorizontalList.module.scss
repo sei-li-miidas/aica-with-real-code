@@ -1,0 +1,23 @@
+@use "@/scss/utils/variables";
+
+.contentList {
+  > li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      &:after {
+        padding: 0 4px;
+        color: variables.$colorText;
+        content: "/";
+      }
+    }
+  }
+
+  // セパレーターで改行しない場合
+  &.noLineBreak {
+    > li {
+      display: inline;
+      line-height: 2;
+    }
+  }
+}

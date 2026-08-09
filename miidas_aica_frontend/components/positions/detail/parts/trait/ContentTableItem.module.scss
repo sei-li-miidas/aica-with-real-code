@@ -1,0 +1,24 @@
+@use "@/scss/utils/variables";
+
+$colorBorder: #bcc8d5;
+
+.row {
+  height: 43px;
+
+  & + & {
+    border-top: 1px dashed $colorBorder;
+  }
+}
+
+.name {
+  padding: 8px 4px;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.value {
+  padding: 8px 4px;
+  text-align: right;
+  vertical-align: middle;
+}

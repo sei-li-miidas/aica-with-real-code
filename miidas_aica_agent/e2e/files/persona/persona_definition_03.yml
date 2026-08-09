@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 鈴木
+  first_name: 一郎
+  last_name_kana: スズキ
+  first_name_kana: イチロウ
+  email: e2e.persona03@example.com
+  phone_no: "09000000003"
+  gender: 1
+  password: Pass0003
+  birth_year: 1989
+  birth_month: 11
+  first_language: 91
+  driver_licence: 3
+  residence:
+    prefecture: 千葉県
+    city: 千葉市
+education:
+  school_type: 6
+  graduation_year: 2008
+  english_level: 3
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 500
+  work_addresses:
+    - prefecture: 東京都
+      city: 千代田区
+  will_remote_work: true
+  will_job_change_period: 2
+  will_job_type_keywords:
+    - エンジニア
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

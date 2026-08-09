@@ -1,0 +1,86 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.wrapper {
+  // scrollIntoViewでのスクロール位置調整用
+  // NOTE: それぞれ表示されたタイミングで実測値を保持しているため、プレビュー画面など非表示の場合の考慮も含んでいる
+  // ヘッダー(fixed)の高さ + 求人詳細のタブバー(fixed)の高さ
+  scroll-margin-top: calc(
+    var(--header-height, 0px) + var(--position-detail-tab-bar-height, 0px)
+  );
+  // 求人詳細のフッター(fixed)の高さ
+  scroll-margin-bottom: var(--position-detail-footer-height, 0);
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  word-break: break-all;
+
+  // #68332: 企業側ポジションプレビューでの印刷時は、折りたたみのボックスを常に展開して表示させたいため
+  @media print {
+    max-height: unset !important;
+  }
+
+  &.withReadMoreButton {
+    padding-bottom: 64px;
+  }
+
+  &.expanded {
+    transition: max-height 0.3s ease;
+  }
+}
+
+// オーバーレイ
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 50%
+  );
+  pointer-events: none;
+}
+
+// トグルボタン
+.toggleBtn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 100%;
+  height: 44px;
+  background-color: variables.$white;
+  border: 1px solid variables.$colorBlueGray;
+  border-radius: 22px;
+  font-weight: bold;
+  line-height: 44px;
+  color: variables.$colorText;
+  text-align: center;
+  transform: translateX(-50%);
+
+  @include mixin.pcLayout {
+    max-width: 350px;
+  }
+
+  &:after {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    content: "";
+    transform: translateY(-3px) rotate(45deg);
+  }
+
+  &.hide {
+    &:after {
+      transform: translateY(2px) rotate(225deg);
+    }
+  }
+}

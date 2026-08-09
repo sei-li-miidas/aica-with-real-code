@@ -1,0 +1,70 @@
+.recommendation-item {
+  margin-bottom: calc(2 * var(--mui-spacing));
+}
+
+.recommendation-label {
+  display: block;
+  cursor: default;
+  color: var(--mui-palette-text-disabled);
+  text-align: left;
+}
+
+.recommendation-toggle {
+  display: block;
+  color: var(--mui-palette-success-main);
+  text-decoration: none;
+  font-weight: normal;
+  text-align: left;
+}
+
+.recommendation-toggle.open {
+  font-weight: bold;
+}
+
+.recommendation-description {
+  margin-bottom: var(--mui-spacing);
+}
+
+.recommendation-row {
+  display: flex;
+  gap: calc(2 * var(--mui-spacing));
+  overflow-x: auto;
+  padding-block: var(--mui-spacing);
+}
+
+.recommendation-card {
+  width: 120px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  .MuiCardActionArea-root {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .no-image {
+    height: 90px;
+    background-color: var(--mui-palette-primary-light);
+  }
+}
+
+.recommendation-card-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.recommendation-card-content {
+  padding: var(--mui-spacing);
+}
+
+.recommendation-card-actions {
+  justify-content: flex-end;
+  padding: var(--mui-spacing);
+  margin-top: auto;
+}

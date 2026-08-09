@@ -1,0 +1,60 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.helpTooltip {
+  $color1: #35404a;
+  $color2: #26303b;
+  $color3: #8999ab;
+
+  &Btn {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    overflow: visible;
+
+    svg {
+      @include mixin.svgIcon(20px, $color3);
+    }
+  }
+
+  &Balloon {
+    position: absolute;
+    bottom: 24px;
+    width: calc(100vw - 30px);
+    padding: 6px 11px;
+    background: rgba($color1, 0.9);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba($color1, 0.2);
+    font-size: 11px;
+    line-height: 15px;
+    color: variables.$white;
+    text-align: left;
+
+    > strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    > p {
+      font-weight: normal;
+    }
+
+    @include mixin.pcLayout {
+      left: -20px;
+      width: 250px;
+
+      &:after {
+        position: absolute;
+        bottom: -10px;
+        left: 23px;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-top: 5px solid rgba($color2, 0.9);
+        content: "";
+      }
+    }
+  }
+}

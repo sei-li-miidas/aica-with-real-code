@@ -1,0 +1,16 @@
+.recommendation-list {
+  border: 1px solid var(--mui-palette-grey-300);
+  border-radius: 2px;
+  padding: calc(3 * var(--mui-spacing));
+  background-color: var(--mui-palette-background-paper);
+}
+
+.recommendation-list-title {
+  color: var(--mui-palette-primary-main);
+  text-align: center;
+  font-weight: bold;
+}
+
+.recommendation-list-subtitle {
+  padding-bottom: calc(3 * var(--mui-spacing));
+}

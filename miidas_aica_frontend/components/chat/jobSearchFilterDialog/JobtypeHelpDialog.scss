@@ -1,0 +1,40 @@
+.jobtype-help-dialog__markdown {
+  color: #27356d;
+  font-size: 14px;
+  line-height: 1.7;
+
+  p {
+    margin: 0;
+  }
+
+  p + p,
+  ul + p,
+  ol + p,
+  p + ul,
+  p + ol {
+    margin-top: 12px;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding-left: 24px;
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li + li {
+    margin-top: 4px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--mui-palette-primary-main);
+  }
+}

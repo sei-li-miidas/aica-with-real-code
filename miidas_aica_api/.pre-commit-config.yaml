@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v2.11.4
+    hooks:
+      - id: golangci-lint
+        name: golangci-lint
+        entry: bash -c 'cd src && golangci-lint run --path-mode=abs --config ../.golangci.yml'
+        language_version: 1.26.5
+        pass_filenames: false
+        files: ^src/.*\.go$
+        stages: [pre-commit]

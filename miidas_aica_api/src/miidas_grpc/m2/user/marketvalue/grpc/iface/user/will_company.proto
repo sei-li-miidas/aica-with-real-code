@@ -1,0 +1,160 @@
+edition = "2023";
+
+package miidas.user.marketvalue.user;
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/user";
+
+// 企業希望条件
+message CompanyWill {
+  // Vacations 休暇
+  Vacations vacations = 1;
+  // YearHolidays 年間休日
+  YearHolidays yearHolidays = 2;
+  // PaidHolidayUseRate 有給休暇取得率
+  PaidHolidayUseRate paidHolidayUseRate = 3;
+  // JobRotationExists ジョブローテーション
+  JobRotationExists jobRotationExists = 4;
+  // ChangeDepartmentRequest 異動希望申請制度
+  ChangeDepartmentRequest changeDepartmentRequest = 5;
+  // HREvaluationSpecialSystem 特殊な評価制度
+  HREvaluationSpecialSystem HREvaluationSpecialSystem = 6;
+  // SpecialistCareerPath スペシャリストキャリアパス
+  SpecialistCareerPath SpecialistCareerPath = 7;
+  // HREvaluationWomanManagerRate 女性管理職比率
+  HREvaluationWomanManagerRate HREvaluationWomanManagerRate = 8;
+  // HREvaluation20SManagerRate 20代管理職
+  HREvaluation20SManagerRate HREvaluation20SManagerRate = 9;
+  // ProfitCompany 法人種別
+  ProfitCompany ProfitCompany = 10;
+  // AddressPrefecture 本社所在地
+  AddressPrefecture AddressPrefecture = 11;
+  // EmployeeQty 従業員数
+  EmployeeQty EmployeeQty = 12;
+  // EstablishmentYear 設立
+  EstablishmentYear EstablishmentYear = 13;
+  // CapitalType 資本区分
+  CapitalType CapitalType = 14;
+  // SalesScale 売上規模
+  SalesScale SalesScale = 15;
+  // AppealPoint アピールポイント
+  AppealPoint AppealPoint = 16;
+  // EmployeeWorkAbroadRate 海外駐在社員比率
+  EmployeeWorkAbroadRate EmployeeWorkAbroadRate = 17;
+  // SalesOverseasRate 海外売上比率
+  SalesOverseasRate SalesOverseasRate = 18;
+  // WelfareBenefit 福利厚生（待遇）
+  WelfareBenefit WelfareBenefit = 19;
+  // WelfareAchievement 実績のある福利厚生
+  WelfareAchievement WelfareAchievement = 20;
+  // WelfarePopular 人気の福利厚生
+  WelfarePopular WelfarePopular = 21;
+  // WelfareOther その他福利厚生
+  WelfareOther WelfareOther = 22;
+  // TrainingSystemExists 研修制度
+  TrainingSystemExists TrainingSystemExists = 23;
+  // Other その他企業特徴
+  Other Other = 24;
+  // SideBusiness 副業
+  SideBusiness SideBusiness = 25;
+}
+message Vacations {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message YearHolidays {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message PaidHolidayUseRate {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message JobRotationExists {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message ChangeDepartmentRequest {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message HREvaluationSpecialSystem {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message SpecialistCareerPath {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message HREvaluationWomanManagerRate {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message HREvaluation20SManagerRate {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message ProfitCompany {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message AddressPrefecture {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message EmployeeQty {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message EstablishmentYear {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message CapitalType {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message SalesScale {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message AppealPoint {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message EmployeeWorkAbroadRate {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message SalesOverseasRate {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message WelfareBenefit {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message WelfareAchievement {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message WelfarePopular {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message WelfareOther {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message TrainingSystemExists {
+  int32 importance = 1;
+  int32 value = 2 [features.field_presence = EXPLICIT];
+}
+message Other {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}
+message SideBusiness {
+  int32 importance = 1;
+  repeated int32 value = 2;
+}

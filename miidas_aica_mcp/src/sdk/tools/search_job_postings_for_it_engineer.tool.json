@@ -1,0 +1,321 @@
+{
+  "name": "search_job_postings_for_it_engineer",
+  "description": "IT開発系のエンジニア専用の求人検索ツールです。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ToolName": {
+        "type": "string",
+        "enum": ["search_job_postings_for_it_engineer"],
+        "description": "ツール名"
+      },
+      "JobtypeNames": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "ITコンサルタント（アプリ）",
+            "ITコンサルタント（インフラ）",
+            "プロジェクトマネージャー（IT）",
+            "システムアーキテクト",
+            "Webアプリ開発",
+            "スマートフォンアプリ開発（ネイティブ）",
+            "汎用機開発",
+            "パッケージ／ミドルウェア開発",
+            "情報システム（業務）",
+            "情報システム（インフラ）",
+            "研究開発／R＆D",
+            "ヘルプデスク（IT）",
+            "テクニカルサポート（IT）",
+            "プリセールス（IT）"
+          ]
+        },
+        "description": "ユーザーが希望する職種名。"
+      },
+      "Salary": {
+        "type": "integer",
+        "description": "希望年収（万円）"
+      },
+      "Locations": {
+        "type": "array",
+        "description": "ユーザーが希望する勤務地。都道府県・市区町村の両方を指定してください。",
+        "items": {
+          "type": "object",
+          "properties": {
+            "LocationType": {
+              "type": "string",
+              "enum": ["居住地", "希望勤務地"],
+              "description": "場所の種別"
+            },
+            "PrefectureName": {
+              "type": "string",
+              "description": "都道府県名"
+            },
+            "CityName": {
+              "type": "string",
+              "description": "原則は「市」まで入力してください。東京都23区は区名ではなく「23区」と入力します（例: 東京都港区→23区）。例: 愛知県名古屋市中区→名古屋市。市が存在しない地域は町村名を入力します。"
+            }
+          }
+        }
+      },
+      "PositionKeyword": {
+        "type": ["string", "null"],
+        "description": "ユーザーのこだわり条件や特徴に関する検索キーワードを指定してください。職種名（例：エンジニア、営業）は含めないでください。 例：副業可能、ピアス可、時短勤務"
+      },
+      "DayOffs": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": ["土日祝休み", "毎週2日休み", "その他"]
+        },
+        "description": "ユーザーが希望する休日の種別。"
+      },
+      "AverageOvertime": {
+        "type": ["string", "null"],
+        "enum": ["10時間以内", null],
+        "description": "残業時間の希望。"
+      },
+      "RemoteWorkPossible": {
+        "type": ["boolean", "null"],
+        "description": "リモート可"
+      },
+      "ProgrammingLanguages": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "ABAP／4",
+            "ActionScript",
+            "ASP",
+            "ASP.NET",
+            "C",
+            "C++",
+            "C#",
+            "Clojure",
+            "COBOL",
+            "CoffeeScript",
+            "CSS",
+            "Dart",
+            "Delphi",
+            "D言語",
+            "Erlang",
+            "F#",
+            "Fortran",
+            "Go",
+            "Groovy",
+            "Hack",
+            "Haskell",
+            "HTML",
+            "Java",
+            "JavaScript",
+            "JSP",
+            "Kotlin",
+            "Lisp",
+            "Lua",
+            "Objective-C",
+            "Pascal",
+            "Perl",
+            "PHP",
+            "PL／1",
+            "PL／SQL",
+            "Python",
+            "RPG",
+            "Ruby",
+            "R言語",
+            "Scala",
+            "Shell(C／B／K)",
+            "SQL",
+            "Swift",
+            "TypeScript",
+            "VB",
+            "VB.NET",
+            "VBA",
+            "VBScript",
+            "VC",
+            "VC++",
+            "Visual C# .NET",
+            "Visual C++ .NET",
+            "Visual J++ .NET",
+            "アセンブラ／ASM",
+            "その他言語"
+          ]
+        },
+        "description": "言語（all）"
+      },
+      "ProjectScales": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "10人月未満",
+            "10人月以上100人月未満",
+            "100人月以上500人月未満",
+            "500人月以上1,000人月未満",
+            "1,000人月以上"
+          ]
+        },
+        "description": "プロジェクト規模（IT）"
+      },
+      "ApplicationFrameworks": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "Bootstrap",
+            "Foundation",
+            "Echo",
+            "Gin",
+            "Martini",
+            "Revel",
+            "Dropwizard",
+            "JSF",
+            "Play Framework",
+            "Seasar",
+            "Slim3",
+            "Spring",
+            "Struts",
+            "Struts2",
+            "Wicket",
+            "AngularJS",
+            "Backbone.js",
+            "batman.js",
+            "Broke.js",
+            "CreateJS",
+            "D3.js",
+            "Ember.js",
+            "enchant.js",
+            "ExtJS",
+            "eyeballs.js",
+            "jQTouch",
+            "jQuery",
+            "jQuery Mobile",
+            "Knockout.JS",
+            "Node.js",
+            "Polymer",
+            "React.js",
+            "Catalyst",
+            "Mojolicious",
+            "CakePHP",
+            "CodeIgniter",
+            "Ethna",
+            "FuelPHP",
+            "HHVM",
+            "Kohana",
+            "Laravel",
+            "Phalcon",
+            "Symfony",
+            "Zend Framework",
+            "Yii",
+            "Django",
+            "Flask",
+            "Pyramid",
+            "Sphinx",
+            "Tornado",
+            "Ruby on Rails",
+            "Sinatra",
+            "cocos2d",
+            "Corona",
+            "Cordova",
+            "PhoneGap",
+            "React Native",
+            "RubyMotion",
+            "Titanium Mobile",
+            "その他"
+          ]
+        },
+        "description": "アプリケーションフレームワーク（IT）"
+      },
+      "CloudServices": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "AWS",
+            "Azure",
+            "Infomatica",
+            "SoftLayer",
+            "Heroku",
+            "Google Cloud",
+            "Force.com",
+            "GMOクラウド",
+            "その他"
+          ]
+        },
+        "description": "クラウドサービス（IT）"
+      },
+      "Phases": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "提案／見積作成／案件受注",
+            "IT戦略／情報システム戦略",
+            "システム化計画策定／システム企画",
+            "プロダクト評価・選定／ベンダー選定",
+            "技術選定（言語／フレームワーク／OS／サーバ）",
+            "要件定義",
+            "基本設計",
+            "詳細設計",
+            "構築",
+            "プログラミング",
+            "テスト設計",
+            "テスト",
+            "運用設計",
+            "運用",
+            "保守",
+            "監視"
+          ]
+        },
+        "description": "担当フェーズ（IT）"
+      },
+      "Positions": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "PMO",
+            "PM",
+            "PL",
+            "チームリーダー／サブリーダー"
+          ]
+        },
+        "description": "ポジション（IT）"
+      },
+      "SystemScales": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "100人未満",
+            "100人以上1万人未満",
+            "1万人以上10万人未満",
+            "10万人以上50万人未満",
+            "50万人以上1,000万人未満",
+            "1,000万人以上"
+          ]
+        },
+        "description": "システム規模（IT）"
+      },
+      "DevelopmentProjectTypes": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "業務改革系",
+            "生産系（製品開発／生産技術／品質管理）",
+            "物流系",
+            "営業支援系",
+            "顧客管理系",
+            "販売管理系",
+            "組織／人事系",
+            "財務／会計系",
+            "内部監査系（システム監査）",
+            "マーケティング系",
+            "その他業務システム"
+          ]
+        },
+        "description": "開発案件種別（IT／業務系）"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "initial_menu",
+  "name": "初期メニュー",
+  "displayType": "inline",
+  "steps": [
+    {
+      "id": 1,
+      "question": "ご希望の条件を選択してください",
+      "questionPrompt": "初めまして！ミイダス AI転職アドバイザーです。本日はどのようなご相談を希望されますか？",
+      "selectionType": "single",
+      "options": [
+        {
+          "label": "自分の希望に合った求人を見たい",
+          "value": 1,
+          "allowFreeText": false,
+          "description": "職種・勤務地・年収などの希望条件をもとに、あなたに合った求人をご提案します。"
+        },
+        {
+          "label": "自分に向いている仕事を知りたい",
+          "value": 2,
+          "allowFreeText": false,
+          "description": "仕事をする上でのやりたいこと・避けたいことの傾向から、あなたに向いている職種を診断します。"
+        },
+        {
+          "label": "理想のキャリアの軸を固めたい",
+          "value": 3,
+          "allowFreeText": false,
+          "description": "転職を考えた背景や悩みを整理して、あなたにとっての理想のキャリアの軸を一緒に考えます。"
+        }
+      ]
+    }
+  ]
+}

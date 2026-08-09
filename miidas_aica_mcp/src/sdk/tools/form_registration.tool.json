@@ -1,0 +1,13 @@
+{
+  "name": "form_registration",
+  "description": "ユーザーの考えが『求人への応募はしないが、ミイダスには登録したい』の場合にこのツールを使用してください。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "Registration": {
+        "type": "boolean",
+        "description": "TRUEを格納してください。"
+      }
+    }
+  }
+}

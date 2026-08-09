@@ -1,0 +1,73 @@
+{
+  "id": "position_change_analyze",
+  "name": "転職軸の分析",
+  "displayType": "modal",
+  "steps": [
+    {
+      "id": 1,
+      "question": "転職を考えたきっかけを教えてください。",
+      "questionPrompt": "それでは、今後のキャリアについて一緒に考えていきましょう。まずは今の状況を教えてください。転職を考えたきっかけとして、ご自身の感覚に近いものはありますか？",
+      "selectionType": "multiple",
+      "options": [
+        {"label": "給与や昇給の見込みが低い", "value": 1, "allowFreeText": false},
+        {"label": "人間関係や職場の雰囲気が合わない", "value": 2, "allowFreeText": false},
+        {"label": "残業が多い・休日が少ない", "value": 3, "allowFreeText": false},
+        {"label": "仕事内容や将来性に不安がある", "value": 4, "allowFreeText": false},
+        {"label": "ワークライフバランスを改善したい", "value": 5, "allowFreeText": false},
+        {"label": "その他", "value": 6, "allowFreeText": true}
+      ]
+    },
+    {
+      "id": 2,
+      "question": "今の仕事の中で「やりがい」や「充実感」を感じる瞬間を教えてください。",
+      "questionPrompt": "次に、ポジティブな側面についても教えてください。今の仕事の中で、少しでも『やりがい』や『充実感』を感じる瞬間はどれでしょうか？",
+      "selectionType": "multiple",
+      "options": [
+        {"label": "人に感謝されたり役に立った時", "value": 1, "allowFreeText": false},
+        {"label": "目標を達成して成長を感じた時", "value": 2, "allowFreeText": false},
+        {"label": "専門的なスキルを発揮している時", "value": 3, "allowFreeText": false},
+        {"label": "課題を解決して達成感を得た時", "value": 4, "allowFreeText": false},
+        {"label": "安定して、着実に業務が進む時", "value": 5, "allowFreeText": false},
+        {"label": "その他", "value": 6, "allowFreeText": true}
+      ]
+    },
+    {
+      "id": 3,
+      "question": "今後のキャリアで重要視することを教えてください。",
+      "questionPrompt": "では、これからのキャリアにおいて、特に優先して叶えたいことは何でしょうか？ご自身の理想に近いものを選んでみてください。",
+      "selectionType": "multiple",
+      "options": [
+        {"label": "市場価値を高め、年収を上げたい", "value": 1, "allowFreeText": false},
+        {"label": "心にゆとりを持って働きたい", "value": 2, "allowFreeText": false},
+        {"label": "専門性を磨き、特定の分野を極めたい", "value": 3, "allowFreeText": false},
+        {"label": "自分のアイデアや裁量を活かしたい", "value": 4, "allowFreeText": false},
+        {"label": "良いチームや仲間に恵まれて働きたい", "value": 5, "allowFreeText": false},
+        {"label": "その他", "value": 6, "allowFreeText": true}
+      ]
+    },
+    {
+      "id": 4,
+      "question": "現在の環境の満足度はどのくらいですか？",
+      "questionPrompt": "理想の形が見えてきましたね。その理想の状態を100点とした場合、現在の環境は何点くらいだと感じますか？",
+      "selectionType": "single",
+      "options": [
+        {"label": "80点以上：理想に近い", "value": 1, "allowFreeText": false},
+        {"label": "50〜79点：まずまずだが悩みもある", "value": 2, "allowFreeText": false},
+        {"label": "30〜49点：変えたい部分が多い", "value": 3, "allowFreeText": false},
+        {"label": "30点未満：早急に環境を変えたい", "value": 4, "allowFreeText": false}
+      ]
+    },
+    {
+      "id": 5,
+      "question": "転職軸を踏まえて、次のアクションを選択してください",
+      "questionPrompt": "ありがとうございます。これまでの内容を整理して、転職軸をまとめました。この転職軸を踏まえて、次はどのように進めていきましょうか？",
+      "selectionType": "single",
+      "options": [
+        {"label": "求人を探す", "value": 1, "allowFreeText": false},
+        {"label": "向いている仕事を見つける", "value": 2, "allowFreeText": false},
+        {"label": "会員登録して転職活動を始める", "value": 3, "allowFreeText": false},
+        {"label": "その他", "value": 4, "allowFreeText": true}
+      ]
+    }
+  ]
+}

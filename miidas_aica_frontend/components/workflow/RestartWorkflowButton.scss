@@ -1,0 +1,55 @@
+.restart-workflow-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(1.5 * var(--mui-spacing));
+  background: #8da1c4;
+  color: #fff;
+  padding: calc(2 * var(--mui-spacing));
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgb(33 56 99 / 18%);
+
+  &__heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(1 * var(--mui-spacing));
+    width: 100%;
+    padding: calc(1.5 * var(--mui-spacing)) calc(2 * var(--mui-spacing));
+    border: none;
+    border-radius: 999px;
+    background-color: rgb(255 255 255 / 25%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background-color: rgb(255 255 255 / 35%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgb(255 255 255 / 60%);
+      outline-offset: 2px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+  }
+
+  &__button-label {
+    letter-spacing: 0.02em;
+  }
+}

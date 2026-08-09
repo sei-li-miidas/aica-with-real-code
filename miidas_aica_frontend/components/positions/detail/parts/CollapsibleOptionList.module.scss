@@ -1,0 +1,12 @@
+@use "@/scss/utils/variables";
+
+.collapse {
+  > button {
+    color: variables.$colorTextSub;
+
+    &:after {
+      border-right: 2px solid variables.$colorTextSub;
+      border-bottom: 2px solid variables.$colorTextSub;
+    }
+  }
+}

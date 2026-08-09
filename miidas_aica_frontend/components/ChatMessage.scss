@@ -1,0 +1,49 @@
+.chat-message-container {
+  margin-bottom: 1rem;
+
+  .role {
+    &.agent {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .chat-message-content {
+    white-space: pre-line;
+
+    &.agent {
+      background-color: #ffffff;
+      border-radius: 0 1rem 1rem 1rem;
+      padding: 0.6rem;
+      max-width: 90%;
+    }
+
+    &.user {
+      background-color: var(--mui-palette-primary-main);
+      color: #ffffff;
+      margin-left: 3rem;
+      border-radius: 1rem 0 1rem 1rem;
+      padding: 0.6rem;
+    }
+
+    a {
+      color: var(--mui-palette-warning-main);
+      text-decoration: underline;
+    }
+
+    ol {
+      padding-left: 2rem;
+      white-space: normal;
+      li {
+        list-style-type: decimal;
+      }
+    }
+
+    ul {
+      padding-left: 2rem;
+      white-space: normal;
+      li {
+        list-style-type: disc;
+      }
+    }
+  }
+}

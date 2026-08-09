@@ -1,0 +1,65 @@
+{
+  "name": "search_job_postings",
+  "description": "ユーザーから得た情報から求人を検索できます。希望年収と勤務場所、希望職種についての情報があれば実行可能です。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ToolName": {
+        "type": "string",
+        "enum": ["search_job_postings"],
+        "description": "ツール名"
+      },
+      "JobtypeNames": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "ユーザーが希望する職種名を渡してください。もしユーザーから直接職種名を得られていない場合でも、これまでのユーザーとの会話から適した職種名が類推される場合はその職種名を渡してください。\n    例：ユーザー会話：世の中の動向や新しい情報を追いかけるのは好きなんです。でも、人と競ったり数字を追いかけたりする日々には疲れてしまって。どちらかというと、手に入れた情報をじっくり読み解いて、誰かのために整理したり、正しくまとめたりするような、落ち着いた時間が流れている仕事に惹かれます。→ 職種名：リサーチャー、調査分析"
+      },
+      "Salary": {
+        "type": "integer",
+        "description": "ユーザーの希望年収（単位：万円）を渡してください"
+      },
+      "Locations": {
+        "type": "array",
+        "description": "ユーザーが希望する勤務地",
+        "items": {
+          "type": "object",
+          "description": "例：東京都の地名が出た場合、ユーザー「東京都北区です」　対応方法：PrefectureNameには東京都、CityNameには北区を指定してください。どちらかが空白になりそうな場合も、必ずユーザーに再度確認して、両方明らかにしてください。",
+          "properties": {
+            "LocationType": {
+              "type": "string",
+              "description": "場所の種別",
+              "enum": ["フルリモート", "居住地", "希望勤務地"]
+            },
+            "PrefectureName": {
+              "type": "string",
+              "description": "ユーザーが希望する都道府県名を渡してください"
+            },
+            "CityName": {
+              "type": "string",
+              "description": "原則は「市」まで入力してください。東京都23区は区名ではなく「23区」と入力します（例: 東京都港区→23区）。例: 愛知県名古屋市中区→名古屋市。市が存在しない地域は町村名を入力します。"
+            }
+          }
+        }
+      },
+      "PositionKeyword": {
+        "type": ["string", "null"],
+        "description": "ユーザーのこだわり条件や特徴に関する検索キーワードを指定してください。職種名（例：エンジニア、営業）は含めないでください。 例：副業可能、ピアス可、時短勤務"
+      },
+      "DayOffs": {
+        "type": ["array", "null"],
+        "description": "ユーザーが希望する休日の種別を選択してください",
+        "items": {
+          "type": "string",
+          "enum": ["土日祝休み", "毎週2日休み", "その他"]
+        }
+      },
+      "AverageOvertime": {
+        "type": ["string", "null"],
+        "description": "ユーザーから残業時間の希望が出た場合は選択してください",
+        "enum": ["10時間以内", null]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.modal {
+  -webkit-overflow-scrolling: touch;
+
+  .modalWrap {
+    max-height: 100vh; // css変数が利用できない環境でのフォールバック
+    max-height: calc(
+      var(--vh, 1vh) * 100
+    ); // --vhはuseRealViewportHeightでwindow.innerHeightから生成
+    padding: 16px;
+    text-align: center;
+
+    .modalContent {
+      position: relative;
+      display: flex; // IE対応、つけないと中の要素のmax-heightが効かない
+    }
+  }
+}

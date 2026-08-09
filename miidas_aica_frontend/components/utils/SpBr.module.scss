@@ -1,0 +1,10 @@
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/variables";
+
+.SpBr {
+  display: block;
+
+  @include mixin.pcLayout {
+    display: none;
+  }
+}

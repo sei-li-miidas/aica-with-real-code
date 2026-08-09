@@ -1,0 +1,80 @@
+{
+  "ToolName": "search_job_postings_for_it_engineer",
+  "SearchFilters": {
+    "Jobtypes": {
+      "search_job_postings_for_it_engineer": [
+        {
+          "Label": "ITコンサルタント（アプリ）",
+          "Value": "ITコンサルタント（アプリ）",
+          "Description": "アプリ領域のITコンサルティングを担う職種です。",
+          "Selected": true
+        },
+        {
+          "Label": "Webアプリ開発",
+          "Value": "Webアプリ開発",
+          "Description": "Webアプリケーションの設計・開発を担う職種です。",
+          "Selected": false
+        }
+      ]
+    },
+    "Locations": {
+      "Residence": {
+        "Address": {
+          "PrefectureName": "東京都",
+          "CityName": "港区"
+        },
+        "CommutingAreas": [
+          {
+            "Label": "東京都渋谷区",
+            "PrefectureName": "東京都",
+            "CityName": "渋谷区",
+            "Selected": true
+          }
+        ]
+      },
+      "WorkLocations": [
+        {
+          "Label": "東京都千代田区",
+          "PrefectureName": "東京都",
+          "CityName": "千代田区",
+          "Selected": true
+        }
+      ],
+      "RemoteWorkPossible": true
+    },
+    "Salary": 700,
+    "PositionKeyword": "backend",
+    "OtherFilters": {
+      "search_job_postings_for_it_engineer": [
+        {
+          "Key": "language",
+          "Name": "言語（all）",
+          "Type": "multi_select",
+          "Options": [
+            {
+              "Label": "Go",
+              "Value": "Go"
+            },
+            {
+              "Label": "TypeScript",
+              "Value": "TypeScript"
+            }
+          ]
+        }
+      ]
+    },
+    "SelectedFilterOptions": {
+      "search_job_postings_for_it_engineer": {
+        "言語（all）": [
+          "Go"
+        ]
+      }
+    }
+  },
+  "JobtypeNamesWithSameSearchFilters": {
+    "search_job_postings_for_it_engineer": [
+      "ITコンサルタント（アプリ）",
+      "Webアプリ開発"
+    ]
+  }
+}

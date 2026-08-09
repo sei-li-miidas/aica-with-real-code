@@ -1,0 +1,97 @@
+logging:
+  version: 1
+  disable_existing_loggers: False
+  formatters:
+    formatter:
+      format: "[%(asctime)s] [%(levelname)s] [%(name)s]: %(message)s"
+  handlers:
+    console:
+      class: "logging.StreamHandler"
+      formatter: "formatter"
+      stream: "ext://sys.stdout"
+    file:
+      class: "logging.FileHandler"
+      level: "DEBUG"
+      formatter: "formatter"
+      filename: "/tmp/aica_batch.log"
+      mode: "a"
+  root:
+    level: "INFO"
+    handlers:
+      - console
+      - file
+  loggers:
+    aica_batch:
+      level: "DEBUG"
+      propagate: True
+db:
+  url: "postgresql+psycopg://${AICA_AGENT_DB_USER}:${AICA_AGENT_DB_PASSWORD}@${AICA_AGENT_DB_HOST}:${AICA_AGENT_DB_PORT}/${AICA_AGENT_DB_NAME}?sslmode=${AICA_AGENT_DB_SSLMODE}"
+rate_limits:
+  chat_request:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_SESSION_HOUR:100}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_SESSION_DAY:200}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_IP_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_IP_DAY:10000}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_GUEST_HOUR:25000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_GUEST_DAY:50000}
+  position_detail:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_SESSION_HOUR:100}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_SESSION_DAY:200}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_IP_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_IP_DAY:10000}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_GUEST_HOUR:25000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_GUEST_DAY:50000}
+  position_search:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_SESSION_HOUR:20}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_SESSION_DAY:50}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_IP_HOUR:1000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_IP_DAY:2500}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_GUEST_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_GUEST_DAY:12500}
+  load_more_positions:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_SESSION_HOUR:20}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_SESSION_DAY:50}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_IP_HOUR:1000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_IP_DAY:2500}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_GUEST_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_GUEST_DAY:12500}
+cache:
+  redis:
+    host: ${AICA_REDIS_HOST}
+    port: ${AICA_REDIS_PORT}

@@ -1,0 +1,39 @@
+name: ai-ca
+services:
+  mcp-server:
+    container_name: mcp-server
+    image: golang:1.26.5
+    ports:
+      - "${AICA_MCP_PORT}:${AICA_MCP_PORT}"
+    environment:
+      - TZ=Asia/Tokyo
+      - AICA_MCP_API_SERVER=${AICA_MCP_API_SERVER}
+      - AICA_MCP_PORT=${AICA_MCP_PORT}
+      - AICA_MCP_DB_HOST=${AICA_MCP_DB_HOST}
+      - AICA_MCP_DB_PORT=${AICA_MCP_DB_PORT}
+      - AICA_MCP_DB_USER=${AICA_MCP_DB_USER}
+      - AICA_MCP_DB_PASSWORD=${AICA_MCP_DB_PASSWORD}
+      - AICA_MCP_DB_NAME=${AICA_MCP_DB_NAME}
+      - AICA_MCP_DB_SSLMODE=${AICA_MCP_DB_SSLMODE}
+    volumes:
+      - ./files/ca/Cloudflare_Gateway_CA.pem:/usr/local/share/ca-certificates/Cloudflare_Gateway_CA.crt:ro
+      - ./${START_SCRIPT}:/go/run.sh:ro
+      - source: ../src
+        target: /go/src/aica
+        type: bind
+    working_dir: /go/src/aica/
+    entrypoint: [ "bash", "-c" ]
+    command: [ "/go/run.sh" ]
+    # Not sure why it doesn't work
+    # healthcheck:
+    #   test: ["CMD-SHELL", "curl --max-time 5 -f http://localhost:${AICA_MCP_PORT}/sse || exit 1"]
+    #   interval: 20s
+    #   timeout: 10s
+    #   retries: 5
+    #   start_period: 30s
+
+  mcp-server-debug:
+    extends: mcp-server
+    ports:
+      - "${AICA_MCP_PORT}:${AICA_MCP_PORT}"
+      - 6000:6000

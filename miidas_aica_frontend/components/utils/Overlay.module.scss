@@ -1,0 +1,27 @@
+@use "sass:list";
+@use "@/scss/utils/zindex";
+
+$colorOverlay: #081329;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: list.index(zindex.$elements, modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($colorOverlay, 0.5);
+  touch-action: none;
+  transition: background-color 0.25s ease;
+
+  &.isHidden {
+    background-color: rgba($colorOverlay, 0);
+    visibility: hidden;
+    transition:
+      background-color 0.25s ease 0.25s,
+      visibility 0s 0.5s;
+  }
+}

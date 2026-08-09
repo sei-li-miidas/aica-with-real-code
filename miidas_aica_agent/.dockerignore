@@ -1,0 +1,12 @@
+# docker
+**/Dockerfile
+.dockerignore
+# env
+.env*
+**/.env*
+# git
+.git
+.github
+.gitignore
+# vscode
+.vscode

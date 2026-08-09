@@ -1,0 +1,24 @@
+@use "@/scss/utils/variables";
+
+.container {
+  margin: 0 4px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.hpmCertificationYear {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  margin-top: 12px;
+  background-color: variables.$colorLightBlue;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: variables.$colorSecondaryBlue1;
+  gap: 4px;
+}

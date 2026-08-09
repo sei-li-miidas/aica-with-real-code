@@ -1,0 +1,144 @@
+{
+  "name": "search_job_postings_for_sales_financial_sales",
+  "description": "『金融営業』の職種に限定した求人検索ツール。その他の職種の場合このツールを使わないでください。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ToolName": {
+        "type": "string",
+        "enum": ["search_job_postings_for_sales_financial_sales"],
+        "description": "ツール名"
+      },
+      "JobtypeNames": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "ユーザーが希望する職種名。"
+      },
+      "Salary": {
+        "type": "integer",
+        "description": "希望年収（万円）"
+      },
+      "Locations": {
+        "type": "array",
+        "description": "ユーザーが希望する勤務地。都道府県・市区町村の両方を指定してください。",
+        "items": {
+          "type": "object",
+          "properties": {
+            "LocationType": {
+              "type": "string",
+              "enum": ["居住地", "希望勤務地"],
+              "description": "場所の種別"
+            },
+            "PrefectureName": {
+              "type": "string",
+              "description": "都道府県名"
+            },
+            "CityName": {
+              "type": "string",
+              "description": "原則は「市」まで入力してください。東京都23区は区名ではなく「23区」と入力します（例: 東京都港区→23区）。例: 愛知県名古屋市中区→名古屋市。市が存在しない地域は町村名を入力します。"
+            }
+          }
+        }
+      },
+      "PositionKeyword": {
+        "type": ["string", "null"],
+        "description": "ユーザーのこだわり条件や特徴に関する検索キーワードを指定してください。職種名（例：エンジニア、営業）は含めないでください。 例：副業可能、ピアス可、時短勤務"
+      },
+      "DayOffs": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": ["土日祝休み", "毎週2日休み", "その他"]
+        },
+        "description": "ユーザーが希望する休日の種別。"
+      },
+      "AverageOvertime": {
+        "type": ["string", "null"],
+        "enum": ["10時間以内", null],
+        "description": "残業時間の希望。"
+      },
+      "IncentiveSystem": {
+        "type": ["string", "null"],
+        "enum": ["固定給重視", "フルコミッション（完全歩合）", null],
+        "description": "インセンティブ制度"
+      },
+      "SalesMethodStyles": {
+        "type": ["array", "null"],
+        "items": { "type": "string", "enum": ["提案型営業", "ルート型営業"] },
+        "description": "営業スタイル（提案型／ルート型）"
+      },
+      "TargetCustomerTypes": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": ["新規顧客メイン", "既存顧客メイン", "新規・既存顧客両方"]
+        },
+        "description": "対象顧客（新規／既存）"
+      },
+      "IndividualSalesStyles": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": ["銀行窓口（テラー）", "外回り（渉外）", "来店型保険ショップ"]
+        },
+        "description": "個人営業スタイル"
+      },
+      "Qualifications": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "証券外務員一種/二種",
+            "FP（ファイナンシャルプランナー）1級/2級",
+            "AFP/CFP",
+            "貸金業務取扱主任者"
+          ]
+        },
+        "description": "保有資格活用"
+      },
+      "HandledFinancialProducts": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "string",
+          "enum": [
+            "預貯金",
+            "国内投信",
+            "海外投信",
+            "国内債券",
+            "外国債券",
+            "仕組債",
+            "その他債券",
+            "通貨／為替デリバティブ（通貨オプション等）",
+            "生命保険（個人）",
+            "生命保険（法人）",
+            "火災保険（個人）",
+            "地震保険（個人）",
+            "自動車保険（個人）",
+            "その他（個人）",
+            "企業財産保険（法人）",
+            "賠償責任保険（法人）",
+            "貨物／運送保険（法人）",
+            "その他保険（法人）",
+            "ローン／融資",
+            "情報通信関連機器／設備",
+            "各種システム",
+            "工作／建築用機械／測定／精密機器",
+            "医療機器",
+            "店舗／事務所用設備",
+            "オート",
+            "不動産",
+            "オペレーティングリース",
+            "その他リース",
+            "その他金融商品"
+          ]
+        },
+        "description": "取扱商材（金融商品）"
+      },
+      "SalesStyleDive": {
+        "type": ["string", "null"],
+        "enum": ["あり", "なし", null],
+        "description": "新規飛び込みあり/なし"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.bossCompetencyExamAlert {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  color: variables.$miidas-danger;
+}
+
+.bossCompetencyExamDescription {
+  margin-bottom: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+// TraitListItemの詳細度よりも高くする
+a.competencyExamBtn {
+  color: variables.$white;
+}
+
+.competencyExamBtn {
+  @include mixin.btn(variables.$miidas-secondary, 234px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listItem {
+  overflow: hidden;
+  border: 1px solid variables.$colorBorder;
+  border-radius: 8px;
+}
+
+.header {
+  padding: 4px 8px;
+  background-color: variables.$miidas-secondary;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$white;
+}
+
+.body {
+  padding: 16px;
+  background-color: variables.$colorLightBlue;
+}
+
+.typeKey {
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$colorText;
+}
+
+.typeValue {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.matchGood {
+  color: #2158d4;
+}
+
+.matchBad {
+  color: variables.$miidas-danger;
+}

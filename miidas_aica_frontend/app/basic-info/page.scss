@@ -1,0 +1,27 @@
+@use "../../scss/utils/profile-common";
+
+.privacy-note {
+  margin-bottom: calc(var(--mui-spacing) * 2);
+  display: flex;
+  align-items: center;
+}
+
+.note-icon {
+  margin-right: var(--mui-spacing);
+}
+
+.inline-icon {
+  margin-left: calc(var(--mui-spacing) * 0.5);
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.gender-group {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.gender-option {
+  flex: 1;
+  margin: 0;
+}

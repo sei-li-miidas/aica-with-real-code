@@ -1,0 +1,39 @@
+agent_server:
+  ws_url: ${AICA_WS_ENDPOINT}
+  api_url: ${AICA_API_ENDPOINT}
+runtime:
+  finish_policy: ${FINISH_POLICY}
+  auto_follow_position_search_link: ${AUTO_FOLLOW_POSITION_SEARCH_LINK}
+  auto_run_profile_apply: ${AUTO_RUN_PROFILE_APPLY}
+  restore_history_on_restart: ${RESTORE_HISTORY_ON_RESTART}
+  random_disconnect_probability: ${RANDOM_DISCONNECT_PROBABILITY}
+  resume_session_id: ${AICA_RESUME_SESSION_ID}
+model_list:
+  - model_name: openai-gpt-4.1
+    disabled: true
+    model_settings:
+      model: openai:gpt-4.1
+      temperature: 0.3
+      top_p: 0.95
+  - model_name: bedrock-claude-v1
+    disabled: false
+    model_settings:
+      model: bedrock_converse:anthropic.claude-3-5-sonnet-20240620-v1:0
+      temperature: 0.3
+      top_p: 0.95
+      aws_access_key_id: ${AWS_ACCESS_KEY_ID}
+      aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+      aws_session_token: ${AWS_SESSION_TOKEN}
+      region_name: ${AWS_REGION_NAME}
+persona_location: files/persona
+client_system_prompt_path: files/prompt/client_system_prompt.md
+# persona_included:
+#   - name: aaa
+#     max_rounds: 50
+#   - name: bbb
+# persona_excluded:
+#   - name: ccc
+#   - name: ddd
+client_number: ${CLIENT_NUMBER}
+# max_rounds<=0の場合、上限なし
+max_rounds: ${MAX_ROUNDS}

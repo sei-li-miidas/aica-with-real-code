@@ -1,0 +1,114 @@
+edition = "2023";
+
+package miidas.user.marketvalue.business;
+
+import "google/protobuf/timestamp.proto";
+import "common/vo.proto";
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/business";
+
+message Business {
+    int32 id = 1;
+    int32 company_id = 2;
+    Detail detail = 3;
+    google.protobuf.Timestamp last_modified_at = 4;
+    google.protobuf.Timestamp imported_at = 5;
+    google.protobuf.Timestamp trashed_at = 6;
+}
+
+message Detail {
+    string name = 1;
+    common.ValueText employee_qty = 2;
+    common.ValueText establishment_year = 3;
+    common.ValueText sales_scale = 4;
+    Industries industries = 5;
+    common.ValueText stage = 6;
+    Product product = 7;
+    TargetCustomer target_customer = 8;
+    common.ValuesText trend_keyword = 9;
+    common.ValueText market_prospect = 10;
+    common.ValueText strategy = 11;
+    common.ValueText advantage = 12;
+    DecisionType decision_type = 13;
+    common.ValueText employee_average_age = 14;
+    common.ValueText employee_woman_rate = 15;
+    common.ValueText employee_mid_career_rate = 16;
+    common.ValueText employee_foreign_nationality_rate = 17;
+    EmployeeCharacter employee_character = 18;
+    common.ValueText hr_evaluation_promotion_speed = 19;
+    bool foreign_nationality_recruiting = 20 [features.field_presence = EXPLICIT];
+    common.ValuesText medical_advantage_field = 21;
+    common.ValueText car_parts_tier = 22;
+    common.ValueText si_type = 23;
+    common.ValuesText si_advantage_industry = 24;
+    common.ValueText contract_company_profit_source = 25;
+    common.ValueText contract_company_project_term = 26;
+    common.ValueText contract_company_client_resident = 27;
+    common.ValueText contract_company_resident = 28;
+
+    message DecisionType {
+        int32 type1 = 1;
+        int32 type2 = 2;
+        int32 type3 = 3;
+        int32 type4 = 4;
+        string text = 5;
+    }
+
+    message EmployeeCharacter {
+        int32 character1 = 1;
+        int32 character2 = 2;
+        int32 character3 = 3;
+        int32 character4 = 4;
+        int32 character5 = 5;
+        int32 character6 = 6;
+        int32 character7 = 7;
+        int32 character8 = 8;
+        int32 character9 = 9;
+        int32 character10 = 10;
+        int32 character11 = 11;
+        int32 character12 = 12;
+        string text = 13;
+    }
+
+    message Industries {
+        repeated Industry industries = 1;
+        string text = 2;
+
+        message Industry {
+            int32 small_id = 1;
+            string label = 2;
+            bool mainFlg = 3;
+        }
+    }
+
+    message Product {
+        common.ValueText share = 1;
+        common.FlagText has_own_products = 2;
+        Tangibleness tangibleness = 3;
+
+        message Tangibleness {
+            common.Flag tangible = 1;
+            common.Flag intangible = 2;
+            string text = 3;
+        }
+    }
+
+    message TargetCustomer {
+        bool bto_b_exists = 1 [features.field_presence = EXPLICIT];
+        bool bto_c_exists = 2 [features.field_presence = EXPLICIT];
+        string text = 3;
+        BtoB bto_b = 4;
+        BtoC bto_c = 5;
+
+        message BtoB {
+            repeated common.IntIdLabelPair industry_small_ids = 1;
+            string text = 2;
+        }
+
+        message BtoC {
+            repeated common.IntIdLabelPair target_ids = 1;
+            string text = 2;
+        }
+    }
+}

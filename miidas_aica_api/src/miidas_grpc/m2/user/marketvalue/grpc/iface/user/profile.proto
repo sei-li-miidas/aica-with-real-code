@@ -1,0 +1,203 @@
+edition = "2023";
+
+package miidas.user.marketvalue.user;
+
+import "google/protobuf/timestamp.proto";
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/user";
+
+message Profile {
+  int32 user_id = 1 [features.field_presence = EXPLICIT];
+  int32 age = 2;
+  int32 annual_income = 3;
+  GraduateInfo graduate = 4; // ポインタだがエラー時を除き必ずあるので普通に埋め込む
+  JobInfo job = 5; // ポインタだがエラー時を除き必ずあるので普通に埋め込む
+  repeated Experience experiences = 6;
+  LangInfo lang = 7; // ポインタだがエラー時を除き必ずあるので普通に埋め込む
+  repeated int32 office_excel_skill_ids = 8;
+  repeated int32 office_access_skill_ids = 9;
+  repeated int32 company_name_ids = 10;
+  repeated int32 licence_ids = 11;
+  DriverLicence driver_licence = 12;
+  bool has_resume = 13;
+  bool has_portfolio = 14;
+  bool worked_abroad = 15;
+  Resume Resume = 16;
+  Competency Competency = 17;
+  Bias Bias = 18;
+  int32 prefecture_id = 19;
+  bool block_all_companies_flg = 20;
+  repeated int32 hp_apply_company_ids = 21;
+  google.protobuf.Timestamp registered_at = 22;
+  OutsourcingSearch outsourcing_search = 24;
+  repeated AllCareerJobTypeExpTerm all_career_job_type_and_exp_terms = 25;
+  int32 city_id = 26;
+  int32 gender_id = 27 [features.field_presence = EXPLICIT]; // 性別ID
+}
+
+message DriverLicence {
+  bool has_licence = 1; // HasLicence True: 必須
+  bool is_full = 2; // IsFull MT車運転可能かどうか
+}
+
+message GraduateInfo {
+  int32 year = 1;
+  int32 school_type = 2;
+  int32 school_rank = 3;
+  int32 school_id = 4;
+  int32 depart_id = 5;
+  int32 professional_training_college_category_id = 6;
+}
+
+message JobInfo {
+  int32 management_exp_term_id = 1 [features.field_presence = EXPLICIT];
+  int32 management_people_qty_id = 2;
+  int32 exp_company_id = 3; // 経験社数ID
+  int32 retire_month = 4; // 職歴なし離職中は離職月数を0ではなく最大値にしている
+  int32 company_name_id = 5;
+}
+
+message Experience {
+  int32 user_company_id = 1; // ユーザー経験企業ID
+  int32 company_name_id = 2; // 企業NameID
+  int32 employee_qty_id = 3; // 企業の規模
+  int32 employment_type_id = 4; // 直近の雇用形態
+  int32 industry_small_id = 5 [features.field_presence = EXPLICIT]; // 業種ID
+  bool is_recent = 6; // 直近かどうか
+  int32 retire_year = 7; // 退職年月
+  int32 retire_month = 8; // とりあえずここが 0 なら RetireYm = nil に
+
+  message JobTypeExpTerm {
+    int32 job_type_small_id = 1;
+    int32 exp_term_id = 2 [features.field_presence = EXPLICIT];
+    bool is_special = 3;
+  }
+  repeated JobTypeExpTerm job_types = 9;
+
+  message JobTypeSkillExpTerm {
+    int32 job_type_id = 1; // 6桁とは限らないっぽい
+    int32 skill_id = 2;
+    int32 exp_term_id = 3;
+    string input_skill = 4;
+    bool is_special = 5; // 得意なスキル
+  }
+  repeated JobTypeSkillExpTerm skills = 10;
+
+  int32 join_year = 11;
+  int32 join_month = 12; // ここが 0 なら JoinYm = nil に
+}
+
+message LangInfo {
+  int32 eng_level = 1;
+  int32 eng_toeic = 2;
+  int32 eng_toefli = 3;
+  int32 eng_toeflp = 4;
+  repeated int32 other_ids = 5;
+  repeated int32 other_levels = 6;
+}
+
+message Resume {
+  string FileContents = 1;
+  string TextContents = 2;
+}
+
+message AllCareerJobTypeExpTerm {
+  int32 job_type_small_id = 1;
+  int32 exp_term_id = 2 [features.field_presence = EXPLICIT];
+}
+
+message Competency {
+  int32 vanity = 1; // 虚栄心
+  Axes axes = 2;
+
+  message Axes {
+    // パーソナリティ
+    int32 management_style = 1; // マネジメントスタイル
+    int32 vitality = 2; // 活力
+    int32 sociability = 3; // 人あたり
+    int32 teamwork = 4; // チームワーク
+    int32 creativity = 5; // 創造性
+    int32 problem_solving = 6; // 問題解決力
+    int32 pressure_tolerance = 7; // プレッシャーへの耐性
+    int32 coordination = 8; // 調整力
+    int32 leadership = 9; // リーダーシップ
+    int32 adaptability = 10; // 対応力
+    int32 perseverance = 11; // 粘り強さ
+    int32 focus = 12; // 一点集中
+    int32 planning = 13; // 計画性
+    int32 interpersonal_influence = 14; // 対人影響
+    int32 goal_setting = 15; // 目標の立て方
+    int32 decisiveness = 16; // 決断力
+    int32 analytical_ability = 17; // 分析力
+    int32 conceptualization = 18; // 概念化
+    int32 continuity = 19; // 継続力
+    int32 relationship_building = 20; // 人間関係の構築
+    int32 empathy = 21; // 共感力
+    int32 self_learning = 22; // 自学
+    // 上司部下適正
+    int32 directive = 23; // 指示型
+    int32 delegation = 24; // 委任型
+    int32 listening = 25; // 傾聴型
+    int32 dialogue = 26; // 対話型
+    int32 negotiation = 27; // 交渉型
+    int32 obedient = 28; // 従順型
+    int32 autonomous = 29; // 自律型
+    int32 cooperative = 30; // 協調型
+    int32 proactive = 31; // 提案型
+    int32 assertive = 32; // 主張型
+    // ストレス要因
+    int32 uncertain_situations = 33; // 不確実な状況
+    int32 response_to_sudden_changes = 34; // 急な変化への対応
+    int32 hard_work = 35; // ハードワーク
+    int32 lack_of_planning = 36; // 計画性のなさ
+    int32 strict_management = 37; // 厳しい管理
+    int32 lack_of_evaluation = 38; // 評価の欠如
+    int32 inability_to_exercise_initiative = 39; // 主体性が発揮できない
+    int32 exclusion_from_decision_making = 40; // 意思決定に関与できない
+    int32 low_standards = 41; // 要求水準が低い
+    int32 high_analysis = 42; // 高度な分析
+    int32 lack_of_learning_opportunities = 43; // 学習機会の不足
+    int32 following_precedents = 44; // 前例踏襲
+    int32 routine_work = 45; // 定型業務
+    int32 difficult_decisions = 46; // 困難な決断
+    int32 negotiation_tasks = 47; // 交渉業務
+    int32 consensus_building = 48; // 合意形成
+    int32 conflict_with_others = 49; // 周囲との対立
+    int32 dry_workplace = 50; // ドライな職場
+    int32 caught_in_the_middle = 51; // 板挟み状態
+    int32 collaborative_work = 52; // 共同業務
+  }
+}
+
+message Bias {
+  int32 conformity = 1; // 同調度
+  int32 impulse_control = 2; // 衝動制御
+  int32 framing_effect = 3; // フレーミング効果
+  int32 focused_attention = 4; // 焦点的注意
+  int32 divided_attention = 5; // 全体的注意
+  int32 negative_emotions = 6; // 否定的感情
+  int32 sunk_cost = 7; // サンクコスト効果
+  int32 impatience = 8; // 時間選好（せっかち度）
+  int32 decline_evaluation_aversion = 9; // 評価下落回避
+  int32 loss_aversion = 10; // 損失回避
+  int32 effort_aversion = 11; // 労力回避
+  int32 regret_aversion = 12; // 失敗回避
+  int32 range_others = 13; // 他人要因
+  int32 range_myself = 14; // 自己要因
+  int32 empathy = 15; // 共感性
+  int32 status_quo = 16; // 現状維持バイアス
+  int32 predictive_behavior = 17; // 予測態度
+  int32 bias_control = 18; // バイアス制御
+  int32 altruism_selfishness_evaluation = 19; // 利他性・利己性の10段階評価
+  int32 risk_tolerance = 20; // リスク許容度
+  int32 ends_means = 21; // 目的思考
+}
+
+message OutsourcingSearch {
+  repeated int32 work_address = 1;
+  repeated int32 working_time = 2;
+  repeated int32 contract_period = 3;
+  int32 remote_work = 4 [features.field_presence = EXPLICIT];
+  int32 hourly_fee = 5 [features.field_presence = EXPLICIT];
+}

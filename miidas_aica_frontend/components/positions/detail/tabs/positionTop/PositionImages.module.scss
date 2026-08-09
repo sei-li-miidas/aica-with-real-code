@@ -1,0 +1,22 @@
+@use "@/scss/utils/mixin";
+
+.container {
+  width: 100%;
+  margin-bottom: 12px;
+
+  @include mixin.positionImagesPcAndTabletLayout {
+    margin-bottom: 0;
+  }
+}
+
+.mainImage {
+  $columnGap: 8px;
+
+  width: 100%;
+
+  @include mixin.positionImagesPcAndTabletLayout {
+    width: calc(
+      100% / 3 - #{$columnGap} * 2 / 3
+    ); // 画像サイズを画像3枚・gap2箇所で100%になるサイズに指定
+  }
+}

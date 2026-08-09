@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 伊藤
+  first_name: 健
+  last_name_kana: イトウ
+  first_name_kana: ケン
+  email: e2e.persona05@example.com
+  phone_no: "09000000005"
+  gender: 1
+  password: Pass0005
+  birth_year: 1991
+  birth_month: 5
+  first_language: 91
+  driver_licence: 2
+  residence:
+    prefecture: 愛知県
+    city: 名古屋市
+education:
+  school_type: 6
+  graduation_year: 2009
+  english_level: 2
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 430
+  work_addresses:
+    - prefecture: 愛知県
+      city: 名古屋市
+  will_remote_work: false
+  will_job_change_period: 3
+  will_job_type_keywords:
+    - 営業
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

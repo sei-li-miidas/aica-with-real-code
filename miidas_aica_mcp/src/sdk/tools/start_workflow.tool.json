@@ -1,0 +1,20 @@
+{
+  "name": "start_workflow",
+  "description": "指定されたワークフローを開始します。ワークフローは、複数のステップやタスクで構成されるプロセスであり、ユーザーのニーズに応じた一連のアクションを実行します。'job_match_diagnosis': ユーザーが転職・離職を目的としているが、具体的な希望職種を提示できず自己分析を必要としている場合に使用してください。 'position_change_analyze': 次のような場合に使用してください。1. ユーザーの転職理由や動機が曖昧な場合 2. 現状への不満や将来への不安を表明した場合 3. 自己分析をより深く行いたいと希望した場合",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "WorkflowID": {
+        "type": "string",
+        "enum": [
+          "job_match_diagnosis",
+          "position_change_analyze"
+        ],
+        "description": "開始するワークフローのID。例: 'job_match_diagnosis'"
+      }
+    },
+    "required": [
+      "WorkflowID"
+    ]
+  }
+}

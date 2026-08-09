@@ -1,0 +1,12 @@
+@use "@/scss/utils/variables";
+
+.foreignNationalityRecruitingLabel {
+  width: 120px;
+  padding: 2px 6px;
+  background-color: variables.$colorPrimary;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: variables.$white;
+}

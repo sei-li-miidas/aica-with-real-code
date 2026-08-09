@@ -1,0 +1,84 @@
+{
+  "AllPositionIds": [1, 2],
+  "Positions": [
+    {
+      "ID": 1,
+      "Title": "Mock Backend Engineer",
+      "MainJobText": "Build APIs and services.",
+      "SalaryFrom": 500,
+      "SalaryTo": 800,
+      "Image": ""
+    },
+    {
+      "ID": 2,
+      "Title": "Mock Product Engineer",
+      "MainJobText": "Work across product and engineering.",
+      "SalaryFrom": 500,
+      "SalaryTo": 800,
+      "Image": ""
+    }
+  ],
+  "Recommendations": [
+    {
+      "Theme": "theme1",
+      "Title": "Mock Recommendation",
+      "Description": "This is a mock recommendation."
+    }
+  ],
+  "SearchFilters": {
+    "Jobtypes": [
+      {
+        "Label": "ITコンサルタント（アプリ）",
+        "Value": "ITコンサルタント（アプリ）",
+        "Description": "Mock job type description",
+        "Selected": true
+      },
+      {
+        "Label": "ITコンサルタント（インフラ）",
+        "Value": "ITコンサルタント（インフラ）",
+        "Description": "Mock job type description",
+        "Selected": false
+      }
+    ],
+    "Locations": {
+      "Residence": {
+        "Address": {
+          "PrefectureName": "東京都",
+          "CityName": "渋谷区"
+        },
+        "CommutingAreas": [
+          {
+            "Label": "東京都新宿区",
+            "PrefectureName": "東京都",
+            "CityName": "新宿区",
+            "Selected": true
+          }
+        ]
+      },
+      "WorkLocations": [
+        {
+          "Label": "東京都新宿区",
+          "PrefectureName": "東京都",
+          "CityName": "新宿区",
+          "Selected": true
+        }
+      ],
+      "RemoteWorkPossible": true
+    },
+    "Salary": 0,
+    "OtherFilters": [
+      {
+        "Key": "RemoteWork",
+        "Name": "リモート可",
+        "Type": "single",
+        "Options": [
+          {
+            "Label": "可",
+            "Value": "true"
+          }
+        ]
+      }
+    ]
+  },
+  "JobtypeNamesWithSameSearchFilters": ["ITコンサルタント（アプリ）"]
+}

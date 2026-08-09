@@ -1,0 +1,89 @@
+@use "sass:list";
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/zindex";
+
+.helpBalloon {
+  position: fixed;
+  z-index: list.index(zindex.$elements, tooltipBalloon);
+  width: 100vw;
+  padding: 5px 16px;
+  pointer-events: none;
+  visibility: hidden;
+
+  // モーダル上に表示する場合の余白と重なり順の調整
+  &.onModal {
+    z-index: list.index(zindex.$elements, tooltipOnModal);
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  &.withCloseBtn .inner {
+    padding-right: 36px;
+  }
+
+  @include mixin.pcLayout {
+    width: 250px;
+    padding: 0 0 5px;
+
+    // モーダル上に表示する場合の余白調整を無効にする
+    &.onModal {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  background: mixin.$colorHelpBalloonBg;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 mixin.$colorShadowLight;
+  font-size: 11px;
+  line-height: 15px;
+  color: variables.$white;
+  text-align: left;
+}
+
+.title {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.text {
+  font-weight: normal;
+}
+
+.closeBtn {
+  @include mixin.closeButton(14px, 6px, 2px, variables.$white);
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  pointer-events: auto;
+}
+
+.arrow {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  content: "";
+
+  &.arrowTop {
+    bottom: -10px;
+    border-top: 5px solid mixin.$colorHelpBalloonBg;
+  }
+
+  &.arrowBottom {
+    top: -10px;
+    border-bottom: 5px solid mixin.$colorHelpBalloonBg;
+  }
+
+  &.arrowHidden {
+    visibility: hidden;
+  }
+}

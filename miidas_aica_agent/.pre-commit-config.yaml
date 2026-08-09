@@ -1,0 +1,55 @@
+minimum_pre_commit_version: "3.5.0"
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.10
+    hooks:
+      - id: ruff-check
+        args: [ --fix ]
+        alias: ruff-check-server
+        name: ruff check (server)
+        files: "^server/.*\\.py$"
+        stages: [pre-commit]
+      - id: ruff-check
+        args: [ --fix ]
+        alias: ruff-check-cli
+        name: ruff check (cli)
+        files: "^cli/.*\\.py$"
+        stages: [pre-commit]
+      - id: ruff-check
+        args: [ --fix ]
+        alias: ruff-check-e2e
+        name: ruff check (e2e)
+        files: "^e2e/.*\\.py$"
+        stages: [pre-commit]
+      - id: ruff-format
+        alias: ruff-format-server
+        name: ruff format (server)
+        files: "^server/.*\\.py$"
+        stages: [pre-commit]
+      - id: ruff-format
+        alias: ruff-format-cli
+        name: ruff format (cli)
+        files: "^cli/.*\\.py$"
+        stages: [pre-commit]
+      - id: ruff-format
+        alias: ruff-format-e2e
+        name: ruff format (e2e)
+        files: "^e2e/.*\\.py$"
+        stages: [pre-commit]
+
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.7.3
+    hooks:
+      - id: pip-audit
+        name: pip-audit (server)
+        files: "^server/requirements.*\\.txt$"
+        args: ['-r', 'server/requirements.txt', '-r', 'server/requirements-dev.txt']
+      - id: pip-audit
+        name: pip-audit (cli)
+        files: "^cli/requirements.*\\.txt$"
+        args: ['-r', 'cli/requirements.txt', '-r', 'cli/requirements-dev.txt']
+      - id: pip-audit
+        name: pip-audit (e2e)
+        files: "^e2e/requirements.*\\.txt$"
+        args: ['-r', 'e2e/requirements.txt', '-r', 'e2e/requirements-dev.txt']

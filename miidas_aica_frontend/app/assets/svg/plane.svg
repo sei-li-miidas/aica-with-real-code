@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="132"
+   height="132"
+   viewBox="0 0 132 132"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style>
+    .white { fill:#ffffff; fill-opacity:1; }
+    .dark-blue  { fill: #78bef4; fill-opacity: 1; }
+    .light-blue { fill: #c0e4ff; fill-opacity: 1; }
+  </style>
+  <g id="flying-plane">
+    <g id="plane">
+      <path
+         d="M 8.42969,17.633 31.0572,30.0063 127.02,1.07501 Z"
+         fill="#A6D8FF"
+         class="light-blue"
+         id="path1" />
+      <path
+         d="M 127.017,1.07501 31.0547,30.0063 45.3218,61.8488 43.2317,36.059 Z"
+         fill="#78BEF4"
+         class="dark-blue"
+         id="path2" />
+      <path
+         d="M 45.279,61.5759 63.8624,48.2472 43.2344,36.059 Z"
+         fill="#C0E4FF"
+         class="light-blue"
+         id="path3" />
+      <path
+         d="M 43.1016,36.011 79.6327,57.436 127.023,1.07501 Z"
+         fill="#A6D8FF"
+         class="light-blue"
+         id="path4" />
+    </g>
+    <rect
+       x="27.382799"
+       y="83.044701"
+       width="9.675"
+       height="5.375"
+       rx="2.6875"
+       transform="rotate(144.5033,46,80)"
+       class="white"
+       id="stream-right">
+      <animate
+        attributeName="width"
+        values="9.675; 35.474998;"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="1; 0;"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </rect>
+    <rect
+       x="0.0234375"
+       y="76.152"
+       width="5.375"
+       height="5.375"
+       rx="2.6875"
+       transform="rotate(144.5033,17,75)"
+       class="white"
+       id="stream-left"
+    >
+      <animate
+        attributeName="width"
+        values="5.375; 31.174999;"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="1; 0;"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </rect>
+
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0 0; 0 20; 0 0"
+      dur="5s"
+      repeatCount="indefinite"
+      calcMode="spline"
+      keyTimes="0; 0.5; 1"
+      keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+    />
+  </g>
+</svg>

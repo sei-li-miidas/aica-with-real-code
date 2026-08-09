@@ -1,0 +1,9 @@
+.svg {
+  // 初回サイズ調整時に見やすいようにデフォルト設定
+  width: 24px;
+  height: 24px;
+
+  use {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,21 @@
+name: ai-ca
+services:
+  agent-cli-server:
+    container_name: agent-cli-server
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    env_file: ../.env.local
+    volumes:
+      - ../src:/home/app/batch/src
+      - ../run.sh:/home/app/batch/run.sh
+    entrypoint: ["/home/app/batch/run.sh"]
+
+  agent-cli-test:
+    extends: agent-cli-server
+    environment:
+      - PYTHONPATH=/home/app/batch/src/aica_batch
+    volumes:
+      - ../tests:/home/app/batch/tests
+    entrypoint: ["python", "-m", "pytest"]
+    command: ["tests/unit"]

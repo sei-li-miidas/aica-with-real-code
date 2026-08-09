@@ -1,0 +1,3 @@
+# インフラチームのレビュー必須
+/cli/docker/ecs/ @MIIDAS-Company/infra
+/server/docker/ecs/ @MIIDAS-Company/infra

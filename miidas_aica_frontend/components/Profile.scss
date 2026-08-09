@@ -1,0 +1,45 @@
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--mui-spacing) * 3);
+  margin-bottom: calc(var(--mui-spacing) * 3);
+}
+
+.profile-card {
+  position: relative;
+}
+
+.profile-chip {
+  position: absolute;
+  top: var(--mui-spacing);
+  right: var(--mui-spacing);
+  z-index: 1;
+  padding: calc(var(--mui-spacing) * 0.5);
+  color: inherit;
+  border-color: currentColor;
+
+  .MuiChip-label {
+    color: inherit;
+    padding-left: calc(var(--mui-spacing) * 1.5);
+    padding-right: calc(var(--mui-spacing) * 1.5);
+  }
+}
+
+.profile-chip.is-complete {
+  color: var(--mui-palette-success-main);
+  border-color: var(--mui-palette-success-main);
+}
+
+.profile-chip.is-incomplete {
+  color: var(--mui-palette-error-main);
+  border-color: var(--mui-palette-error-main);
+}
+
+.profile-card-actions {
+  justify-content: flex-end;
+}
+
+.profile-loading {
+  text-align: center;
+  margin-top: calc(var(--mui-spacing) * 5);
+}

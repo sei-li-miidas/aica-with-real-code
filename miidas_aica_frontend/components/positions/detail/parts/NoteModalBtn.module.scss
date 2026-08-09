@@ -1,0 +1,10 @@
+@use "@/scss/utils/variables";
+
+.infoBtn {
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  color: variables.$colorPrimary;
+  white-space: nowrap;
+  vertical-align: baseline;
+}

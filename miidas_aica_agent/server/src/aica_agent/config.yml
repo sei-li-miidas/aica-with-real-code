@@ -1,0 +1,155 @@
+logging:
+  version: 1
+  disable_existing_loggers: False
+  formatters:
+    json:
+      (): "pythonjsonlogger.jsonlogger.JsonFormatter"
+      format: "%(asctime)s %(levelname)s %(name)s %(session_id)s %(request_id)s %(caller)s %(message)s"
+      json_ensure_ascii: False
+  handlers:
+    console:
+      class: "logging.StreamHandler"
+      formatter: "json"
+      level: "INFO"
+      stream: "ext://sys.stdout"
+    aica_debug_file:
+      class: "logging.FileHandler"
+      formatter: "json"
+      level: "DEBUG"
+      filename: "/tmp/aica_agent_debug.log"
+      encoding: "utf-8"
+  root:
+    level: "WARNING"
+    handlers:
+      - console
+  loggers:
+    gunicorn:
+      level: INFO
+      handlers:
+        - console
+      propagate: False
+    uvicorn:
+      level: "INFO"
+      handlers:
+        - console
+      propagate: False
+    LiteLLM:
+      level: "WARNING"
+      propagate: False
+      handlers:
+        - console
+    sqlalchemy:
+      level: "WARNING"
+      propagate: False
+      handlers:
+        - console
+    aica_agent:
+      level: "DEBUG"
+      propagate: False
+      handlers:
+        - console
+        - aica_debug_file
+db:
+  url: "postgresql+psycopg://${AICA_AGENT_DB_USER}:${AICA_AGENT_DB_PASSWORD}@${AICA_AGENT_DB_HOST}:${AICA_AGENT_DB_PORT}/${AICA_AGENT_DB_NAME}?sslmode=${AICA_AGENT_DB_SSLMODE}"
+model_list:
+  - model: gpt-4.1-2025-04-14
+    use_for:
+      - summary
+    model_settings:
+      temperature: 1.0
+  - model: gpt-4.1-2025-04-14
+    use_for:
+      - position_change_analyze_summary
+    model_settings:
+      temperature: 1.0
+  - model: openai/gpt-4.1
+    use_for:
+      - agent
+    model_settings:
+      temperature: 1.0
+agent_runtime:
+  service_variant: refactored
+  api_style: responses
+  agent_model: openai/gpt-4.1
+mcp:
+  url: "${AICA_AGENT_MCP_ENDPOINT}"
+  timeout: 30
+api:
+  aica: "${AICA_AGENT_API_ENDPOINT}"
+  miidas: "${AICA_AGENT_MIIDAS_API_ENDPOINT}"
+  # 30 second timeout
+  timeout: 30
+rate_limits:
+  chat_request:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_SESSION_HOUR:100}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_SESSION_DAY:200}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_IP_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_IP_DAY:10000}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_GUEST_HOUR:25000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_CHAT_REQUEST_GUEST_DAY:50000}
+  position_detail:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_SESSION_HOUR:100}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_SESSION_DAY:200}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_IP_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_IP_DAY:10000}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_GUEST_HOUR:25000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_DETAIL_GUEST_DAY:50000}
+  position_search:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_SESSION_HOUR:20}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_SESSION_DAY:50}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_IP_HOUR:1000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_IP_DAY:2500}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_GUEST_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_POSITION_SEARCH_GUEST_DAY:12500}
+  load_more_positions:
+    session:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_SESSION_HOUR:20}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_SESSION_DAY:50}
+    ip:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_IP_HOUR:1000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_IP_DAY:2500}
+    guest:
+      - window_hours: 1
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_GUEST_HOUR:5000}
+      - window_hours: 24
+        limit: ${AICA_RATE_LIMIT_LOAD_MORE_POSITIONS_GUEST_DAY:12500}
+cache:
+  redis:
+    host: ${AICA_REDIS_HOST}
+    port: ${AICA_REDIS_PORT}
+    ttl: 1800
+prompts:
+  dir: "files/prompts"
+workflows:
+  dir: "files/workflows"

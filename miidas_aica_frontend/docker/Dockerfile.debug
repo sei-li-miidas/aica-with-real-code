@@ -1,0 +1,11 @@
+ARG NODE_VERSION=22.22.0
+ARG DEBIAN_VERSION=trixie
+FROM node:${NODE_VERSION}-${DEBIAN_VERSION}-slim
+
+WORKDIR /app
+
+COPY package*.json ./
+
+EXPOSE 3000
+
+CMD ["sh", "-c", "npm ci --ignore-scripts --min-release-age=7 && npm run dev"]

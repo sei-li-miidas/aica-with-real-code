@@ -1,0 +1,12 @@
+@use "@/scss/utils/variables";
+
+.otherTimingText {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: variables.$colorTextSub;
+}
+
+.remarks {
+  margin-top: 4px;
+}

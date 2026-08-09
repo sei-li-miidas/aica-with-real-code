@@ -1,0 +1,66 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.wrapper {
+  display: grid;
+  width: calc(100vw - 32px);
+  max-width: 500px;
+  max-height: calc(100vh - 32px); // css変数が利用できない環境でのフォールバック
+  max-height: calc(
+    var(--vh, 1vh) * 100 - 32px
+  ); // --vhはAppContainerでwindow.innerHeightから生成
+  background-color: variables.$white;
+  border-radius: 2px;
+
+  &.pcSmall {
+    @include mixin.pcLayout {
+      width: 343px;
+      max-width: 343px;
+      max-height: calc(100vh - 96px);
+    }
+  }
+
+  &.pcMedium {
+    @include mixin.pcLayout {
+      width: 500px;
+      max-width: 500px;
+      max-height: calc(100vh - 96px);
+    }
+  }
+
+  &.pcLarge {
+    @include mixin.pcLayout {
+      width: 760px;
+      max-width: 760px;
+      max-height: calc(100vh - 96px);
+    }
+  }
+}
+
+.body {
+  height: 100%;
+  overflow-y: auto;
+
+  // スクロールバーが不要な時は非表示、必要な時は常に表示
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: solid 2px transparent;
+    border-radius: 27px;
+    box-shadow: inset 0 0 3px 3px rgba(53, 70, 89, 0.4);
+  }
+}
+
+.headerContent {
+  &.border {
+    border-bottom: 1px solid variables.$colorBorder;
+  }
+}
+
+.footerContent {
+  &.border {
+    border-top: 1px solid variables.$colorBorder;
+  }
+}

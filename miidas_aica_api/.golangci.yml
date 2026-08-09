@@ -1,0 +1,30 @@
+version: "2"
+
+formatters:
+  enable: ["gofmt", "goimports"]
+
+linters:
+  default: standard
+  enable:
+    - misspell
+    - nolintlint
+    - unparam
+  settings:
+    staticcheck:
+      checks:
+        - "all"
+        - "-ST1000"
+        - "-ST1003"
+        - "-ST1020"
+        - "-ST1021"
+        - "-ST1022"
+        - "-QF1003"
+        - "-QF1008"
+    nolintlint:
+      require-explanation: true
+      require-specific: true
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  new-from-rev: HEAD~1

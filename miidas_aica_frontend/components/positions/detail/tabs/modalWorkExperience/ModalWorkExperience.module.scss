@@ -1,0 +1,52 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 16px 40px;
+  background-color: variables.$colorLightBlue;
+}
+
+.main {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 1px;
+
+  @include mixin.pcLayout {
+    font-size: 20px;
+  }
+}
+
+.sub {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5; /* 21px */
+
+  @include mixin.pcLayout {
+    margin-top: 8px;
+  }
+}
+
+.primary {
+  font-weight: bold;
+  color: variables.$colorPrimary;
+}
+
+.useCases {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-rows: repeat(4, 251px);
+  grid-template-columns: 311px;
+  margin-top: 28px;
+  gap: 16px;
+
+  @include mixin.pcLayout {
+    grid-template-rows: repeat(2, 251px);
+    grid-template-columns: repeat(2, 311px);
+  }
+}

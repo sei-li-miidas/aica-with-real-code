@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 渡辺
+  first_name: 彩
+  last_name_kana: ワタナベ
+  first_name_kana: アヤ
+  email: e2e.persona06@example.com
+  phone_no: "09000000006"
+  gender: 2
+  password: Pass0006
+  birth_year: 1993
+  birth_month: 8
+  first_language: 91
+  driver_licence: 1
+  residence:
+    prefecture: 福岡県
+    city: 福岡市
+education:
+  school_type: 6
+  graduation_year: 2011
+  english_level: 3
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 410
+  work_addresses:
+    - prefecture: 福岡県
+      city: 福岡市
+  will_remote_work: true
+  will_job_change_period: 2
+  will_job_type_keywords:
+    - 事務
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

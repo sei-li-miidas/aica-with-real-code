@@ -1,0 +1,18 @@
+@use "@/scss/utils/variables";
+
+.item {
+  &:not(:last-child) {
+    padding-bottom: 16px;
+    border-bottom: 1px dotted variables.$colorBorder;
+  }
+
+  &:not(:first-child) {
+    padding-top: 16px;
+  }
+}
+
+.itemKey {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}

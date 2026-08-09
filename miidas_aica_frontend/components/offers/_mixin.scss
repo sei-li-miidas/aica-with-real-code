@@ -1,0 +1,132 @@
+@use "@/scss/utils/variables";
+@use "@/scss/sprite/_sprite_svg_offers";
+
+$colorTextFreewordInput: #354659;
+$colorRadioOn: #1bc2f5;
+$colorRadioBorder: #ced3db;
+$colorFreewordPlaceholder: #aab6c3;
+$colorFreewordLabelBorder: #dae3ec;
+
+@mixin RadioStyle($display: inline-block) {
+  display: $display;
+
+  input {
+    display: none;
+
+    + span {
+      position: relative;
+      display: block;
+      min-height: 30px;
+      padding-left: 38px;
+
+      // OFF
+      &:before {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        display: $display;
+        width: 26px;
+        height: 26px;
+        margin-right: 16px;
+        border: solid 2px $colorRadioBorder;
+        border-radius: 50%;
+        vertical-align: middle;
+        content: "";
+      }
+    }
+
+    // ON
+    &:checked + span {
+      font-weight: bold;
+      color: variables.$colorPrimary;
+
+      &:after {
+        position: absolute;
+        top: 6px;
+        left: 9px;
+        width: 12px;
+        height: 12px;
+        background-color: $colorRadioOn;
+        border-radius: 50%;
+        content: "";
+      }
+    }
+  }
+
+  @media only screen and (min-width: variables.$minScreenWidth) {
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin freeword {
+  width: 100%;
+
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 34px;
+    margin-bottom: 10px;
+    background: variables.$white;
+    border: solid 1px $colorFreewordLabelBorder;
+    border-radius: 4px;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0 10px 0 33px;
+      font-size: 12px;
+      font-weight: normal;
+      color: $colorTextFreewordInput;
+
+      // プレースホルダーカラー
+      &::placeholder {
+        color: $colorFreewordPlaceholder;
+      }
+
+      // IEのXを表示しないようにする
+      &::-ms-clear {
+        display: none;
+      }
+    }
+
+    button {
+      height: 16px;
+
+      &:before {
+        @include sprite_svg_offers.sprite(ico_cancel);
+
+        display: inline-block;
+        margin: 0 9px 0 9px;
+        content: "";
+      }
+    }
+
+    &:before {
+      position: absolute;
+      top: 6px;
+      left: 10px;
+      display: inline-block;
+      content: "";
+
+      @include sprite_svg_offers.sprite(ico_search);
+    }
+  }
+}
+
+// 行数制限
+@mixin line-clamp($font-size, $line-height, $line-num) {
+  @warn "共通ミックスイン(src/scss/utils/_mixin.scss)を使用すること";
+
+  display: -webkit-box;
+  max-height: calc(#{$font-size} * #{$line-height} * #{$line-num});
+  overflow: hidden;
+  font-size: $font-size;
+  line-height: $line-height;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-num;
+}

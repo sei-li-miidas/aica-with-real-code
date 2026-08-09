@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* @theme {
+  --font-sans: "Noto Sans JP";
+  --font-mono: "Noto Sans JP";
+} */
+
+:root {
+  color-scheme: light !important;
+  --body-background: var(--mui-palette-primary-light);
+  --user-chat-message-background: #c4dcf4;
+  --main-content-max-width: 1000px;
+  /* iPhone 13 miniの幅*/
+  --main-content-min-width: 360px;
+  /* メインチャットの背景色 */
+  --bg-gradient: linear-gradient(
+    315deg,
+    /* 右上から左下への角度 */ #fef0f7 0%,
+    /* 桃色 （右上） */ #eff8fa 30%,
+    /* 水色 */ #f0f1ff 65%,
+    /* 紫色 */ #d8e0ff 100% /* 青紫 （左下）*/
+  );
+  --bg-page-header-gradient: linear-gradient(
+    135deg,
+    #fcf0ef 0%,
+    #fbf3fc 31%,
+    #e8f3fe 62%,
+    #dee3ff 97%
+  );
+  /* バーチャルキーボードの高さ */
+  --vkHeight: 0px;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100vw;
+  height: 100dvh;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body-background);
+  position: fixed;
+  top: 0;
+}
+
+/* PC版 */
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
+}

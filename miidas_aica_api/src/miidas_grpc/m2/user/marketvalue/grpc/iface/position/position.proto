@@ -1,0 +1,430 @@
+edition = "2023";
+
+package miidas.user.marketvalue.position;
+
+import "google/protobuf/timestamp.proto";
+import "common/vo.proto";
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/position";
+
+message Position {
+  reserved 7;
+  int32 id = 1;
+  int32 company_id = 2;
+  int32 business_id = 3;
+  int32 company_section_id = 4;
+  google.protobuf.Timestamp published_at = 5;
+  bool detail_showable_flg = 6;
+  google.protobuf.Timestamp trashed_at = 8;
+  google.protobuf.Timestamp last_modified_at = 9;
+  int32 auto_offer_status = 10;  // TODO リネーム
+  int32 backward_compatible_type = 11;
+  Detail detail = 12;
+  Interview interview = 13;
+  repeated Boss boss_list = 14;
+  google.protobuf.Timestamp imported_at = 15;
+  int32 certification_rank = 16;
+  google.protobuf.Timestamp first_published_at = 17;
+  google.protobuf.Timestamp last_notified_at = 18;
+}
+
+message Boss {
+  int32 directive = 1; // 指示型
+  int32 delegation = 2; // 委任型
+  int32 listening = 3; // 傾聴型
+  int32 dialogue = 4; // 対話型
+  int32 negotiation = 5; // 交渉型
+}
+
+message Interview {
+  Shared shared = 1;                  // 共通設定
+  Meeting meeting = 2;                // 対面面接設定
+  Online online = 3;                  // オンライン面接設定
+  Phone phone = 4;                    // 電話面接設定
+  WorkExperience work_experience = 5; // リアル職場体験
+
+  message Shared {
+    string estimated_term = 1;                 // 選考期間
+    int32 interview_times = 2;                 // 面接回数
+    bool selection_aptitude_test_exists = 3;   // 選考適正試験有無
+    bool selection_paper_test_exists = 4;      // 選考筆記試験有無
+    bool selection_practical_test_exists = 5;  // 選考実技試験有無
+    bool selection_other_test_exists = 6;      // 選考その他試験有無
+    string selection_remarks = 7;              // 選考補足
+    bool casual_dress_flg = 8;                 // 面接時私服OKフラグ
+    repeated int32 interviewers = 9;           // 面接官
+    string other_interviewer = 10;             // 面接官（その他）
+    string contact = 11;                       // 連絡先
+  }
+
+  message Meeting {
+    bool enable_flg = 1;                        // 実施ON/OFF
+    int32 possible_weekday_hour_from = 2;       // 面接可能平日時間From
+    int32 possible_weekday_hour_to = 3;         // 面接可能平日時間To
+    bool possible_weekend_flg = 4;              // 面接可能土日祝日フラグ
+    string possible_time_complement = 5;        // 面接可能日時補足
+    int32 minutes = 6;                          // 面接所要時間（分）
+    repeated string place_options = 7;          // 面接場所候補TSV(対面のみ)
+    bool transportation_payment_flg = 8;        // 交通費支給フラグ（対面のみ）
+    string transportation_payment_remarks = 9;  // 交通費支給（備考）
+  }
+
+  message Online {
+    bool enable_flg = 1;                   // 実施ON/OFF
+    int32 possible_weekday_hour_from = 2;  // 面接可能平日時間From
+    int32 possible_weekday_hour_to = 3;    // 面接可能平日時間To
+    bool possible_weekend_flg = 4;         // 面接可能土日祝日フラグ
+    string possible_time_complement = 5;   // 面接可能日時補足
+    int32 minutes = 6;                     // 面接所要時間（分）
+  }
+
+  message Phone {
+    bool enable_flg = 1;                   // 実施ON/OFF
+    int32 possible_weekday_hour_from = 2;  // 面接可能平日時間From
+    int32 possible_weekday_hour_to = 3;    // 面接可能平日時間To
+    bool possible_weekend_flg = 4;         // 面接可能土日祝日フラグ
+    string possible_time_complement = 5;   // 面接可能日時補足
+    int32 minutes = 6;                     // 面接所要時間（分）
+  }
+
+  message WorkExperience {
+    int32 pattern_id = 1;               // 実施方式
+    int32 timing_id = 2;                // 実施タイミング
+    string timing_remarks = 3;          // 実施タイミング補足
+    string other_timing_text = 4;       // その他の実施タイミングの備考
+    repeated int32 work_type_ids = 5;   // 実施内容
+    string work_content = 6;            // 実施内容詳細
+    int32 timeframe_id = 7;             // 実施日時
+    string timeframe_remarks = 8;       // 実施日時補足
+    int32 need_time_id = 9;             // 所要時間
+    string need_time_remarks = 10;      // 所要時間補足
+    int32 reward_id = 11;               // 報酬有無
+    int32 reward_value = 12;            // 報酬額
+    string reward_remarks = 13;         // 報酬補足
+  }
+
+}
+
+message Detail {
+    string title = 1;                           // ポジション名（公開用）
+    common.ValueText post = 2;                  // 役職
+    common.ValueText employmentType = 3;        // 契約形態種別
+    repeated Job jobs = 4;                      // 仕事内容
+    string main_job_text = 5;                   // 仕事内容(メイン)
+    GuaranteedIncome guaranteed_income = 6;     // 待遇_確約年収_
+    ModelAnnualIncome model_annual_income = 7;  // 待遇_モデル年収（目安）
+    common.ValueText stock_option = 8;          // 待遇_ストックオプション
+    common.ValueText bonus_count = 9;           // 待遇_賞与
+    common.ValueText promotion_count = 10;      // 待遇_昇給・昇格
+    WorkAddresses work_address = 11;            // 勤務地_都道府県
+    common.ValueText remote_work = 12;          // リモート勤務
+    string remote_work_condition = 13;          // リモート勤務条件
+    common.ValueText remote_work_office_frequency =
+        14;                                         // リモート勤務_出社頻度
+    common.ValueText holiday = 15;                  // 休日
+    string work_time = 16;                          // 勤務時間
+    common.ValueText work_time_system = 17;         // 勤務時間_勤務体制
+    common.ValueText work_time_nights_shift = 18;   // 勤務時間_夜勤の有無
+    common.ValueText overtime_avg = 19;             // 労働環境_平均残業時間
+    common.ValueText official_trip_frequency = 20;  // 労働環境_出張頻度
+    repeated common.ValueText working_environment =
+        21;                                     // 労働環境_労働環境の特徴
+    common.ValueText transference_exists = 22;  // キャリア_国内転勤の有無
+    common.ValueText transference_frequency =
+        23;                                            // キャリア_国内転勤の有無_国内転
+    common.ValueText transference_abroad_exists = 24;  // キャリア_海外転勤
+    common.ValueText transference_abroad_english_is_unused =
+        25;                                    // キャリア_海外転勤_英語力不問
+    int32 business_id = 26;                    // 事業
+    string business_name = 27;                 // 事業名
+    HREvaluationType hr_evaluation_type = 28;  // 人事評価_評価基準の特徴
+    HREvaluationCompetency hr_evaluation_competency =
+        29;          // 人事評価_特に評価されるコンピテ
+    string pr = 30;  // その他_ポジションPR
+    common.ValueText accomplishment_importance =
+        31;  // ポジション特徴_業績目標達成思考
+    common.ValueText accomplishment_rate =
+        32;                                  // ポジション特徴_業績目標達成者率
+    common.ValueText sales_style_dive = 33;  // ポジション特徴_営業スタイル_新
+    common.ValueText sales_style_tel_appointment =
+        34;                                     // ポジション特徴_営業スタイル_新
+    common.ValueText sales_style_host = 35;     // ポジション特徴_営業スタイル_接
+    common.ValueText base_monthly_salary = 36;  // ポジション特徴_基本月給
+    common.ValueText career_path_out_of_site_exists =
+        37;  // ポジション特徴_キャリアパス_1
+    common.ValueText career_path_work_head_office_exists =
+        38;  // ポジション特徴_キャリアパス_2
+    common.ValueText org_trend_engineer_manager_exists =
+        39;  // ポジション特徴_組織_1
+    common.ValueText org_trend_section_member_qty =
+        40;  // ポジション特徴_組織_2
+    common.ValueText org_trend_accounting_licence_exists =
+        41;  // ポジション特徴_組織_3
+    common.ValueText org_trend_legal_licence_exists =
+        42;  // ポジション特徴_組織_4
+    common.ValueText org_trend_related_with_engineer =
+        43;                                                // ポジション特徴_組織_5
+    common.ValuesText work_environment = 44;               // ポジション特徴_労働環境
+    common.ValueText development_term = 45;                // ポジション特徴_開発スパン
+    common.ValueText development_process = 46;             // ポジション特徴_開発手法
+    common.ValueText emergency_support = 47;               // ポジション特徴_緊急対応
+    int32 joined_reserve = 48;                             // 待遇_入社支度金
+    common.ValueText employment_to_regular_employee = 49;  // 契約形態_契約社員
+    common.ValueText probation = 50;                       // ポジション特徴_試用期間
+    common.ValueText contract_period = 51;                 // ポジション特徴_契約期間
+    common.ValueText contract_extension = 52;              // ポジション特徴_契約延長
+    RegularOutsourcing regular_outsourcing = 53;           // 業務委託（レギュラー）
+    SpotOutsourcing spot_outsourcing = 54;                 // 業務委託（スポット）
+    string spot_job_description = 55;                      // 業務委託（スポット）依頼内容
+    string commission_business_description =
+        56;                                        // 業務委託（完全歩合制）業務内容
+    string commission_fee_condition = 57;          // 業務委託（完全歩合制）報酬
+    common.ValueText employment_type_change = 58;  // 契約形態変更可否
+    OutsourcingAppeal outsourcing_appeal =
+        59;                                  // 業務委託ポジションの訴求ポイント
+    common.ValueText spot_job_request = 60;  // 業務委託ポジション(スポット)の依頼内容
+    repeated Image images = 61;                           // ポジション特徴_掲載画像
+    common.ValueText smoke_free = 62;                     // 受動喫煙対策
+    common.ValueText smoke_free_environment = 63;         // 受動喫煙対策（具体的な対策）
+    common.ValueText contract_renewal = 64;               // ポジション特徴_契約更新
+    string contract_renewal_text = 65;                    // ポジション特徴_契約更新の詳細
+
+  message HREvaluationCompetency {
+    repeated AxisData axes = 1;
+    string text = 2;
+
+    message AxisData {
+      string axis = 1;
+      int32 value = 2;
+    }
+  }
+
+  message HREvaluationType {
+    int32 type1 = 1;
+    int32 type2 = 2;
+    int32 type3 = 3;
+    int32 type4 = 4;
+    string text = 5;
+  }
+
+  message Job {
+    int32 small_id = 1;
+    string label = 2;
+    bool main = 3;
+    bool has_skills = 4;
+    repeated SkillGroup skill_groups = 5;
+
+    message SkillGroup {
+      int32 id = 1;
+      repeated Skill skills = 2;
+
+      message Skill {
+        int32 id = 1;
+        bool is_main = 2;
+      }
+    }
+  }
+
+  message ModelAnnualIncome {
+    int32 income20s = 1;
+    int32 income30s = 2;
+    int32 income40s = 3;
+    string text = 4;
+  }
+
+  message OutsourcingAppeal {
+    reserved 1, 2, 3, 8, 9, 15, 16, 17;
+    bool experienceNotEssential = 4;
+    bool weekendWorker = 5;
+    int32 remoteWorkType = 6 [features.field_presence = EXPLICIT];
+    bool transportationPayment = 7;
+    bool onlineInterview = 10;
+    bool shortTimeWorker = 11;
+    bool dailyPayment = 12;
+    bool workTimeNegotiable = 13;
+    int32 workType = 14 [features.field_presence = EXPLICIT];
+    int32 dailyWage = 18 [features.field_presence = EXPLICIT];
+  }
+
+  message RegularOutsourcing {
+    int32 fee = 1;
+    int32 contract_period = 2;
+    double monthly_working_time = 3;
+    double monthly_fee = 4;
+    int32 hourly_fee = 5;
+    string text = 6;
+    int32 incentive = 7;
+  }
+
+  message SpotOutsourcing {
+    int32 fee = 1;
+    double working_time = 2;
+    int32 hourly_fee = 3;
+    string text = 4;
+  }
+
+  message WorkAddresses {
+    repeated WorkAddress values = 1;
+    string text = 2;
+
+    message WorkAddress {
+      int32 id = 1;
+      string label = 2;
+      string text = 3;
+    }
+  }
+
+  message Image {
+    // 削除された項目
+    reserved 2;
+    int32 display_type = 1; // 1:メイン画像、2:サブ画像
+    string file_path = 3;   // S3オブジェクトのファイルパス (URLのパス部分と一致する)
+  }
+}
+
+message GuaranteedIncome {
+  int32 income_from_type = 1;
+  int32 bulk_income_from = 2 [features.field_presence = EXPLICIT];
+  int32 bulk_income_to = 3 [features.field_presence = EXPLICIT];
+  string text = 4;
+  repeated Income incomes = 5;
+
+  message Income {
+    int32 income_id = 1;
+    int32 income_from = 2;
+    int32 income_to = 3;
+  }
+}
+
+message Fitting {
+  int32 position_id = 1;  // ポジションID
+
+  int32 income_from = 2 [features.field_presence = EXPLICIT];  // 年収From
+  int32 income_to = 3 [features.field_presence = EXPLICIT];    // 年収To
+  bool is_menkaku = 4;                         // メンカクか
+  bool is_satisfied = 5;                       // 希望条件一致か
+  bool is_income_up = 6;                       // 年収UPか
+  int32 target_match_rank = 7;                 // 募集条件一致率
+  int32 competency_match_rank = 8;             // 活躍可能性
+
+  bool is_workaddress_match = 9;       // 希望勤務地一致・不一致
+  bool is_job_match = 10;              // 希望職種一致・不一致
+  bool is_income_match = 11;           // 希望年収一致・不一致
+  bool is_accepted_income_match = 12;  // 希望年収に対して許容範囲内か
+  bool is_target_match = 13;           // ターゲット一致か
+  bool is_starred_by_company = 14;     // 企業側いいね対象か
+}
+
+message Filter {
+  string Word = 1;
+  int32 CompanyID = 2 [features.field_presence = EXPLICIT];
+  int32 JobTypeSmallID = 3 [features.field_presence = EXPLICIT];
+  string Starred = 4;
+  string Browsed = 5;
+  string Certificated = 6;
+  string Satisfied = 7;
+  string Trashed = 8;
+  string ScoutMessage = 9;
+  string BillingInProgress = 10;
+}
+
+message Sort {
+  string First = 1;
+  string Second = 2;
+}
+
+message OutsourcingFitting {
+  int32 position_id = 1;            // ポジションID
+  bool is_menkaku = 2;              // メンカクか
+  bool is_satisfied = 3;            // 希望条件一致か
+  bool is_target_match = 4;         // ターゲット一致か
+}
+
+message Matching {
+  map<int32, int32> job_large = 1;
+  map<int32, int32> job_middle = 2;
+  map<int32, int32> job_small = 3;
+  map<int32, int32> skill_ids = 4;
+  map<int32, int32> lang_ids = 5;
+  int32 management_exp_term_id = 6;
+  int32 management_people_qty_id = 7 [features.field_presence = EXPLICIT];
+  DriverLicence driver_licence = 8;
+  repeated int32 licences = 9;
+  int32 english_lang_level_id = 10 [features.field_presence = EXPLICIT];
+  int32 english_toeic_score_id = 11 [features.field_presence = EXPLICIT];
+  int32 english_i_toefl_score_id = 12 [features.field_presence = EXPLICIT];
+  int32 english_p_toefl_score_id = 13 [features.field_presence = EXPLICIT];
+  int32 graduate_department_id = 14 [features.field_presence = EXPLICIT];
+  int32 graduate_school_id = 15 [features.field_presence = EXPLICIT];
+  repeated int32 msoffice_excel = 16;
+  repeated int32 msoffice_access = 17;
+  bool work_abroad = 18;
+  bool is_input_portfolio = 19;
+  bool is_input_resume = 20;
+  Axis axis = 21;
+  message DriverLicence {
+    // HasLicence True: 必須
+    bool has_licence = 1;
+    // IsFull MT車運転可能かどうか
+    bool is_full = 2;
+  }
+}
+
+message Axis {
+  // パーソナリティ
+  int32 management_style = 1; // マネジメントスタイル
+  int32 vitality = 2; // 活力
+  int32 sociability = 3; // 人あたり
+  int32 teamwork = 4; // チームワーク
+  int32 creativity = 5; // 創造性
+  int32 problem_solving = 6; // 問題解決力
+  int32 pressure_tolerance = 7; // プレッシャーへの耐性
+  int32 coordination = 8; // 調整力
+  int32 leadership = 9; // リーダーシップ
+  int32 adaptability = 10; // 対応力
+  int32 perseverance = 11; // 粘り強さ
+  int32 focus = 12; // 一点集中
+  int32 planning = 13; // 計画性
+  int32 interpersonal_influence = 14; // 対人影響
+  int32 goal_setting = 15; // 目標の立て方
+  int32 decisiveness = 16; // 決断力
+  int32 analytical_ability = 17; // 分析力
+  int32 conceptualization = 18; // 概念化
+  int32 continuity = 19; // 継続力
+  int32 relationship_building = 20; // 人間関係の構築
+  int32 empathy = 21; // 共感力
+  int32 self_learning = 22; // 自学
+  // 上司部下適正
+  int32 directive = 23; // 指示型
+  int32 delegation = 24; // 委任型
+  int32 listening = 25; // 傾聴型
+  int32 dialogue = 26; // 対話型
+  int32 negotiation = 27; // 交渉型
+  int32 obedient = 28; // 従順型
+  int32 autonomous = 29; // 自律型
+  int32 cooperative = 30; // 協調型
+  int32 proactive = 31; // 提案型
+  int32 assertive = 32; // 主張型
+  // ストレス要因
+  int32 uncertain_situations = 33; // 不確実な状況
+  int32 response_to_sudden_changes = 34; // 急な変化への対応
+  int32 hard_work = 35; // ハードワーク
+  int32 lack_of_planning = 36; // 計画性のなさ
+  int32 strict_management = 37; // 厳しい管理
+  int32 lack_of_evaluation = 38; // 評価の欠如
+  int32 inability_to_exercise_initiative = 39; // 主体性が発揮できない
+  int32 exclusion_from_decision_making = 40; // 意思決定に関与できない
+  int32 low_standards = 41; // 要求水準が低い
+  int32 high_analysis = 42; // 高度な分析
+  int32 lack_of_learning_opportunities = 43; // 学習機会の不足
+  int32 following_precedents = 44; // 前例踏襲
+  int32 routine_work = 45; // 定型業務
+  int32 difficult_decisions = 46; // 困難な決断
+  int32 negotiation_tasks = 47; // 交渉業務
+  int32 consensus_building = 48; // 合意形成
+  int32 conflict_with_others = 49; // 周囲との対立
+  int32 dry_workplace = 50; // ドライな職場
+  int32 caught_in_the_middle = 51; // 板挟み状態
+  int32 collaborative_work = 52; // 共同業務
+}

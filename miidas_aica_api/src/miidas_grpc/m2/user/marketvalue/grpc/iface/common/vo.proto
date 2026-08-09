@@ -1,0 +1,38 @@
+edition = "2023";
+
+package miidas.user.marketvalue.common;
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/common";
+
+message ValueText {
+    int32 id = 1;
+    string label = 2;
+    string text = 3;
+}
+
+message ValuesText {
+    repeated IntIdNamePair ids = 1;
+    string text = 2;
+}
+
+message IntIdNamePair {
+    int32 id = 1;
+    string name = 2;
+}
+
+message IntIdLabelPair {
+    int32 id = 1;
+    string label = 2;
+}
+
+message Flag {
+    bool on = 1;
+    string label = 2;
+}
+
+message FlagText {
+    Flag flg = 1;
+    string name = 2;
+    string text = 3;
+}

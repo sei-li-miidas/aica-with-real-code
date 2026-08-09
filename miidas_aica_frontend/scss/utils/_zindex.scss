@@ -1,0 +1,74 @@
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
+// --------------------------------------------------------------------------
+// z-index管理
+// --------------------------------------------------------------------------
+
+// 基本となるz-indexの配列
+// この配列のindexを使用するので、右へ行くほどz-indexが上
+$elements:
+  body, banner, header, footer, loadingBar, tooltipBalloon, suggest, tabBar,
+  modal, notification, tooltipOnModal, coachMark;
+
+// --------------------------------------------------------------------------
+// insert-nth
+// 指定したindexに値を挿入する
+// --------------------------------------------------------------------------
+
+// 使用方法:
+// 1.基本的には各scssで、このzindex.scssを読み込んで使用
+//   @use "@/scss/utils/zindex";
+// 2.bodyとheaderの間に設定したい場合は以下のようにする
+//   $elements: insert-nth($elements, 1, hoge);
+// 3.中身はこうなります
+//   $elements: body, hoge, header;
+// 4.scssのz-indexの指定は以下のようにする
+//   z-index: index($elements, hoge);
+// 5.cssではこうなります
+//   z-index: 2;
+
+@function insert-nth($list, $index, $value) {
+  $result: null;
+
+  @if meta.type-of($index) != number {
+    @warn "$index: #{string.quote($index)} is not a number for `insert-nth`.";
+  } @else if $index < 1 {
+    @warn "List index 0 must be a non-zero integer for `insert-nth`";
+  } @else if $index > list.length($list) {
+    @warn "List index is #{$index} but list is only #{list.length($list)} item long for `insert-nth'.";
+  } @else {
+    $result: ();
+
+    @for $i from 1 through list.length($list) {
+      $result: list.append($result, list.nth($list, $i));
+
+      @if $i == $index {
+        $result: list.append($result, $value);
+      }
+    }
+  }
+
+  @return $result;
+}
+
+// --------------------------------------------------------------------------
+// prepend
+// 先頭に値を追加する
+// --------------------------------------------------------------------------
+
+// 使用方法:
+// 1.基本的には各scssで、このzindex.scssを読み込んで使用
+// @use "@/scss/utils/zindex";
+// 2.先頭に設定したい場合は以下のようにする
+// $elements: prepend($elements,2, hoge);
+// 3.中身はこうなります
+// $elements: hoge, header, footer;
+// 4.scssのz-indexの指定は以下のようにする
+//   z-index: index($elements, hoge);
+// 5.cssではこうなります
+//   z-index: 1;
+
+@function prepend($list, $value) {
+  @return list.join($value, $list);
+}

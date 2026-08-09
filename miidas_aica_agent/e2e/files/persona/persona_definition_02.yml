@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 佐藤
+  first_name: 花子
+  last_name_kana: サトウ
+  first_name_kana: ハナコ
+  email: e2e.persona02@example.com
+  phone_no: "09000000002"
+  gender: 2
+  password: Pass0002
+  birth_year: 1994
+  birth_month: 7
+  first_language: 91
+  driver_licence: 1
+  residence:
+    prefecture: 神奈川県
+    city: 横浜市
+education:
+  school_type: 6
+  graduation_year: 2012
+  english_level: 2
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 420
+  work_addresses:
+    - prefecture: 神奈川県
+      city: 横浜市
+  will_remote_work: true
+  will_job_change_period: 3
+  will_job_type_keywords:
+    - 事務
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

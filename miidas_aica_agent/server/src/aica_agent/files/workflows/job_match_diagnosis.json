@@ -1,0 +1,144 @@
+{
+  "id": "job_match_diagnosis",
+  "name": "向いている仕事の診断",
+  "displayType": "modal",
+  "steps": [
+    {
+      "id": 1,
+      "question": "やりたい仕事を教えてください。",
+      "questionPrompt": "分かりました！では、あなたに向いている仕事を診断するために、まずやりたい仕事を3〜5つ教えてください！",
+      "selectionType": "multiple",
+      "options": [
+        {
+          "id": "communication",
+          "name": "コミュニケーション・人間関係",
+          "items": [
+            {"label": "人と関わる（接客・打ち合わせなど）", "value": 1, "jobNature": "他者とのかかわり", "allowFreeText": false},
+            {"label": "対面での話し合い・会議", "value": 2, "jobNature": "対面での議論", "allowFreeText": false},
+            {"label": "電話でのやり取り", "value": 3, "jobNature": "電話での会話", "allowFreeText": false},
+            {"label": "メールやチャットでのやり取り", "value": 4, "jobNature": "電子メール", "allowFreeText": false},
+            {"label": "文書や資料の作成", "value": 5, "jobNature": "ビジネスレターやメモの作成", "allowFreeText": false},
+            {"label": "チームで協力して進める", "value": 6, "jobNature": "グループやチームでの仕事", "allowFreeText": false},
+            {"label": "社外の人（顧客・取引先）との関わり", "value": 7, "jobNature": "外部の顧客等との接触", "allowFreeText": false},
+            {"label": "チームをまとめる・リーダーシップ", "value": 8, "jobNature": "他者と調整し、リードする", "allowFreeText": false},
+            {"label": "意見の対立や交渉・クレーム対応", "value": 9, "jobNature": "仕事上での他者との対立", "allowFreeText": false},
+            {"label": "激しい怒りやトラブルへの対応", "value": 10, "jobNature": "暴力的な人々への対応", "allowFreeText": false},
+            {"label": "人と物理的に密接する", "value": 11, "jobNature": "他者との身体的近接", "allowFreeText": false}
+          ]
+        },
+        {
+          "id": "style",
+          "name": "仕事の進め方・裁量",
+          "items": [
+            {"label": "自分の裁量で進められる", "value": 12, "jobNature": "意思決定の自由", "allowFreeText": false},
+            {"label": "目標や計画を自分で決める", "value": 13, "jobNature": "優先順位や目標の自己設定", "allowFreeText": false},
+            {"label": "スケジュールが固定されている", "value": 14, "jobNature": "規則的（ルーチンやスケジュールが決まっている）", "allowFreeText": false},
+            {"label": "状況に応じて予定が変わりやすい", "value": 15, "jobNature": "不規則（天候、生産需要、契約期間などで変わる）", "allowFreeText": false},
+            {"label": "繁忙期と閑散期の差が激しい（季節性）", "value": 16, "jobNature": "季節的（一年のうちの一定の時期だけ）", "allowFreeText": false},
+            {"label": "決まったルーティン", "value": 17, "jobNature": "同一作業の反復", "allowFreeText": false},
+            {"label": "同じ動作の繰り返し（単純作業など）", "value": 18, "jobNature": "反復作業", "allowFreeText": false}
+          ]
+        },
+        {
+          "id": "pressure",
+          "name": "プレッシャー・責任",
+          "items": [
+            {"label": "厳しい締め切りやスピードが求められる", "value": 19, "jobNature": "時間的切迫", "allowFreeText": false},
+            {"label": "売上や成果などのノルマ・責任がある", "value": 20, "jobNature": "結果・成果への責任", "allowFreeText": false},
+            {"label": "ミスが許されない細かい正確さ", "value": 21, "jobNature": "厳密さ、正確さ", "allowFreeText": false},
+            {"label": "他人の命や健康、安全を預かる", "value": 22, "jobNature": "他者の健康・安全への責任", "allowFreeText": false},
+            {"label": "自分の決断が会社や他人に大きく影響する", "value": 23, "jobNature": "意思決定が他者や企業に及ぼす影響力", "allowFreeText": false},
+            {"label": "競争や勝ち負けがはっきりしている", "value": 24, "jobNature": "競争水準", "allowFreeText": false}
+          ]
+        },
+        {
+          "id": "environment",
+          "name": "作業環境・身体的負荷",
+          "items": [
+            {"label": "快適な屋内での仕事", "value": 25, "jobNature": "空調のきいた屋内作業", "allowFreeText": false},
+            {"label": "空調がない（暑い・寒い）屋内での仕事", "value": 26, "jobNature": "空調のきいていない屋内作業", "allowFreeText": false},
+            {"label": "屋外での仕事", "value": 27, "jobNature": "屋外作業", "allowFreeText": false},
+            {"label": "座り仕事", "value": 28, "jobNature": "座り作業", "allowFreeText": false},
+            {"label": "立ち仕事", "value": 29, "jobNature": "立ち作業", "allowFreeText": false},
+            {"label": "よく歩く・動く仕事", "value": 30, "jobNature": "歩行、走行", "allowFreeText": false},
+            {"label": "手先や道具・機械を操作する仕事", "value": 31, "jobNature": "モノ、道具、制御装置を扱う手作業", "allowFreeText": false},
+            {"label": "機械やラインのスピードに合わせる仕事", "value": 32, "jobNature": "機器等の速度に応じた作業", "allowFreeText": false},
+            {"label": "自動化されたシステムや機械を使う仕事", "value": 33, "jobNature": "機械やコンピュータによる仕事の自動化", "allowFreeText": false}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "やりたくない仕事を教えてください。",
+      "questionPrompt": "ありがとうございます！次に、やりたくない仕事を最大5つ教えてください。",
+      "selectionType": "multiple",
+      "options": [
+        {
+          "id": "communication",
+          "name": "コミュニケーション・人間関係",
+          "items": [
+            {"label": "人と関わる（接客・打ち合わせなど）", "value": 1, "jobNature": "他者とのかかわり", "allowFreeText": false},
+            {"label": "対面での話し合い・会議", "value": 2, "jobNature": "対面での議論", "allowFreeText": false},
+            {"label": "電話でのやり取り", "value": 3, "jobNature": "電話での会話", "allowFreeText": false},
+            {"label": "メールやチャットでのやり取り", "value": 4, "jobNature": "電子メール", "allowFreeText": false},
+            {"label": "文書や資料の作成", "value": 5, "jobNature": "ビジネスレターやメモの作成", "allowFreeText": false},
+            {"label": "チームで協力して進める", "value": 6, "jobNature": "グループやチームでの仕事", "allowFreeText": false},
+            {"label": "社外の人（顧客・取引先）との関わり", "value": 7, "jobNature": "外部の顧客等との接触", "allowFreeText": false},
+            {"label": "チームをまとめる・リーダーシップ", "value": 8, "jobNature": "他者と調整し、リードする", "allowFreeText": false},
+            {"label": "意見の対立や交渉・クレーム対応", "value": 9, "jobNature": "仕事上での他者との対立", "allowFreeText": false},
+            {"label": "激しい怒りやトラブルへの対応", "value": 10, "jobNature": "暴力的な人々への対応", "allowFreeText": false},
+            {"label": "人と物理的に密接する", "value": 11, "jobNature": "他者との身体的近接", "allowFreeText": false}
+          ]
+        },
+        {
+          "id": "style",
+          "name": "仕事の進め方・裁量",
+          "items": [
+            {"label": "自分の裁量で進められる", "value": 12, "jobNature": "意思決定の自由", "allowFreeText": false},
+            {"label": "目標や計画を自分で決める", "value": 13, "jobNature": "優先順位や目標の自己設定", "allowFreeText": false},
+            {"label": "スケジュールが固定されている", "value": 14, "jobNature": "規則的（ルーチンやスケジュールが決まっている）", "allowFreeText": false},
+            {"label": "状況に応じて予定が変わりやすい", "value": 15, "jobNature": "不規則（天候、生産需要、契約期間などで変わる）", "allowFreeText": false},
+            {"label": "繁忙期と閑散期の差が激しい（季節性）", "value": 16, "jobNature": "季節的（一年のうちの一定の時期だけ）", "allowFreeText": false},
+            {"label": "決まったルーティン", "value": 17, "jobNature": "同一作業の反復", "allowFreeText": false},
+            {"label": "同じ動作の繰り返し（単純作業など）", "value": 18, "jobNature": "反復作業", "allowFreeText": false}
+          ]
+        },
+        {
+          "id": "pressure",
+          "name": "プレッシャー・責任",
+          "items": [
+            {"label": "厳しい締め切りやスピードが求められる", "value": 19, "jobNature": "時間的切迫", "allowFreeText": false},
+            {"label": "売上や成果などのノルマ・責任がある", "value": 20, "jobNature": "結果・成果への責任", "allowFreeText": false},
+            {"label": "ミスが許されない細かい正確さ", "value": 21, "jobNature": "厳密さ、正確さ", "allowFreeText": false},
+            {"label": "他人の命や健康、安全を預かる", "value": 22, "jobNature": "他者の健康・安全への責任", "allowFreeText": false},
+            {"label": "自分の決断が会社や他人に大きく影響する", "value": 23, "jobNature": "意思決定が他者や企業に及ぼす影響力", "allowFreeText": false},
+            {"label": "競争や勝ち負けがはっきりしている", "value": 24, "jobNature": "競争水準", "allowFreeText": false}
+          ]
+        },
+        {
+          "id": "environment",
+          "name": "作業環境・身体的負荷",
+          "items": [
+            {"label": "快適な屋内での仕事", "value": 25, "jobNature": "空調のきいた屋内作業", "allowFreeText": false},
+            {"label": "空調がない（暑い・寒い）屋内での仕事", "value": 26, "jobNature": "空調のきいていない屋内作業", "allowFreeText": false},
+            {"label": "屋外での仕事", "value": 27, "jobNature": "屋外作業", "allowFreeText": false},
+            {"label": "座り仕事", "value": 28, "jobNature": "座り作業", "allowFreeText": false},
+            {"label": "立ち仕事", "value": 29, "jobNature": "立ち作業", "allowFreeText": false},
+            {"label": "よく歩く・動く仕事", "value": 30, "jobNature": "歩行、走行", "allowFreeText": false},
+            {"label": "手先や道具・機械を操作する仕事", "value": 31, "jobNature": "モノ、道具、制御装置を扱う手作業", "allowFreeText": false},
+            {"label": "機械やラインのスピードに合わせる仕事", "value": 32, "jobNature": "機器等の速度に応じた作業", "allowFreeText": false},
+            {"label": "自動化されたシステムや機械を使う仕事", "value": 33, "jobNature": "機械やコンピュータによる仕事の自動化", "allowFreeText": false}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "気になる職種を選択してください。",
+      "questionPrompt": "あなたの選択に合った職種をピックアップしました！気になる職種を1つ以上選択してください。",
+      "selectionType": "multiple",
+      "options": []
+    }
+  ]
+}

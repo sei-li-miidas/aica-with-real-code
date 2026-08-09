@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 小林
+  first_name: 玲奈
+  last_name_kana: コバヤシ
+  first_name_kana: レイナ
+  email: e2e.persona08@example.com
+  phone_no: "09000000008"
+  gender: 2
+  password: Pass0008
+  birth_year: 1995
+  birth_month: 12
+  first_language: 91
+  driver_licence: 1
+  residence:
+    prefecture: 京都府
+    city: 京都市
+education:
+  school_type: 6
+  graduation_year: 2013
+  english_level: 2
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 390
+  work_addresses:
+    - prefecture: 京都府
+      city: 京都市
+  will_remote_work: false
+  will_job_change_period: 4
+  will_job_type_keywords:
+    - マーケティング
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

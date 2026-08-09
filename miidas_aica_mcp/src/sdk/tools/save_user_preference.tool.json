@@ -1,0 +1,59 @@
+{
+  "name": "save_user_preference",
+  "description": "ユーザーから得た情報を、会話の流れに関係なく随時保存してください。特にUserPreferences_In_Sentenceには希望条件だけでなく個人的趣向や重要前提も保存してください。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "Scope": {
+        "type": ["string", "null"],
+        "enum": ["Minimum", ""],
+        "description": "ユーザーの希望年収の範囲を指定するEnumです。Minimum: 希望年収が言及された場合に設定。"
+      },
+      "Amount": {
+        "type": ["integer", "null"],
+        "description": "ユーザーの希望年収。万円単位。例:400万円の場合は400"
+      },
+      "DayOffs": {
+        "type": ["string", "null"],
+        "enum": ["土日祝休み", "毎週2日休み", "その他", ""],
+        "description": "ユーザーが休日の希望を指定した場合のみ、保存してください。"
+      },
+      "JobtypeNames": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "ユーザーが希望している職種名を保存できます。"
+      },
+      "AverageOvertime": {
+        "type": ["string", "null"],
+        "enum": ["10時間以内", ""],
+        "description": "ユーザーが残業時間の希望を示した場合に保存してください。現在のenumでは「10時間以内」のみ指定可能です。残業時間に関する希望が不明または言及がない場合は、\"\"またはnullを設定してください。"
+      },
+      "FullyRemoteWork": {
+        "type": ["boolean", "null"],
+        "description": "ユーザーからフルリモート指定の場合はTRUEを保存してください。"
+      },
+      "Location_Prefecture_Residence": {
+        "type": ["string", "null"],
+        "description": "ユーザーが居住している都道府県名を保存できます。このパラメータに値を入れる際は、Location_City_Residenceにも値が入っている必要があります。もし、ユーザーから都道府県のみの提示があった際は、必ず市区町村も確認し、Location_City_Residenceにも値を入力してください。"
+      },
+      "Location_City_Residence": {
+        "type": ["string", "null"],
+        "description": "ユーザーが居住している市区町村名を保存できます。原則は「市」まで入力してください。東京都23区は区名ではなく「23区」と入力します（例: 東京都港区→23区）。例: 愛知県名古屋市中区→名古屋市。市が存在しない地域は町村名を入力します。このパラメータに値を入れる際は、Location_Prefecture_Residenceにも値が入っている必要があります。もし、ユーザーから市区町村名のみの提示があった際は、必ず都道府県も確認し、Location_Prefecture_Residenceにも値を入力してください。"
+      },
+      "Location_Prefecture_Preference": {
+        "type": ["string", "null"],
+        "description": "居住地の説明を拒否したユーザーの都道府県名を保存できます。このパラメータに値を入れる際は、Location_City_Preferenceにも値が入っている必要があります。もし、ユーザーから都道府県のみの提示があった際は、必ず市区町村も確認し、Location_City_Preferenceにも値を入力してください。"
+      },
+      "Location_City_Preference": {
+        "type": ["string", "null"],
+        "description": "居住地の説明を拒否したユーザーの市区町村名を保存できます。原則は「市」まで入力してください。東京都23区は区名ではなく「23区」と入力します（例: 東京都港区→23区）。例: 愛知県名古屋市中区→名古屋市。市が存在しない地域は町村名を入力します。このパラメータに値を入れる際は、Location_Prefecture_Preferenceにも値が入っている必要があります。もし、ユーザーから市区町村名のみの提示があった際は、必ず都道府県も確認し、Location_Prefecture_Preferenceにも値を入力してください。"
+      },
+      "UserPreferences_In_Sentence": {
+        "type": ["string", "null"],
+        "description": "ユーザーの希望条件の要約を保存してください。"
+      }
+    }
+  }
+}

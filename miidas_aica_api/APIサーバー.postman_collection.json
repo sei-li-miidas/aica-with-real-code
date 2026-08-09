@@ -1,0 +1,1021 @@
+{
+  "info": {
+    "_postman_id": "24ebd4e9-cf3e-4f0e-9a69-7be99c106271",
+    "name": "APIサーバー",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38824808"
+  },
+  "item": [
+    {
+      "name": "ポジション",
+      "item": [
+        {
+          "name": "ポジション検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Salary\": 100,\n    \"Locations\": [\n        {\n            \"LocationType\": \"居住地\",\n            \"PrefectureName\": \"東京都\",\n            \"CityName\": \"八王子市\"\n        }\n    ],\n    \"FullyRemoteWork\": false,\n    \"PositionKeyword\": \"Web開発\",\n    \"JobTypeNames\": [\n        \"Web開発\"\n    ],\n    \"DayOffs\": [],\n    \"AverageOvertime\": \"\",\n    \"Limit\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "IT専門職ポジション検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "111f9de8-b1cd-45a5-8ee4-673f3aed5f3c",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Phases\": null,\n    \"Salary\": 400,\n    \"DayOffs\": null,\n    \"Locations\": [\n        {\n            \"CityName\": \"熊本市\",\n            \"LocationType\": \"希望勤務地\",\n            \"PrefectureName\": \"熊本県\"\n        }\n    ],\n    \"Positions\": null,\n    \"RequestID\": \"36ae426c-4e80-44e9-9894-220f081a5e15\",\n    \"SessionID\": \"c1df5183-2043-4da1-b672-44ea528a94ca\",\n    \"JobTypeNames\": [\n        \"情報システム（業務）\"\n    ],\n    \"SystemScales\": null,\n    \"CloudServices\": null,\n    \"ProjectScales\": null,\n    \"AverageOvertime\": \"10時間以内\",\n    \"PositionKeyword\": null,\n    \"RemoteWorkPossible\": null,\n    \"ProgrammingLanguages\": null,\n    \"ApplicationFrameworks\": null,\n    \"DevelopmentProjectTypes\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search/it_engineer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search",
+                "it_engineer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "職種選定",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "111f9de8-b1cd-45a5-8ee4-673f3aed5f3c",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"JobtypeNames\": [\n        \"ITコンサルタント（アプリ）\",\n        \"ITコンサルタント（インフラ）\",\n        \"プロジェクトマネージャー（IT）\",\n        \"システムアーキテクト\",\n        \"スマートフォンアプリ開発（ネイティブ）\",\n        \"Webアプリ開発\"\n    ],\n    \"CurrentJobtypeName\": \"Webアプリ開発\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/jobtypes/decided",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "jobtypes",
+                "decided"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "指定職種専用詳細条件",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "6e712570-d181-42ae-9268-3617a2775b21",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"JobtypeName\": \"Webアプリ開発\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search_filter/jobtype",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search_filter",
+                "jobtype"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "現在職種別検索条件",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "0b5f892b-dea2-423a-8c8f-ba28ac572743",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search_filter/current",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search_filter",
+                "current"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "選択中の職種",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "0b5f892b-dea2-423a-8c8f-ba28ac572743",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search_filter/current/jobtype",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search_filter",
+                "current",
+                "jobtype"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "金融営業ポジション検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "111f9de8-b1cd-45a5-8ee4-673f3aed5f3c",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Salary\": 100,\n    \"Locations\": [\n        {\n            \"LocationType\": \"居住地\",\n            \"PrefectureName\": \"東京都\",\n            \"CityName\": \"八王子市\"\n        },\n        {\n            \"LocationType\": \"希望勤務地\",\n            \"PrefectureName\": \"熊本県\",\n            \"CityName\": \"熊本市\"\n        }\n    ],\n    \"JobTypeNames\": [\n        \"金融営業（法人）\"\n    ],\n    \"HandledFinancialProducts\": [\"預貯金\", \"国内債券\"],\n    \"DayOffs\": [],\n    \"AverageOvertime\": \"\",\n    \"Limit\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search/financial_sales",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search",
+                "financial_sales"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "職種別ポジション検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "111f9de8-b1cd-45a5-8ee4-673f3aed5f3c",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Salary\": 1000,\n    \"Locations\": [\n        {\n            \"LocationType\": \"居住地\",\n            \"PrefectureName\": \"東京都\",\n            \"CityName\": \"八王子市\"\n        }\n    ],\n    \"FullyRemoteWork\": false,\n    \"PositionKeyword\": \"Web開発\",\n    \"JobTypeNames\": [\n        \"Webアプリ開発\"\n    ],\n    \"DayOffs\": [],\n    \"Limit\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/search/jobtype_specific",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "search",
+                "jobtype_specific"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ポジションサマリ取得",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"PositionIDs\": [\n        4342\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/summaries",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "summaries"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ポジション詳細",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/detail/750169",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "detail",
+                "750169"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "おすすめ",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "2e3f06f1-4642-4578-a66d-144c6421caff",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/positions/recommendations/theme1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "positions",
+                "recommendations",
+                "theme1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "事業",
+      "item": [
+        {
+          "name": "事業詳細",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/businesses/detail/position_id/750169",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "businesses",
+                "detail",
+                "position_id",
+                "750169"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "企業",
+      "item": [
+        {
+          "name": "企業詳細",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/companies/detail/position_id/750169",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "companies",
+                "detail",
+                "position_id",
+                "750169"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "業種",
+      "item": [
+        {
+          "name": "業種検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Sentence\": \"ITエンジニア\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/industry/search/semantic",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "industry",
+                "search",
+                "semantic"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "勤務地",
+      "item": [
+        {
+          "name": "通勤圏検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"LocationType\": \"希望勤務地\",\n    \"PrefectureName\": \"東京都\",\n    \"CityName\": \"千代田\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/location/search/commuting_areas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "location",
+                "search",
+                "commuting_areas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "都道府県・市区町村名検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n            \"PrefectureName\": \"東京都\",\n            \"CityName\": \"千代田\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/location/verify/prefecture/city",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "location",
+                "verify",
+                "prefecture",
+                "city"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "キーワード検索",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Keyword\": \"東京\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://api-server:10001/aica/mcptool/location/search/keyword",
+              "protocol": "http",
+              "host": [
+                "api-server"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "location",
+                "search",
+                "keyword"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "通勤圏検索 Copy",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-SESSION-ID",
+                    "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                    "type": "text"
+                  },
+                  {
+                    "key": "X-REQUEST-ID",
+                    "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"Keyword\": \"東京\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://api-server:10001/aica/mcptool/location/search/keyword",
+                  "protocol": "http",
+                  "host": [
+                    "api-server"
+                  ],
+                  "port": "10001",
+                  "path": [
+                    "aica",
+                    "mcptool",
+                    "location",
+                    "search",
+                    "keyword"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 01 Aug 2025 09:05:45 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "124"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"CityID\": 132292,\n        \"CityName\": \"西東京市\",\n        \"Name\": \"東京都西東京市\",\n        \"PrefectureID\": 13,\n        \"PrefectureName\": \"東京都\"\n    }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "職種",
+      "item": [
+        {
+          "name": "職種検索（キーワード）",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"Keyword\": \"ITエンジニア\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/jobtype/search/semantic",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "jobtype",
+                "search",
+                "semantic"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "職種検索（性質）",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"JobNaturePreferences\": [\n        {\n            \"JobNature\": \"他者とのかかわり\",\n            \"Preference\": \"やりたい\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/jobtype/search/nature",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "jobtype",
+                "search",
+                "nature"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "マスター",
+      "item": [
+        {
+          "name": "マスターデータ取得",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-SESSION-ID",
+                "value": "a173c465-3ed2-4a01-bab0-846ce270b809",
+                "type": "text"
+              },
+              {
+                "key": "X-REQUEST-ID",
+                "value": "2217c819-17d2-470b-9107-10f4a0c648f8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:10001/aica/mcptool/masters/?names=City",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "10001",
+              "path": [
+                "aica",
+                "mcptool",
+                "masters",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "names",
+                  "value": "SchoolType",
+                  "disabled": true
+                },
+                {
+                  "key": "names",
+                  "value": "LangLevel",
+                  "disabled": true
+                },
+                {
+                  "key": "names",
+                  "value": "ProfessionalTrainingCollegeCategory",
+                  "disabled": true
+                },
+                {
+                  "key": "names",
+                  "value": "City",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+@use "@/scss/utils/variables";
+
+.matchRank {
+  margin-bottom: 24px;
+}
+
+.menkaku {
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$colorPrimary;
+}
+
+.menkakuMessage {
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.value {
+  & + & {
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Keyword": "Mockキーワード",
+  "Jobtypes": [
+    {
+      "ID": 1,
+      "Name": "Mock職種",
+      "Description": "Mock職種の説明",
+      "Distance": 0.12
+    }
+  ]
+}

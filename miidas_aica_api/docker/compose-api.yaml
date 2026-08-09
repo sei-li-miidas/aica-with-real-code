@@ -1,0 +1,57 @@
+name: ai-ca
+services:
+  api-server:
+    container_name: api-server
+    image: golang:1.26.5
+    ports:
+      - "${AICA_MCP_TOOL_API_PORT}:${AICA_MCP_TOOL_API_PORT}"
+    environment:
+      - TZ=Asia/Tokyo
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AICA_ENV=${AICA_ENV}
+      - AICA_MCP_TOOL_API_PORT=${AICA_MCP_TOOL_API_PORT}
+      - AICA_MCP_TOOL_API_DB_HOST=${AICA_MCP_TOOL_API_DB_HOST}
+      - AICA_MCP_TOOL_API_DB_PORT=${AICA_MCP_TOOL_API_DB_PORT}
+      - AICA_MCP_TOOL_API_DB_USER=${AICA_MCP_TOOL_API_DB_USER}
+      - AICA_MCP_TOOL_API_DB_PASSWORD=${AICA_MCP_TOOL_API_DB_PASSWORD}
+      - AICA_MCP_TOOL_API_DB_NAME=${AICA_MCP_TOOL_API_DB_NAME}
+      - AICA_MCP_TOOL_API_DB_SSLMODE=${AICA_MCP_TOOL_API_DB_SSLMODE}
+      - AICA_MCP_TOOL_API_MIIDAS_DB_HOST=${AICA_MCP_TOOL_API_MIIDAS_DB_HOST}
+      - AICA_MCP_TOOL_API_MIIDAS_DB_USER=${AICA_MCP_TOOL_API_MIIDAS_DB_USER}
+      - AICA_MCP_TOOL_API_MIIDAS_DB_PASSWORD=${AICA_MCP_TOOL_API_MIIDAS_DB_PASSWORD}
+      - AICA_MCP_TOOL_API_MIIDAS_DB_PORT=${AICA_MCP_TOOL_API_MIIDAS_DB_PORT}
+      - AICA_MCP_TOOL_API_MV2_HOST=${AICA_MCP_TOOL_API_MV2_HOST}
+      - AICA_MCP_TOOL_API_MV2_PORT=${AICA_MCP_TOOL_API_MV2_PORT}
+      - AICA_MCP_TOOL_API_MV2_INSECURE=${AICA_MCP_TOOL_API_MV2_INSECURE}
+      - MIIDAS_S3_USER_ASSETS_ENDPOINT=${MIIDAS_S3_USER_ASSETS_ENDPOINT}
+      - AICA_MCP_TOOL_BATCH_DB_HOST=${AICA_MCP_TOOL_BATCH_DB_HOST}
+      - AICA_MCP_TOOL_BATCH_DB_PORT=${AICA_MCP_TOOL_BATCH_DB_PORT}
+      - AICA_MCP_TOOL_BATCH_DB_USER=${AICA_MCP_TOOL_BATCH_DB_USER}
+      - AICA_MCP_TOOL_BATCH_DB_PASSWORD=${AICA_MCP_TOOL_BATCH_DB_PASSWORD}
+      - AICA_MCP_TOOL_BATCH_DB_NAME=${AICA_MCP_TOOL_BATCH_DB_NAME}
+      - AICA_MCP_TOOL_BATCH_DB_SSLMODE=${AICA_MCP_TOOL_BATCH_DB_SSLMODE}
+      - AICA_MCP_TOOL_BATCH_MIIDAS_DB_HOST=${AICA_MCP_TOOL_BATCH_MIIDAS_DB_HOST}
+      - AICA_MCP_TOOL_BATCH_MIIDAS_DB_USER=${AICA_MCP_TOOL_BATCH_MIIDAS_DB_USER}
+      - AICA_MCP_TOOL_BATCH_MIIDAS_DB_PASSWORD=${AICA_MCP_TOOL_BATCH_MIIDAS_DB_PASSWORD}
+      - AICA_MCP_TOOL_BATCH_MIIDAS_DB_PORT=${AICA_MCP_TOOL_BATCH_MIIDAS_DB_PORT}
+      - GO_BUILD_TAGS=${GO_BUILD_TAGS}
+    volumes:
+      - ./files/ca/Cloudflare_Gateway_CA.pem:/usr/local/share/ca-certificates/Cloudflare_Gateway_CA.crt:ro
+      - ./api/mcptool/${START_SCRIPT}:/go/run.sh:ro
+      - source: ../src
+        target: /go/src/aica
+        type: bind
+    working_dir: /go/src/aica/
+    entrypoint: [ "bash", "-c" ]
+    command: [ "/go/run.sh" ]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:${AICA_MCP_TOOL_API_PORT}/aica/mcptool/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api-server-debug:
+    extends: api-server
+    ports:
+      - "${AICA_MCP_TOOL_API_PORT}:${AICA_MCP_TOOL_API_PORT}"
+      - 4000:4000

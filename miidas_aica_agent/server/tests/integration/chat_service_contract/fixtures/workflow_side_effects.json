@@ -1,0 +1,151 @@
+{
+  "workflow_scenarios": {
+    "job_type_selected": {
+      "_description": "Job type selected updates the position search tool state and then returns the normal chat stream contract.",
+      "_expected_keys": ["input_action", "expected_state_change", "side_effects", "stream_contract"],
+      "input_action": {
+        "request_type": "job_types_selected",
+        "jobtypes": ["データサイエンティスト", "機械学習エンジニア"]
+      },
+      "expected_state_change": {
+        "tool_name": "search_job_postings",
+        "developer_message": "ユーザーが職種「データサイエンティスト、機械学習エンジニア」を選択しました。"
+      },
+      "side_effects": {
+        "position_api_path": "positions/jobtypes/decided"
+      },
+      "stream_contract": {
+        "assistant_message": "承知しました。次の候補を探します。",
+        "response_types": ["message", "end"],
+        "_expected_response_keys": [
+          "session_id",
+          "session_status",
+          "request_type",
+          "response_type",
+          "role",
+          "message_id",
+          "position_id",
+          "is_maintenance",
+          "message"
+        ]
+      }
+    },
+    "job_type_clear": {
+      "_description": "Job type clear resets the position search tool wiring and keeps using the normal chat stream contract.",
+      "_expected_keys": ["input_action", "expected_state_change", "side_effects", "stream_contract"],
+      "input_action": {
+        "request_type": "job_types_clear"
+      },
+      "expected_state_change": {
+        "developer_message_contains": "希望職種を変更したい要望"
+      },
+      "side_effects": {
+        "position_api_path": "positions/jobtypes/clear"
+      },
+      "stream_contract": {
+        "assistant_message": "職種の見直しを進めます。",
+        "response_types": ["message", "end"],
+        "_expected_response_keys": [
+          "session_id",
+          "session_status",
+          "request_type",
+          "response_type",
+          "role",
+          "message_id",
+          "position_id",
+          "is_maintenance",
+          "message"
+        ]
+      }
+    },
+    "workflow_submitted": {
+      "_description": "Workflow submission saves validated answers and workflow histories before returning the normal chat stream contract.",
+      "_expected_keys": ["workflow_input", "expected_state_change", "side_effects", "stream_contract"],
+      "workflow_input": {
+        "request_type": "workflow_answers_submitted",
+        "workflow_id": "career-fit",
+        "answers": {
+          "1": [
+            {
+              "value": 1
+            }
+          ]
+        }
+      },
+      "expected_state_change": {
+        "saved_answers": {
+          "1": [
+            {
+              "label": "エンジニア",
+              "value": 1
+            }
+          ]
+        },
+        "saved_history_pairs": [
+          {
+            "role": "assistant",
+            "content": "どの職種に興味がありますか？"
+          },
+          {
+            "role": "user",
+            "content": "エンジニア"
+          }
+        ],
+        "developer_message_contains": [
+          "ユーザーがワークフロー「キャリア志向確認」に回答しました。",
+          "- どの職種に興味がありますか？: エンジニア"
+        ]
+      },
+      "side_effects": {
+        "workflow_definition_name": "キャリア志向確認"
+      },
+      "stream_contract": {
+        "assistant_message": "回答内容を踏まえて提案を続けます。",
+        "response_types": ["message", "end"],
+        "_expected_response_keys": [
+          "session_id",
+          "session_status",
+          "request_type",
+          "response_type",
+          "role",
+          "message_id",
+          "position_id",
+          "is_maintenance",
+          "message"
+        ]
+      }
+    },
+    "workflow_cancelled": {
+      "_description": "Workflow cancellation validates the known workflow id and then returns the normal chat stream contract.",
+      "_expected_keys": ["cancel_action", "expected_state_change", "side_effects", "stream_contract"],
+      "cancel_action": {
+        "request_type": "workflow_cancelled",
+        "workflow_id": "career-fit"
+      },
+      "expected_state_change": {
+        "developer_message_contains": [
+          "ユーザーがワークフロー `career-fit`を中断しました。",
+          "中断した事実を伝えた上で"
+        ]
+      },
+      "side_effects": {
+        "workflow_definition_name": "キャリア志向確認"
+      },
+      "stream_contract": {
+        "assistant_message": "中断した内容を踏まえて案内を続けます。",
+        "response_types": ["message", "end"],
+        "_expected_response_keys": [
+          "session_id",
+          "session_status",
+          "request_type",
+          "response_type",
+          "role",
+          "message_id",
+          "position_id",
+          "is_maintenance",
+          "message"
+        ]
+      }
+    }
+  }
+}

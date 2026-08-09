@@ -1,0 +1,605 @@
+{
+  "ID": 83836,
+  "Name": "コバシ株式会社",
+  "Prefecture": "東京都",
+  "Address": "東京都中央区京橋１丁目４番１３号",
+  "OriginalFiles": [],
+  "BusinessNames": [],
+  "IsPartnerApplied": false,
+  "ProfitCompany": {
+    "ID": 1,
+    "Name": "営利団体",
+    "Note": ""
+  },
+  "EmployeeQty": {
+    "ID": 5,
+    "Name": "300〜999人",
+    "Note": ""
+  },
+  "EstablishmentYear": {
+    "ID": 5,
+    "Name": "設立50〜100年",
+    "Note": ""
+  },
+  "CapitalType": {
+    "IDs": [
+      {
+        "ID": 3,
+        "Name": "オーナー・ファミリー企業"
+      }
+    ],
+    "Note": "",
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "上場企業"
+      },
+      {
+        "ID": 2,
+        "Name": "上場企業グループ会社"
+      },
+      {
+        "ID": 3,
+        "Name": "オーナー・ファミリー企業"
+      },
+      {
+        "ID": 4,
+        "Name": "外資系企業"
+      },
+      {
+        "ID": -1,
+        "Name": "該当なし"
+      }
+    ]
+  },
+  "SalesScale": {
+    "ID": 4,
+    "Name": "売上100〜1,000億",
+    "Note": ""
+  },
+  "PresidentName": "小橋 里嘉",
+  "Website": "https://www.kobashikk.co.jp/",
+  "Introduction": "グローバルに広がる時代の中で、地域に根差した活動こそが競争社会の中で生き残る大切な要素であると考え、段ボールを中心とし各地のネットワークを活かしながら地域社会に貢献できる企業です。",
+  "AppealPoint": {
+    "IDs": [
+      {
+        "ID": 1,
+        "Name": "安定した事業"
+      },
+      {
+        "ID": 4,
+        "Name": "福利厚生に自信"
+      },
+      {
+        "ID": 8,
+        "Name": "女性が働きやすい"
+      }
+    ],
+    "Note": "",
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "安定した事業"
+      },
+      {
+        "ID": 2,
+        "Name": "成長性のある事業"
+      },
+      {
+        "ID": 3,
+        "Name": "年収に自信"
+      },
+      {
+        "ID": 4,
+        "Name": "福利厚生に自信"
+      },
+      {
+        "ID": 5,
+        "Name": "評価制度に自信"
+      },
+      {
+        "ID": 6,
+        "Name": "社員の定着率"
+      },
+      {
+        "ID": 7,
+        "Name": "働きやすい"
+      },
+      {
+        "ID": 8,
+        "Name": "女性が働きやすい"
+      },
+      {
+        "ID": 9,
+        "Name": "グローバルに活躍できる"
+      },
+      {
+        "ID": 11,
+        "Name": "スタートアップ"
+      },
+      {
+        "ID": 12,
+        "Name": "ベンチャー企業"
+      },
+      {
+        "ID": 13,
+        "Name": "理念経営"
+      },
+      {
+        "ID": 14,
+        "Name": "チャレンジできる風土"
+      },
+      {
+        "ID": 15,
+        "Name": "オフィスに自信"
+      },
+      {
+        "ID": 16,
+        "Name": "社長の経営手腕"
+      },
+      {
+        "ID": -1,
+        "Name": "該当なし"
+      }
+    ]
+  },
+  "SalesOverseasRate": {
+    "ID": 3,
+    "Name": "海外売上比率10%未満",
+    "Note": ""
+  },
+  "EmployeeWorkAbroadRate": {
+    "ID": 2,
+    "Name": "海外駐在社員比率1%〜10%",
+    "Note": "タイに子会社の「THAI KOBASHI CO.,LTD.」を有し、段ボールの製造・販売を行っています。"
+  },
+  "WelfareBenefit": {
+    "ValueTexts": [
+      {
+        "ID": 1,
+        "Name": "残業手当",
+        "Note": ""
+      },
+      {
+        "ID": 2,
+        "Name": "退職金制度",
+        "Note": ""
+      },
+      {
+        "ID": 3,
+        "Name": "社宅制度",
+        "Note": ""
+      }
+    ],
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "残業手当"
+      },
+      {
+        "ID": 2,
+        "Name": "退職金制度"
+      },
+      {
+        "ID": 3,
+        "Name": "社宅制度"
+      },
+      {
+        "ID": 4,
+        "Name": "家賃補助制度"
+      },
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ]
+  },
+  "WelfareInsurance": {
+    "ValueTexts": [
+      {
+        "ID": 1,
+        "Name": "雇用保険",
+        "Note": ""
+      },
+      {
+        "ID": 2,
+        "Name": "労災保険",
+        "Note": ""
+      },
+      {
+        "ID": 3,
+        "Name": "厚生年金",
+        "Note": ""
+      },
+      {
+        "ID": 4,
+        "Name": "健康保険",
+        "Note": ""
+      }
+    ],
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "雇用保険"
+      },
+      {
+        "ID": 2,
+        "Name": "労災保険"
+      },
+      {
+        "ID": 3,
+        "Name": "厚生年金"
+      },
+      {
+        "ID": 4,
+        "Name": "健康保険"
+      },
+      {
+        "ID": -1,
+        "Name": "該当なし"
+      }
+    ]
+  },
+  "YearHolidays": {
+    "ID": 1,
+    "Name": "120日未満",
+    "Note": ""
+  },
+  "SideBusiness": {
+    "ID": 1,
+    "Name": "副業NG",
+    "Note": ""
+  },
+  "SideBusinessCondition": "",
+  "Vacations": {
+    "ValueTexts": [
+      {
+        "ID": 1,
+        "Name": "慶弔休暇",
+        "Note": ""
+      },
+      {
+        "ID": 2,
+        "Name": "夏季休暇",
+        "Note": ""
+      },
+      {
+        "ID": 3,
+        "Name": "年末年始休暇",
+        "Note": ""
+      }
+    ],
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "慶弔休暇"
+      },
+      {
+        "ID": 2,
+        "Name": "夏季休暇"
+      },
+      {
+        "ID": 3,
+        "Name": "年末年始休暇"
+      },
+      {
+        "ID": 4,
+        "Name": "育児休暇"
+      },
+      {
+        "ID": 5,
+        "Name": "産前休暇"
+      },
+      {
+        "ID": 6,
+        "Name": "産後休暇"
+      },
+      {
+        "ID": 7,
+        "Name": "介護休暇"
+      },
+      {
+        "ID": 8,
+        "Name": "長期休暇"
+      },
+      {
+        "ID": 9,
+        "Name": "女性休暇"
+      },
+      {
+        "ID": 10,
+        "Name": "その他休暇"
+      },
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ]
+  },
+  "PaidHolidayUseRate": {
+    "ID": 2,
+    "Name": "45%〜60%未満",
+    "Note": ""
+  },
+  "JobRotationExists": {
+    "Flg": {
+      "On": true,
+      "Name": "あり"
+    },
+    "Note": ""
+  },
+  "ChangeDepartmentRequest": {
+    "Flg": {
+      "On": false,
+      "Name": "申請できない"
+    },
+    "Note": ""
+  },
+  "SpecialistCareerPath": {
+    "ID": 2,
+    "Name": "マネジメントコースのみ",
+    "Note": ""
+  },
+  "HREvaluationSpecialSystem": {
+    "IDs": [
+      {
+        "ID": 3,
+        "Name": "飛び級あり"
+      }
+    ],
+    "Note": "",
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "ノーレーティング制度"
+      },
+      {
+        "ID": 2,
+        "Name": "360度評価"
+      },
+      {
+        "ID": 3,
+        "Name": "飛び級あり"
+      },
+      {
+        "ID": -1,
+        "Name": "該当なし"
+      }
+    ]
+  },
+  "HREvaluationWomanManagerRate": {
+    "ID": 2,
+    "Name": "女性管理職比率10%未満",
+    "Note": ""
+  },
+  "HREvaluation20sManagerRate": {
+    "ID": 3,
+    "Name": "20代管理職不在（登用実績なし）",
+    "Note": ""
+  },
+  "TrainingSystem": {
+    "Exists": true,
+    "Text": "入社時研修（営業部門、操業部門）\n通信教育（補助制度あり）\n集合研修（年１回）"
+  },
+  "WelfareAchievement": {
+    "ValueTexts": [
+      {
+        "ID": 2,
+        "Name": "育児休暇（女性従業員が取得）",
+        "Note": ""
+      },
+      {
+        "ID": 3,
+        "Name": "介護休暇",
+        "Note": ""
+      },
+      {
+        "ID": 4,
+        "Name": "時短勤務",
+        "Note": ""
+      }
+    ],
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "育児休暇（男性従業員が取得）"
+      },
+      {
+        "ID": 2,
+        "Name": "育児休暇（女性従業員が取得）"
+      },
+      {
+        "ID": 3,
+        "Name": "介護休暇"
+      },
+      {
+        "ID": 4,
+        "Name": "時短勤務"
+      },
+      {
+        "ID": 5,
+        "Name": "在宅勤務"
+      },
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ]
+  },
+  "WelfarePopular": {
+    "ValueTexts": [
+      {
+        "ID": -1,
+        "Name": "なし",
+        "Note": ""
+      }
+    ],
+    "Options": [
+      {
+        "ID": 2,
+        "Name": "外国語研修制度"
+      },
+      {
+        "ID": 3,
+        "Name": "海外留学制度"
+      },
+      {
+        "ID": 4,
+        "Name": "独立支援制度"
+      },
+      {
+        "ID": 5,
+        "Name": "社員食堂"
+      },
+      {
+        "ID": 6,
+        "Name": "フリードリンク"
+      },
+      {
+        "ID": 7,
+        "Name": "資格取得支援制度"
+      },
+      {
+        "ID": 8,
+        "Name": "住宅購入支援制度"
+      },
+      {
+        "ID": 9,
+        "Name": "社内ベンチャー制度"
+      },
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ]
+  },
+  "WelfareOther": {
+    "ValueTexts": [
+      {
+        "ID": 2,
+        "Name": "健康診断",
+        "Note": ""
+      },
+      {
+        "ID": 3,
+        "Name": "財形貯蓄制度",
+        "Note": ""
+      },
+      {
+        "ID": 5,
+        "Name": "慶弔見舞金制度",
+        "Note": ""
+      },
+      {
+        "ID": 6,
+        "Name": "保養所",
+        "Note": ""
+      },
+      {
+        "ID": 7,
+        "Name": "社内研修制度",
+        "Note": ""
+      },
+      {
+        "ID": 8,
+        "Name": "通勤手当",
+        "Note": ""
+      },
+      {
+        "ID": 10,
+        "Name": "家族手当",
+        "Note": ""
+      }
+    ],
+    "Options": [
+      {
+        "ID": 2,
+        "Name": "健康診断"
+      },
+      {
+        "ID": 3,
+        "Name": "財形貯蓄制度"
+      },
+      {
+        "ID": 4,
+        "Name": "社員持株会制度"
+      },
+      {
+        "ID": 5,
+        "Name": "慶弔見舞金制度"
+      },
+      {
+        "ID": 6,
+        "Name": "保養所"
+      },
+      {
+        "ID": 7,
+        "Name": "社内研修制度"
+      },
+      {
+        "ID": 8,
+        "Name": "通勤手当"
+      },
+      {
+        "ID": 9,
+        "Name": "扶養手当"
+      },
+      {
+        "ID": 10,
+        "Name": "家族手当"
+      },
+      {
+        "ID": 11,
+        "Name": "食事補助"
+      },
+      {
+        "ID": 12,
+        "Name": "その他福利厚生"
+      },
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ]
+  },
+  "Other": {
+    "IDs": [
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ],
+    "Note": "",
+    "Options": [
+      {
+        "ID": 1,
+        "Name": "労働組合あり"
+      },
+      {
+        "ID": 2,
+        "Name": "知名度の高い経営者、社員あり"
+      },
+      {
+        "ID": 3,
+        "Name": "他社に先駆けて事業を開発した実績あり"
+      },
+      {
+        "ID": 4,
+        "Name": "実業団あり"
+      },
+      {
+        "ID": 5,
+        "Name": "なでしこ銘柄"
+      },
+      {
+        "ID": -1,
+        "Name": "なし"
+      }
+    ]
+  },
+  "PR": "昭和３０年（１９５５年）の創業以来、段ボール製造を中心にさまざまな紙器製品を提供し、数多くに実績とノウハウを蓄積してきました。今後は、こうした経験に加ええ、新しい発想と技術力により、当社独自の製品開発を積極的に行い、明日のより高度な要求や、「地球にやさしい製品」の提供という時代の要求に対しても的確にお応えできる企業にして参ります。",
+  "HPMCompanyDeclaration": "",
+  "IsHPMCertified": false,
+  "HPMCertificationDisplayYear": null,
+  "IsAgreedHatarakuhitoFirst": true
+}

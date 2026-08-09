@@ -1,0 +1,87 @@
+edition = "2023";
+
+package miidas.user.marketvalue.company;
+
+import "google/protobuf/timestamp.proto";
+import "common/vo.proto";
+
+option features.field_presence = IMPLICIT;
+option go_package = "miidas/m2/user/marketvalue/grpc/iface/company";
+
+message Company {
+    int32 id = 1;
+    Detail detail = 2;
+    bool is_searchable = 3;
+    bool stop_offer = 4;
+    int32 registration_status_id = 5;
+    google.protobuf.Timestamp last_modified_at = 6;
+    google.protobuf.Timestamp imported_at = 7;
+    google.protobuf.Timestamp stop_offer_datetime = 8;
+    bool is_matching_enabled = 9;
+}
+
+message Detail {
+    string name = 1;
+    int32 name_id = 2;
+    bool withdrew = 3;
+    common.ValueText profit_company = 4;
+    Address address = 5;
+    common.ValueText employee_qty = 6;
+    common.ValueText establishment_year = 7;
+    common.ValuesText capital_type = 8;
+    common.ValueText sales_scale = 9;
+    string president_name = 10;
+    string website = 11;
+    string introduction = 12;
+    common.ValuesText appeal_point = 13;
+    common.ValueText sales_overseas_rate = 14;
+    common.ValueText employee_work_abroad_rate = 15;
+    repeated common.ValueText welfare_benefit = 16;
+    common.ValueText year_holidays = 17;
+    common.ValueText side_business = 18;
+    string side_business_condition = 19;
+    repeated common.ValueText vacations = 20;
+    common.ValueText paid_holiday_use_rate = 21;
+    common.FlagText job_rotation_exists = 22;
+    common.FlagText change_department_request = 23;
+    common.ValueText specialist_career_path = 24;
+    common.ValuesText hr_evaluation_special_system = 25;
+    common.ValueText hr_evaluation_woman_manager_rate = 26;
+    common.ValueText hr_evaluation20s_manager_rate = 27;
+    TrainingSystem training_system = 28;
+    repeated common.ValueText welfare_achievement = 29;
+    repeated common.ValueText welfare_popular = 30;
+    repeated common.ValueText welfare_other = 31;
+    common.ValuesText other = 32;
+    string pr = 33;
+    repeated Document document = 34;
+    google.protobuf.Timestamp hpm_certified_from = 35;
+    google.protobuf.Timestamp hpm_certified_to = 36;
+    bool is_agreed_hatarakuhito_first = 37;
+    repeated RecentHPMCertification recent_hpm_certifications = 38;
+    repeated common.ValueText welfare_insurance = 39;
+
+
+    message Address {
+        int32 prefecture_id = 1;
+        string prefecture_label = 2;
+        string address = 3;
+    }
+
+    message Document {
+        int32 id = 1;
+        string path = 2;
+        string label = 3;
+    }
+
+    message TrainingSystem {
+        bool exists = 1;
+        string text = 2;
+    }
+
+    message RecentHPMCertification {
+        int32 year = 1;
+        google.protobuf.Timestamp from = 2;
+        google.protobuf.Timestamp to = 3;
+    }
+}

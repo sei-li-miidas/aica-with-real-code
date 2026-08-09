@@ -1,0 +1,117 @@
+@use "sass:list";
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/zindex";
+
+$color1: #25b8e5;
+$color2: #b3bbc5;
+$color3: #e0e8f2;
+
+// z-index調整
+$elements: zindex.insert-nth(zindex.$elements, 1, headerTabNav); // タブメニュー
+$elements: zindex.insert-nth(
+  $elements,
+  1,
+  detailActionBtn
+); // 企業詳細のボタンエリア
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: list.index($elements, modal);
+  display: flex;
+  width: 100%;
+  visibility: hidden;
+  transition: visibility 0 0.25s;
+
+  &.show {
+    visibility: visible;
+    transition: none;
+
+    .content {
+      transform: translateY(0%);
+    }
+  }
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+  width: 100%;
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.25s ease;
+  transform: translateY(100%);
+}
+
+.scrollBlock {
+  height: calc(50vh - 127px);
+  padding: 0 20px;
+  overflow-y: scroll;
+
+  @include mixin.pseudoScrollbar {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+.touchArea {
+  position: relative;
+  height: 44px;
+
+  &:after {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: $color2;
+    border-radius: 2px;
+    pointer-events: none;
+    content: "";
+    transform: translateX(-50%);
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 53px;
+  margin-top: 30px;
+  border-top: 1px solid $color3;
+  font-size: 13px;
+  color: $color1;
+}
+
+.btnText {
+  position: relative;
+  padding-left: 16px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 2px;
+    height: 18px;
+    background-color: $color1;
+    content: "";
+    transform-origin: center;
+  }
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+}

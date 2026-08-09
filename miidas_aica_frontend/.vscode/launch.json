@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[Frontend]Remote Debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000/aica/",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "file:///app/*": "${workspaceFolder}/*"
+      },
+      "smartStep": true,
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "preLaunchTask": "start-frontend-debug"
+    },
+    {
+      "name": "[Frontend]Local Debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000/aica/",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "npm: dev"
+    }
+  ]
+}

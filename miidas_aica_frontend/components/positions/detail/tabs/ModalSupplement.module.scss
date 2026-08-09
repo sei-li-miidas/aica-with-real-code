@@ -1,0 +1,94 @@
+@use "sass:color";
+@use "@/scss/utils/mixin";
+@use "@/scss/utils/variables";
+
+$color1: #ffffff;
+$color2: #354659;
+$color3: #b3bbc5;
+$color4: #aab6c3;
+$headerHeight: 43px;
+$footerHeight: 92px;
+
+.wrapper {
+  width: calc(100vw - 36px);
+  max-width: 760px;
+  height: calc(
+    100vh - 36px - 110px
+  ); // paddingとiOS Safariのアドレスバーを考慮した高さにする
+  background-color: $color1;
+  border-radius: 2px;
+
+  @include mixin.pcLayout {
+    height: auto;
+    max-height: 498px;
+  }
+}
+
+// ヘッダー
+.header {
+  height: $headerHeight;
+}
+
+// 閉じるボタン
+.headerBtn {
+  @include mixin.buttonCloseModal;
+}
+
+// コンテンツ
+.content {
+  height: calc(100% - (#{$headerHeight} + #{$footerHeight}));
+  padding: 25px 20px;
+  margin: 0 12px;
+  overflow-y: scroll;
+  border: solid 1px $color4;
+  border-radius: 4px;
+  color: $color2;
+  text-align: left;
+  word-break: break-all;
+
+  @include mixin.pcLayout {
+    height: auto;
+    max-height: 330px;
+    padding: 7px 10px;
+    margin: 0 40px;
+    font-size: 14px;
+    color: $color2;
+  }
+}
+
+// フッター
+.footer {
+  padding: 20px 12px;
+
+  @include mixin.pcLayout {
+    padding: 40px 12px;
+  }
+}
+
+// 閉じるボタン
+// TODO: 色々ルール変わったので新たにmixin作ってもいいかも
+.footerBtn {
+  width: 100%;
+  height: 52px;
+  background-color: $color3;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px 0 rgba(16, 23, 39, 0.17);
+  color: $color1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+  appearance: none;
+
+  @include mixin.pcLayout {
+    width: 200px;
+    height: 48px;
+    box-shadow: 0 2px 2px 0 rgba(37, 70, 105, 0.2);
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: color.adjust($color3, $lightness: -8%);
+  }
+}

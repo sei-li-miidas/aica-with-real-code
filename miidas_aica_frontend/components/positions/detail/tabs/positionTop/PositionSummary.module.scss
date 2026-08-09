@@ -1,0 +1,73 @@
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  background-color: variables.$white;
+  border: 2px solid variables.$colorSecondaryBlue1;
+  border-radius: 8px;
+}
+
+.title {
+  padding: 6px 0;
+  background-color: variables.$colorSecondaryBlue1;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$white;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 6px 4px;
+
+  @include mixin.pcLayout {
+    justify-content: center;
+    padding: 8px 0 12px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-basis: 50%;
+  padding: 16px 5px 8px;
+
+  @include mixin.pcLayout {
+    flex-basis: auto;
+    padding: 16px 12px 8px;
+  }
+}
+
+.itemIcon {
+  display: flex;
+  flex-basis: 45px;
+  align-items: center;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.itemTitle {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$colorPrimary;
+
+  @include mixin.pcLayout {
+    white-space: nowrap;
+  }
+}
+
+.itemValueLabel {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: variables.$colorText;
+
+  @include mixin.pcLayout {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 山田
+  first_name: 太郎
+  last_name_kana: ヤマダ
+  first_name_kana: タロウ
+  email: e2e.persona01@example.com
+  phone_no: "09000000001"
+  gender: 1
+  password: Pass0001
+  birth_year: 1992
+  birth_month: 4
+  first_language: 91
+  driver_licence: 2
+  residence:
+    prefecture: 東京都
+    city: 渋谷区
+education:
+  school_type: 6
+  graduation_year: 2010
+  english_level: 2
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 450
+  work_addresses:
+    - prefecture: 東京都
+      city: 渋谷区
+  will_remote_work: true
+  will_job_change_period: 2
+  will_job_type_keywords:
+    - 営業
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

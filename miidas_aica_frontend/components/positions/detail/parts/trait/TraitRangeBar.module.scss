@@ -1,0 +1,46 @@
+@use "@/scss/utils/variables";
+
+.itemWrapList {
+  > li + li {
+    margin-top: 4px;
+  }
+}
+
+.labelWrap {
+  display: flex;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  max-width: 160px;
+
+  &.right {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.bar {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+
+  > .unit + .unit {
+    margin-left: 5px;
+  }
+}
+
+.unit {
+  width: 100%;
+  height: 15px;
+  background-color: variables.$colorBlueGray100;
+  border: 1px solid variables.$colorBlueGray200;
+
+  &.active {
+    background-color: variables.$colorSecondaryBlue1;
+    border-color: variables.$colorSecondaryBlue1;
+  }
+}

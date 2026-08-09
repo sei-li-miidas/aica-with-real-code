@@ -1,0 +1,9 @@
+@use "@/scss/utils/mixin";
+
+.table {
+  width: 100%;
+
+  @include mixin.pcLayout {
+    width: 406px;
+  }
+}

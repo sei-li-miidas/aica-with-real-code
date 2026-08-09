@@ -1,0 +1,195 @@
+{
+  "type": "object",
+  "description": "会話要約のルートオブジェクト",
+  "additionalProperties": false,
+  "required": ["user_profile"],
+  "properties": {
+    "user_profile": {
+      "type": "object",
+      "description": "ユーザー情報と会話進捗の要約",
+      "additionalProperties": false,
+      "required": [
+        "basic_info",
+        "career_history",
+        "personal_context",
+        "search_conditions",
+        "psychology",
+        "conversation_status"
+      ],
+      "properties": {
+        "basic_info": {
+          "type": "object",
+          "description": "基本属性",
+          "additionalProperties": false,
+          "required": ["name", "age", "status"],
+          "properties": {
+            "name": {"type": ["string", "null"], "description": "ユーザー名"},
+            "age": {"type": ["string", "null"], "description": "年齢"},
+            "status": {"type": ["string", "null"], "description": "在職中/離職中など"}
+          }
+        },
+        "career_history": {
+          "type": "object",
+          "description": "職務経歴の要約",
+          "additionalProperties": false,
+          "required": ["summary", "skills", "past_roles", "experience_details"],
+          "properties": {
+            "summary": {"type": ["string", "null"], "description": "経歴の簡潔な説明"},
+            "skills": {"type": "array", "items": {"type": "string"}, "description": "スキル一覧"},
+            "past_roles": {"type": "array", "items": {"type": "string"}, "description": "過去の職種・役割"},
+            "experience_details": {"type": "array", "items": {"type": "string"}, "description": "具体的な実務経験"}
+          }
+        },
+        "personal_context": {
+          "type": "object",
+          "description": "個人的背景や雑談文脈",
+          "additionalProperties": false,
+          "required": ["hobbies", "life_situation", "chat_topics"],
+          "properties": {
+            "hobbies": {"type": "array", "items": {"type": "string"}, "description": "趣味・関心"},
+            "life_situation": {"type": "array", "items": {"type": "string"}, "description": "家族・健康・生活事情"},
+            "chat_topics": {"type": "array", "items": {"type": "string"}, "description": "雑談トピック・人柄メモ"}
+          }
+        },
+        "search_conditions": {
+          "type": "object",
+          "description": "希望条件の現在値と履歴",
+          "additionalProperties": false,
+          "required": ["overall_priority", "salary", "location", "job_types", "other_conditions"],
+          "properties": {
+            "overall_priority": {"type": ["string", "null"], "description": "条件全体の優先順位"},
+            "salary": {
+              "type": "object",
+              "description": "年収条件",
+              "additionalProperties": false,
+              "required": ["current", "priority", "history", "nuance"],
+              "properties": {
+                "current": {"type": ["string", "null"], "description": "現在の希望年収"},
+                "priority": {"type": "string", "enum": ["High", "Middle", "Low"], "description": "制約の厳しさ"},
+                "history": {"type": ["string", "null"], "description": "変更履歴"},
+                "nuance": {"type": ["string", "null"], "description": "補足ニュアンス"}
+              }
+            },
+            "location": {
+              "type": "object",
+              "description": "勤務地条件",
+              "additionalProperties": false,
+              "required": ["current_area", "area_type", "remote_work", "priority", "history"],
+              "properties": {
+                "current_area": {"type": ["string", "null"], "description": "都道府県・市区町村"},
+                "area_type": {"type": ["string", "null"], "description": "居住地/希望勤務地"},
+                "remote_work": {"type": ["string", "null"], "description": "リモート希望"},
+                "priority": {"type": "string", "enum": ["High", "Middle", "Low"], "description": "制約の厳しさ"},
+                "history": {"type": ["string", "null"], "description": "変更履歴"}
+              }
+            },
+            "job_types": {
+              "type": "array",
+              "description": "希望職種リスト",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "priority", "reason", "comparison"],
+                "properties": {
+                  "name": {"type": "string", "description": "職種名"},
+                  "priority": {"type": "string", "enum": ["High", "Middle", "Low"], "description": "志望熱量"},
+                  "reason": {"type": ["string", "null"], "description": "その職種を希望する理由"},
+                  "comparison": {"type": ["string", "null"], "description": "他職種との比較"}
+                }
+              }
+            },
+            "other_conditions": {
+              "type": "object",
+              "description": "その他条件",
+              "additionalProperties": false,
+              "required": ["must", "want", "avoid", "history"],
+              "properties": {
+                "must": {"type": "array", "items": {"type": "string"}, "description": "絶対条件"},
+                "want": {"type": "array", "items": {"type": "string"}, "description": "歓迎条件"},
+                "avoid": {"type": "array", "items": {"type": "string"}, "description": "NG条件"},
+                "history": {"type": ["string", "null"], "description": "変更履歴"}
+              }
+            }
+          }
+        },
+        "psychology": {
+          "type": "object",
+          "description": "動機・心理状態",
+          "additionalProperties": false,
+          "required": ["dissatisfaction", "future_desire", "unclear_points"],
+          "properties": {
+            "dissatisfaction": {"type": "array", "items": {"type": "string"}, "description": "現職不満"},
+            "future_desire": {"type": "array", "items": {"type": "string"}, "description": "将来の希望"},
+            "unclear_points": {"type": "array", "items": {"type": "string"}, "description": "未確定/迷い"}
+          }
+        },
+        "conversation_status": {
+          "type": "object",
+          "description": "会話の進行状況",
+          "additionalProperties": false,
+          "required": [
+            "current_discussion_topic",
+            "last_user_intent",
+            "pending_actions",
+            "next_action",
+            "task_ledger"
+          ],
+          "properties": {
+            "current_discussion_topic": {"type": ["string", "null"], "description": "現在の議題"},
+            "last_user_intent": {"type": ["string", "null"], "description": "直近ユーザー意図"},
+            "pending_actions": {"type": ["string", "null"], "description": "保留事項"},
+            "next_action": {"type": ["string", "null"], "description": "次ターンで行うべき行動"},
+            "task_ledger": {
+              "type": "array",
+              "description": "全タスクの進捗台帳",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["task", "status", "detail"],
+                "properties": {
+                  "task": {
+                    "type": "string",
+                    "enum": [
+                      "phase0_understand_intent",
+                      "what_confirm_job_type",
+                      "what_job_type_flow_pattern",
+                      "what_job_type_search_by_sentence",
+                      "what_job_type_search_by_work_nature",
+                      "what_job_type_narrow_down",
+                      "what_confirm_salary",
+                      "what_confirm_location",
+                      "what_confirm_other_conditions",
+                      "what_confirm_industry",
+                      "what_industry_search_by_sentence",
+                      "why_confirm_dissatisfaction",
+                      "why_confirm_future_desire",
+                      "why_confirm_career_values",
+                      "why_phase0_reason_rank",
+                      "why_phase0_reason_context",
+                      "why_phase1_positive_aspects",
+                      "why_phase2_work_wishes",
+                      "why_phase2_ideal_life",
+                      "why_phase3_gap_score",
+                      "why_phase4_axis_summary",
+                      "why_phase4_axis_agreement",
+                      "why_next_step_choice",
+                      "how_execute_search",
+                      "how_prompt_registration"
+                    ],
+                    "description": "タスク識別子"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": ["in_progress", "done", "skipped", "not_started", "changed"],
+                    "description": "進捗状態"
+                  },
+                  "detail": {"type": ["string", "null"], "description": "根拠や補足"}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

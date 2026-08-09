@@ -1,0 +1,14 @@
+.survey-link-container {
+  background-color: #ffffff;
+  color: var(--mui-palette-text-primary);
+  font-size: 90%;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+
+  a {
+    text-decoration: underline;
+    color: var(--mui-palette-text-primary);
+  }
+}

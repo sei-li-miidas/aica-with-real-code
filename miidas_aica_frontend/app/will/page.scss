@@ -1,0 +1,23 @@
+@use "../../scss/utils/profile-common";
+
+.chip {
+  display: flex;
+  align-items: center;
+  padding: var(--mui-spacing) calc(var(--mui-spacing) * 2);
+  margin-bottom: var(--mui-spacing);
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.chip--lg {
+  min-height: calc(var(--mui-spacing) * 5);
+}
+
+.chip__remove {
+  margin-right: var(--mui-spacing);
+}
+
+.chip-list-scrollable {
+  max-height: 330px;
+  overflow-y: auto;
+}

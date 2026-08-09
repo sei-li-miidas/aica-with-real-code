@@ -1,0 +1,38 @@
+.pull-to-refresh-container {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+
+  .pull-refresh-manual-button {
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0;
+  }
+}
+
+.pull-refresh-indicator {
+  position: sticky;
+  top: 0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  min-height: 60px;
+  margin-top: -60px;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  .pull-refresh-spinner {
+    color: #1976d2;
+  }
+
+  .pull-refresh-text {
+    margin-left: 8px;
+    font-weight: 500;
+  }
+}

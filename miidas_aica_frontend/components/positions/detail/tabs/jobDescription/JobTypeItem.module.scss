@@ -1,0 +1,58 @@
+@use "@/scss/utils/variables";
+
+$colorDummyGroupItem: #596674;
+
+.skillGroupItem {
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.skillGroupName {
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  background: variables.$colorBlueGray50;
+  font-size: 12px;
+  color: variables.$colorBlueGray700;
+}
+
+.dummyGroupItem {
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+.dummyGroupName {
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: variables.$colorBlueGray700;
+}
+
+.dummyGroupSkillItems {
+  font-size: 12px;
+  line-height: 1.7;
+  color: $colorDummyGroupItem;
+
+  &.omitted {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.dummyGroupMainSkillItem {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.jobName {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.jobSkills {
+  font-size: 12px;
+}

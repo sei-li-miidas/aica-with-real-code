@@ -1,0 +1,140 @@
+@use "sass:color";
+// カラー一覧
+$miidas-primary: #34cae5;
+// https://www.figma.com/design/807mdzhxrvPM3ULRwvV5Ni/User_StyleGuide?node-id=11578-5683&t=C7o4m8w8Z6E73Rc4-4
+$colorLightBlue: #effbff;
+$miidas-secondary: #446287;
+$miidas-cancel: #b3bbc5;
+$miidas-danger: #ff5757;
+
+$white: #ffffff;
+$black: #000000;
+
+// ログイン前のヘッダーの高さ
+$headerHeightSP: 40px;
+$headerHeightPC: 82px;
+
+// ログイン前のフッターの高さ
+$footerHeightSP: 50px;
+$footerHeightPC: 71px;
+
+// ログイン後のナビゲーションバーの高さ
+$navigationBarHeight: 56px;
+$navigationBarHeightPC: 70px;
+
+// ログイン後のタブバーの高さ（SP）
+$tabBarHeight: 60px;
+// ログイン後のタブバーの幅（PC）
+$tabBarWidthPC: 89px;
+
+// ヘッダーの検索条件ツールの高さ
+$searchToolBarHeight: 79px;
+// ヘッダーのソート、フィルターツールの高さ
+$filterAndSortBarHeight: 51px;
+
+// フッターのボタンの高さ（一覧の削除ボタンや詳細の応募ボタン）
+$footerBtnHeight: 52px;
+$footerBtnHeightPC: 48px;
+// フッターの高さ(ボタン、余白、ボーダー)
+$footerBtnAreaHeight: $footerBtnHeight + 20px;
+$footerBtnAreaHeightPC: $footerBtnHeightPC + 50px;
+
+// TODO: $minScreenWidth→$breakPointPCに置き換え完了次第削除
+// 関連: #61567, #61568, #61622
+// ブレイクポイント
+$minScreenWidth: 980px;
+// ブレイクポイント
+$breakPointPC: 1024px;
+$breakPointTablet: 768px;
+$breakPointSP: 375px;
+
+// スクロールバーの幅(IE11のスクロール幅に合わせている)
+$scrollbarWidth: 17px;
+
+// ダイアログ、アラート、通知モーダルの幅
+$modalWidthSP: calc(
+  100vw - 32px
+); // スタイルガイドの左右マージン16pxを引いたもの
+$modalWidthPC: 343px;
+$modalMaxWidthSP: 343px;
+$modalSingleFooterBtnWidthPC: fit-content;
+$modalSingleFooterBtnMinWidthPC: 232px;
+
+// モーダルコンテンツの幅
+$modalContentsWidthSP: calc(
+  100vw - 32px
+); // スタイルガイドの左右マージン16pxを引いたもの
+$modalContentsMaxWidthSP: 500px;
+$modalContentsWidthPC1: 500px;
+$modalContentsWidthPC2: 343px;
+
+// ハーフモーダルの角丸
+$halfModalBorderRadius: 24px;
+
+// text
+$colorPrimary: #25b8e5;
+$colorText: #354659;
+$colorTextSub: #8999ab;
+$colorTextSecondary: #4d6071;
+
+// placeholder（デザイン原則に定義されているのは　#a8b7c8）
+$colorPlaceholder: #a6bbc3;
+
+// 日程調整
+$scheduleCellWidth: 85px;
+$scheduleCellHeight: 20px;
+
+// 色
+$colorFacebook: #377aea; // Facebook登録・ログインボタンの色
+$colorFacebookText: #ffffff; // Facebook登録・ログインボタンの文字色
+$colorApple: #ffffff; // AppleID登録・ログインボタンの色
+$colorAppleText: #000000; // AppleID登録・ログインボタンの文字色
+
+// btn
+$colorCloseBtn: #4d6071;
+$colorCloseBtnHover: color.adjust($colorCloseBtn, $lightness: -6.7%);
+
+// 募集条件一致率・活躍可能性のランク毎の色
+$colorMatchRankA: #ff6635;
+$colorMatchRankB: #ffa800;
+$colorMatchRankC: #f4e23a;
+$colorMatchRankD: #527caf;
+$colorMatchRankE: #8999ab;
+$colorMatchRankUnknown: #96add2;
+
+// 社員ポジションカードが面接確約の時の背景色
+$colorPositionCardBgImg: linear-gradient(
+  to bottom,
+  #f5e6bb 0%,
+  #fffef8 32%,
+  #ffffff 56%
+);
+
+// 社員ポジションカードが面接確約の時のボーダー色
+$colorPositionCardMenkakuBorder: #e1d7b7;
+// 社員ポジションカードが面接確約でない時のボーダー色
+$colorPositionCardBorder: #dae3ec;
+
+// 社員ポジションカードが面接確約でない時のテキスト色
+$colorPositionCardText: #354659;
+
+// 社員ポジションカードをボバーした時のテキスト色
+$colorPositionCardTextHover: #1bc2f5;
+
+// ボーダー用の色 Primary Gray5 https://www.figma.com/file/tS3XifDT6gzfuG6D0MSbLp/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%8E%9F%E5%89%87_%E8%8D%89%E6%A1%88?type=design&node-id=429-2643&mode=design&t=xU8nuw2eOhkro9A3-0
+$colorBorder: #dae3ec;
+// Secondary Colors
+$colorSecondaryBlue1: #1bc2f5;
+$colorBlueGray: #8999ab;
+$colorBlueGray50: #f3f6fa;
+$colorBlueGray100: #eef2f7;
+$colorBlueGray200: #e7eaef;
+$colorBlueGray250: #e0e8f2;
+$colorBlueGray300: #dae3ec;
+$colorBlueGray500: #aab6c3;
+$colorBlueGray700: #6885a5;
+$colorBlueGray800: #354659;
+
+// くるくるサークル
+$loadingCertainRangeWidth: 50px;
+$loadingCertainRangeHeight: 50px;

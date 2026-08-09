@@ -1,0 +1,39 @@
+terms_of_use_agreed: true
+basic_info:
+  last_name: 加藤
+  first_name: 翔
+  last_name_kana: カトウ
+  first_name_kana: ショウ
+  email: e2e.persona09@example.com
+  phone_no: "09000000009"
+  gender: 1
+  password: Pass0009
+  birth_year: 1990
+  birth_month: 3
+  first_language: 91
+  driver_licence: 2
+  residence:
+    prefecture: 兵庫県
+    city: 神戸市
+education:
+  school_type: 6
+  graduation_year: 2008
+  english_level: 3
+career:
+  exp_company_num: 1
+  management_exp_term: 1
+will:
+  will_income: 470
+  work_addresses:
+    - prefecture: 兵庫県
+      city: 神戸市
+  will_remote_work: true
+  will_job_change_period: 3
+  will_job_type_keywords:
+    - 営業
+  is_rpo_agreement: true
+run_hints:
+  auto_apply_position: true
+  apply_mode: position
+  position_selection: first
+  position_detail_turns: 2

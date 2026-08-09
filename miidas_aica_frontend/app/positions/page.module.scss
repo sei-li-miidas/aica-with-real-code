@@ -1,0 +1,230 @@
+@use "sass:list";
+@use "@/scss/utils/variables";
+@use "@/scss/utils/mixin";
+
+.sectionItem {
+  margin-bottom: 20px;
+  background-color: variables.$white;
+  box-shadow: 0 2px 6px rgba(55.97, 83.86, 92.38, 0.1);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.positionTopSection {
+  background-color: variables.$white;
+}
+
+.content {
+  background-color: variables.$colorBlueGray50;
+}
+
+.positionHeader {
+  // トップに固定するため
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: #dcedff;
+  // Stretch to full-width and manage spacing.
+  // The negative horizontal margins counteract the parent's padding.
+  // 親はpadding: 16pxなので、その分なくします。
+  // 両端までスペースなく伸ばします。
+  // コンテンツとマージンを置きます。
+  /* margin: -16px -16px 24px; */
+  /* padding: 16px 56px; */
+  padding: 10px;
+
+  .closeButton {
+    position: absolute;
+    top: 50%;
+    left: var(--mui-spacing);
+    z-index: 10;
+    transform: translateY(-50%);
+  }
+}
+
+.positionDetail {
+  width: 100vw;
+  height: 100vh;
+  padding-top: calc(4 * var(--mui-spacing));
+  position: relative;
+  overflow: auto;
+  padding-bottom: 100px; // 最後のボタンのため一定スペース置く
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+  }
+
+  .error {
+    margin-bottom: calc(3 * var(--mui-spacing));
+    padding: calc(2 * var(--mui-spacing));
+    background-color: #ffebee;
+    border-radius: var(--mui-spacing);
+  }
+
+  .chatButtonArea {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    z-index: 1001;
+
+    .chatButton {
+      min-width: 85px;
+      background-color: transparent;
+      box-shadow: none;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    .speechBubble {
+      position: absolute;
+      left: 82%; // チャットボタンの右側の設置
+      bottom: 50px; // 吹き出しのボトムはチャットボタンの中盤にする。Fabはデフォルトでは56pxなので。
+      background-color: #ffffff;
+      color: black;
+      padding: calc(2 * var(--mui-spacing));
+      padding-right: calc(5 * var(--mui-spacing)); // 閉じるボタンのため
+      border-radius: 16px 16px 16px 0;
+      border-color: #dee0f2;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      width: max-content;
+      max-width: min(
+        350px,
+        calc(100vw - 130px)
+      ); // 画面の右端からはみ出さないように調整
+
+      .closeButton {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        color: black;
+      }
+    }
+  }
+
+  .chatModalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 2vw;
+  }
+
+  .chatModal {
+    position: relative;
+    width: min(
+      95vw,
+      calc(
+        100vw - env(safe-area-inset-left, 0px) - env(
+            safe-area-inset-right,
+            0px
+          ) -
+          12px
+      )
+    );
+    height: min(
+      95vh,
+      calc(
+        100vh - env(safe-area-inset-top, 0px) - env(
+            safe-area-inset-bottom,
+            0px
+          ) -
+          16px
+      )
+    );
+    background: var(--bg-gradient);
+    box-shadow:
+      0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+      0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+      0px 9px 46px 8px rgba(0, 0, 0, 0.12); // MUI's elevation 24
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @supports (height: 100dvh) {
+      height: min(
+        95dvh,
+        calc(
+          100dvh - env(safe-area-inset-top, 0px) - env(
+              safe-area-inset-bottom,
+              0px
+            ) -
+            16px
+        )
+      );
+    }
+
+    @media (min-width: 600px) {
+      width: 90vw;
+      height: 90vh;
+    }
+  }
+
+  .chatModalClose {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 5;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+.applyButtonArea {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-top: 1px solid var(--mui-palette-divider);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mui-spacing);
+  z-index: 1000;
+  padding: calc(2 * var(--mui-spacing)) 0;
+
+  .applyButton {
+    background-color: variables.$colorPrimary;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: calc(0.5 * var(--mui-spacing));
+    padding-top: calc(1.5 * var(--mui-spacing));
+    padding-bottom: calc(1.5 * var(--mui-spacing));
+
+    .teacup-icon {
+      path {
+        fill: #ffffff;
+      }
+    }
+  }
+
+  .applyNotice {
+    text-align: center;
+    color: var(--mui-palette-text-secondary);
+  }
+}

@@ -1,0 +1,31 @@
+@use "@/scss/utils/variables";
+
+.wrapper {
+  // ヘッダー(fixed)の高さ + 求人詳細のタブバー(sticky)の高さ
+  // NOTE: それぞれ表示されたタイミングで実測値を保持しているため、プレビュー画面など非表示の場合の考慮も含んでいる
+  scroll-margin-top: calc(
+    var(--header-height, 0px) + var(--position-detail-tab-bar-height, 0px)
+  );
+}
+
+.collapse {
+  overflow: hidden;
+
+  // #68332: 企業側ポジションプレビューでの印刷時は、折りたたみのボックスを常に展開して表示させたいため
+  @media print {
+    max-height: unset !important;
+  }
+
+  &.expanded {
+    transition: max-height 0.3s ease;
+  }
+}
+
+// トグルボタン
+.collapseToggleBtn {
+  display: block;
+  margin-left: auto;
+  font-size: 13px;
+  color: variables.$colorTextSub;
+  text-decoration: underline;
+}

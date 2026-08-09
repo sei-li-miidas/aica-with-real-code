@@ -1,0 +1,20 @@
+{
+  "history_scenarios": {
+    "db_to_sdk_mapping": {
+      "_description": "DB ChatHistory structure maps correctly to Agent SDK input format",
+      "_expected_keys": ["db_structure", "sdk_structure", "mapping_transformation"]
+    },
+    "previous_history_payload": {
+      "_description": "Previous history field format and compatibility between DB and SDK",
+      "_expected_keys": ["db_previous_history", "sdk_previous_history", "compatibility_validation"]
+    },
+    "residual_init_session": {
+      "_description": "init_session restores current search filters, position-detail histories, and residual tool-output shapes into the next public chat turn.",
+      "_expected_keys": ["current_search_filter", "restored_histories", "previous_history_contract"]
+    },
+    "previous_history_contract": {
+      "_description": "load_previous_chat_histories reconstructs tool result payloads, greeting tails, and position-detail repository access through the public contract.",
+      "_expected_keys": ["position_detail_path", "tool_result_payloads", "session_greeting_tail"]
+    }
+  }
+}
