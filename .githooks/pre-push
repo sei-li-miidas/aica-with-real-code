@@ -1,0 +1,7 @@
+#!/bin/sh
+# Installed by issue-cycle-init via `git config core.hooksPath .githooks`.
+# Backstop for commits that reached a local branch without going through
+# pre-commit (--no-verify, a cherry-pick, a commit made before the hooks
+# were configured on this clone). See base_branch_guard.py's module
+# docstring for why this exists.
+exec python3 "$(dirname "$0")/base_branch_guard.py" check-push

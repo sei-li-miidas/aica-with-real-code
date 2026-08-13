@@ -1,0 +1,4 @@
+#!/bin/sh
+# Installed by issue-cycle-init via `git config core.hooksPath .githooks`.
+# See base_branch_guard.py's module docstring for why this exists.
+exec python3 "$(dirname "$0")/base_branch_guard.py" check-commit

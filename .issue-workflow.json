@@ -1,0 +1,64 @@
+{
+  "tracker": {
+    "system": "redmine",
+    "status_ids": {
+      "not_started": 1,
+      "in_progress": 2,
+      "resolved": 3,
+      "feedback": 4,
+      "closed": 5
+    },
+    "status_categories": {
+      "new": [1, 8],
+      "in_progress": [2, 4],
+      "finished": [3, 5, 6, 7, 9]
+    },
+    "toolset": {
+      "auth_check":       "cli:{plugin_root}/tools/redmine-helper",
+      "get_issue":        "cli:{plugin_root}/tools/redmine-helper",
+      "create_subissue":  "cli:{plugin_root}/tools/redmine-helper",
+      "post_comment":     "cli:{plugin_root}/tools/redmine-helper",
+      "get_comments":     "cli:{plugin_root}/tools/redmine-helper",
+      "set_relation":     "cli:{plugin_root}/tools/redmine-helper",
+      "update_status":    "cli:{plugin_root}/tools/redmine-helper",
+      "whoami":           "cli:{plugin_root}/tools/redmine-helper",
+      "get_status":       "cli:{plugin_root}/tools/redmine-helper",
+      "get_attachment":   "cli:{plugin_root}/tools/redmine-helper",
+      "get_custom_field": "cli:{plugin_root}/tools/redmine-helper",
+      "set_custom_field": "cli:{plugin_root}/tools/redmine-helper",
+      "get_release_date": "cli:{plugin_root}/tools/redmine-helper",
+      "append_pr_url":    "cli:{plugin_root}/tools/redmine-helper",
+      "get_ai_enabled":   "cli:{plugin_root}/tools/redmine-helper",
+      "set_ai_enabled":   "cli:{plugin_root}/tools/redmine-helper"
+    }
+  },
+  "github_repo": "sei-li-miidas/aica-with-real-code",
+  "default_branch": "develop",
+  "artifact_language": "Japanese",
+  "spec_dir": "spec",
+  "tmp_dir": "tmp",
+  "branches": {
+    "issue_base":     "feature/{issue_no}/base",
+    "brainstorm_wip": "wip/{issue_no}/brainstorm",
+    "plan_wip":       "wip/{issue_no}/plan",
+    "tasks_wip":      "wip/{issue_no}/tasks",
+    "task_wip":       "wip/{issue_no}/task-{task_no}",
+    "e2e_wip":        "wip/{issue_no}/e2e"
+  },
+  "gates": {
+    "plan":        { "approve": false },
+    "tasks":       { "approve": false },
+    "implement":   { "task_approve": false },
+    "e2e":         { "draft_approve": false, "review_confirm": false },
+    "pr_feedback": { "approach_approve": false, "fix_approve": false },
+    "pr_body":     { "approve": false },
+    "design":      { "attachment_confirm": false },
+    "release":     { "date_confirm": false, "base_branch_delete": false }
+  },
+  "round_caps": {
+    "plan":      { "grill": 5 },
+    "tasks":     { "grill": 5 },
+    "implement": { "code_review": 5 },
+    "e2e":       { "review": 5 }
+  }
+}
