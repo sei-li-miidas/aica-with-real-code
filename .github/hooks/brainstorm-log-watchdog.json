@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/brainstorm_log_watchdog.py 2>>/tmp/brainstorm-log-watchdog-error.log",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}
