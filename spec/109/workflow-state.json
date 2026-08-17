@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "issue_no": 109,
+  "feature_slug": "recommendation-reason-display",
+  "phase": "brainstorm",
+  "status": "in_progress",
+  "base_branch": "feature/109/base",
+  "design": {
+    "attachments": {
+      "spec": [],
+      "design": []
+    },
+    "references": {
+      "spec": [],
+      "design": [
+        "design/figma/manifest.json"
+      ]
+    },
+    "confirmed_no_ui": false,
+    "ignored_required_attachments": []
+  },
+  "brainstorm": {
+    "subissue_id": null,
+    "pr": null,
+    "wip_branch": null,
+    "pause_rounds": 0,
+    "pause_comment_watermark": 0
+  },
+  "plan": {
+    "draft_iteration": 0,
+    "question_rounds": 0,
+    "comment_watermark": 0,
+    "pr": null,
+    "wip_branch": null,
+    "round_cap_watermark": 0,
+    "round_cap_extension": 0
+  },
+  "tasks": {
+    "breakdown_pr": null,
+    "wip_branch": null,
+    "subissues": {},
+    "subissue_attempts": {},
+    "ignored_subissues": [],
+    "subissue_recovery": null,
+    "round_cap_watermark": 0,
+    "round_cap_extension": 0
+  },
+  "implement": {
+    "impl_branch": null,
+    "impl_pr": null
+  },
+  "pending_brainstorm_answer": null,
+  "release": {
+    "release_date": null,
+    "branch": null,
+    "pr": null,
+    "date_request_comment_id": null,
+    "date_request_reservation": null
+  },
+  "updated_at": "2026-08-17T15:57:59Z",
+  "updated_by": "sei.li@miidas.jp"
+}

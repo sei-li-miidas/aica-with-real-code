@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-08-17T15:56:33.148522Z",
+  "references": [
+    {
+      "reference_id": "sp-design",
+      "label": "SPデザイン",
+      "url": "https://www.figma.com/design/ii4SCd0DSWJFFMiMH62DHu/AICA?node-id=682-29044&t=ivFXflawOdNQ2PcY-4",
+      "file_key": "ii4SCd0DSWJFFMiMH62DHu",
+      "node_id": "682-29044",
+      "kind": "figma",
+      "purpose": "design",
+      "status": "unsupported",
+      "reason": "tool_unavailable",
+      "required_tools": [
+        "get_design_context",
+        "get_screenshot"
+      ],
+      "missing": [
+        "context.md",
+        "screenshots/682-29044.png"
+      ],
+      "files": []
+    },
+    {
+      "reference_id": "pc-design",
+      "label": "PCデザイン",
+      "url": "https://www.figma.com/design/ii4SCd0DSWJFFMiMH62DHu/AICA?node-id=682-29045&t=ivFXflawOdNQ2PcY-4",
+      "file_key": "ii4SCd0DSWJFFMiMH62DHu",
+      "node_id": "682-29045",
+      "kind": "figma",
+      "purpose": "design",
+      "status": "unsupported",
+      "reason": "tool_unavailable",
+      "required_tools": [
+        "get_design_context",
+        "get_screenshot"
+      ],
+      "missing": [
+        "context.md",
+        "screenshots/682-29045.png"
+      ],
+      "files": []
+    },
+    {
+      "reference_id": "prototype",
+      "label": "プロトタイプ",
+      "url": "https://www.figma.com/make/m7i7WoQwpbZEoab3g5PTFf/%E6%8E%A8%E8%96%A6%E7%90%86%E7%94%B1UI%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E6%8F%90%E6%A1%88--%E5%B2%A9%E7%94%B0-?p=f&t=z1LGlM4B2HrXRVig-0&fullscreen=1",
+      "file_key": "m7i7WoQwpbZEoab3g5PTFf",
+      "node_id": "0:1",
+      "kind": "figma-make",
+      "purpose": "design",
+      "status": "unsupported",
+      "reason": "tool_unavailable",
+      "required_tool": "mcp_figma_mcp_ser_get_design_context",
+      "missing": [
+        "context.md",
+        "source/*"
+      ],
+      "files": []
+    }
+  ]
+}
