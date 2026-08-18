@@ -1,0 +1,301 @@
+{
+  "$schema": "issue-cycle figma manifest v1",
+  "references": [
+    {
+      "id": "sp-design",
+      "label": "SPデザイン",
+      "url": "https://www.figma.com/design/ii4SCd0DSWJFFMiMH62DHu/AICA?node-id=682-29044&t=ivFXflawOdNQ2PcY-4",
+      "kind": "figma",
+      "purpose": "design",
+      "file_key": "ii4SCd0DSWJFFMiMH62DHu",
+      "node_id": "682:29044",
+      "status": "success",
+      "tool_used": "mcp_figma_mcp_ser_get_design_context + mcp_figma_mcp_ser_get_screenshot",
+      "saved_files": [
+        "context.md",
+        "screenshots/677-18721.png",
+        "screenshots/677-18723.png",
+        "screenshots/677-18830.png",
+        "screenshots/680-23455.png",
+        "screenshots/680-24323.png",
+        "screenshots/682-29044-overview.png"
+      ],
+      "files": [
+        {
+          "path": "context.md",
+          "sha256": "f9c21bacea59df374229c3c16614e42a7a313243e4975e548c8c1bfad274d843",
+          "size": 334980
+        },
+        {
+          "path": "screenshots/677-18721.png",
+          "sha256": "c218e5cbbed4351e49a2edc2dd0cd6f22bb20faf4cc7971042b0506b3b25cc08",
+          "size": 279357
+        },
+        {
+          "path": "screenshots/677-18723.png",
+          "sha256": "1a3fe59334e1243ae05ab908a1ccc4e5d23e3a7c651f3a7af0be539b793a3a42",
+          "size": 140409
+        },
+        {
+          "path": "screenshots/677-18830.png",
+          "sha256": "684944bbf140c998eb782b74d2fc4fde7a250e1d2763ba26a0b95dd4aed98b86",
+          "size": 245186
+        },
+        {
+          "path": "screenshots/680-23455.png",
+          "sha256": "a8ce2cdc761dede44aeb955d8a99d1834214db7e6c94c0d441b6891af1ec0bd0",
+          "size": 245322
+        },
+        {
+          "path": "screenshots/680-24323.png",
+          "sha256": "77f4555436bbbfb460fc6e3afa8b7f5c6a4fd3939156237747816a56f48d6a22",
+          "size": 244166
+        },
+        {
+          "path": "screenshots/682-29044-overview.png",
+          "sha256": "560fb40eb139911921f54d5e537ccd5700eba2a50f742c34a1390c92a475f5fd",
+          "size": 814149
+        }
+      ],
+      "screens": [
+        {
+          "id": "677:18830",
+          "name": "01.あなただけの注目ポイントを準備中",
+          "width": 375,
+          "height": 800,
+          "file": "screenshots/677-18830.png"
+        },
+        {
+          "id": "680:23455",
+          "name": "02.ここに注目！（キラキラ表示）",
+          "width": 375,
+          "height": 800,
+          "file": "screenshots/680-23455.png"
+        },
+        {
+          "id": "680:24323",
+          "name": "03.ここに注目",
+          "width": 375,
+          "height": 800,
+          "file": "screenshots/680-24323.png"
+        },
+        {
+          "id": "677:18721",
+          "name": "04.ここに注目_モーダル表示(開いている状態)",
+          "width": 375,
+          "height": 1857,
+          "file": "screenshots/677-18721.png"
+        },
+        {
+          "id": "677:18723",
+          "name": "05.ここに注目_モーダル表示(閉じている状態)",
+          "width": 375,
+          "height": 800,
+          "file": "screenshots/677-18723.png"
+        }
+      ],
+      "overview_file": "screenshots/682-29044-overview.png"
+    },
+    {
+      "id": "pc-design",
+      "label": "PCデザイン",
+      "url": "https://www.figma.com/design/ii4SCd0DSWJFFMiMH62DHu/AICA?node-id=682-29045&t=ivFXflawOdNQ2PcY-4",
+      "kind": "figma",
+      "purpose": "design",
+      "file_key": "ii4SCd0DSWJFFMiMH62DHu",
+      "node_id": "682:29045",
+      "status": "success",
+      "tool_used": "mcp_figma_mcp_ser_get_design_context + mcp_figma_mcp_ser_get_screenshot",
+      "saved_files": [
+        "context.md",
+        "screenshots/681-25667.png",
+        "screenshots/681-26439.png",
+        "screenshots/681-28021.png",
+        "screenshots/681-28208.png",
+        "screenshots/681-28280.png",
+        "screenshots/682-29045-overview.png"
+      ],
+      "files": [
+        {
+          "path": "context.md",
+          "sha256": "c1a5705df44f477bd0bcc684030b2eb146b1e9d0b3f9b9a93a4b041b724f1fad",
+          "size": 298465
+        },
+        {
+          "path": "screenshots/681-25667.png",
+          "sha256": "b851675911d5aa1b26c03fca2a874ef35a967c6d618f23b1837f09381d1e4452",
+          "size": 650172
+        },
+        {
+          "path": "screenshots/681-26439.png",
+          "sha256": "7ca9156be1f1758223908e33dd2ffaa0625e157149d9ebfe08b4123406701337",
+          "size": 651090
+        },
+        {
+          "path": "screenshots/681-28021.png",
+          "sha256": "0975d6d5a519b88e0f953764d14b265e61618ff4d5dfe3f143af3ebd71925754",
+          "size": 334824
+        },
+        {
+          "path": "screenshots/681-28208.png",
+          "sha256": "00a49833076808ffa37730ef997eeb0a1587e9053d60daedf46ddc1a1d791a8c",
+          "size": 445571
+        },
+        {
+          "path": "screenshots/681-28280.png",
+          "sha256": "00e80fb3c726aecd1b159846c997c2d257e204424996d85266c9bc6bd3cfb7d5",
+          "size": 649449
+        },
+        {
+          "path": "screenshots/682-29045-overview.png",
+          "sha256": "a8c8496e705e1a42999b1594e51b299a455afe3b63709bd19c537ba97c262ed6",
+          "size": 1677313
+        }
+      ],
+      "screens": [
+        {
+          "id": "681:25667",
+          "name": "01.あなただけの注目ポイントを準備中",
+          "width": 1920,
+          "height": 1100,
+          "file": "screenshots/681-25667.png"
+        },
+        {
+          "id": "681:26439",
+          "name": "02.ここに注目！（キラキラ表示）",
+          "width": 1920,
+          "height": 1100,
+          "file": "screenshots/681-26439.png"
+        },
+        {
+          "id": "681:28280",
+          "name": "03.ここに注目",
+          "width": 1920,
+          "height": 1100,
+          "file": "screenshots/681-28280.png"
+        },
+        {
+          "id": "681:28021",
+          "name": "04.ここに注目_モーダル表示(開いている状態)",
+          "width": 1920,
+          "height": 1100,
+          "file": "screenshots/681-28021.png"
+        },
+        {
+          "id": "681:28208",
+          "name": "05.ここに注目_モーダル表示(閉じている状態)",
+          "width": 1920,
+          "height": 1100,
+          "file": "screenshots/681-28208.png"
+        }
+      ],
+      "overview_file": "screenshots/682-29045-overview.png"
+    },
+    {
+      "id": "prototype",
+      "label": "プロトタイプ",
+      "url": "https://www.figma.com/make/m7i7WoQwpbZEoab3g5PTFf/%E6%8E%A8%E8%96%A6%E7%90%86%E7%94%B1UI%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E6%8F%90%E6%A1%88--%E5%B2%A9%E7%94%B0-?p=f&t=z1LGlM4B2HrXRVig-0&fullscreen=1",
+      "kind": "figma-make",
+      "purpose": "design",
+      "file_key": "m7i7WoQwpbZEoab3g5PTFf",
+      "node_id": "0:1",
+      "status": "success",
+      "tool_used": "mcp_figma_mcp_ser_get_design_context",
+      "saved_files": [
+        "context.md",
+        "source/guidelines/Guidelines.md",
+        "source/package.json",
+        "source/src/app/App.tsx",
+        "source/src/app/components/RecommendAccordion.tsx",
+        "source/src/app/components/RecommendBottomSheet.tsx",
+        "source/src/app/components/RecommendBubble.tsx",
+        "source/src/app/components/RecommendCard.tsx",
+        "source/src/app/components/RecommendFAB.tsx",
+        "source/src/app/components/RecommendFloatBanner.tsx",
+        "source/src/app/components/RecommendMerged.tsx",
+        "source/src/styles/fonts.css",
+        "source/src/styles/index.css",
+        "source/src/styles/tailwind.css",
+        "source/src/styles/theme.css"
+      ],
+      "files": [
+        {
+          "path": "context.md",
+          "sha256": "8a06421e1734d9a163e9c20c763a9fac1797c86920b4b0e556f8275f672a0636",
+          "size": 4313
+        },
+        {
+          "path": "source/guidelines/Guidelines.md",
+          "sha256": "8a4a52a8fac382f8b44d2f6b713e9643153bd1c732d34ed323d88cb290829257",
+          "size": 2559
+        },
+        {
+          "path": "source/package.json",
+          "sha256": "127496dfe51a29835afbcf5c1593bf93964ea2d9b8a8f41bc90c5aa7cb696f9e",
+          "size": 2521
+        },
+        {
+          "path": "source/src/app/App.tsx",
+          "sha256": "8344f8a5557a24893e5547707004ffe948ca6c1472c2cfd82f202f47d3530099",
+          "size": 25420
+        },
+        {
+          "path": "source/src/app/components/RecommendAccordion.tsx",
+          "sha256": "f8049275e1dec27c0c5bd0df97f8450290e153b71e5971ece96d02c1b1bc2447",
+          "size": 4056
+        },
+        {
+          "path": "source/src/app/components/RecommendBottomSheet.tsx",
+          "sha256": "b22acfd3957f040ee66002471a4bc86166bdf7ca326fbc7dcf74027441615bc4",
+          "size": 6908
+        },
+        {
+          "path": "source/src/app/components/RecommendBubble.tsx",
+          "sha256": "27223a4da21720427c255d6e0e31bce7d4f691de47cb64ccec7901cf7cf4a601",
+          "size": 2471
+        },
+        {
+          "path": "source/src/app/components/RecommendCard.tsx",
+          "sha256": "6e507b53b7ed16d818a720f7a3202769beec34362b8422aa986517b82f1b59d6",
+          "size": 3131
+        },
+        {
+          "path": "source/src/app/components/RecommendFAB.tsx",
+          "sha256": "ff478dc7ed46d8045f559b571423b0889fa23318485129baa5a1116d5f2f27ed",
+          "size": 11776
+        },
+        {
+          "path": "source/src/app/components/RecommendFloatBanner.tsx",
+          "sha256": "0912bf99cc4b874c72058433650ba21987d4ceedc9fdf28a20e92fa352b166bb",
+          "size": 10304
+        },
+        {
+          "path": "source/src/app/components/RecommendMerged.tsx",
+          "sha256": "d03c40c06616566705a9916fcf1521fa04c098cd70409550bbf8611668d31d29",
+          "size": 24459
+        },
+        {
+          "path": "source/src/styles/fonts.css",
+          "sha256": "5ae7ef6edd1b094200fccc62701edbc3f5ee99f82c9879a706f104b610bccde5",
+          "size": 100
+        },
+        {
+          "path": "source/src/styles/index.css",
+          "sha256": "9cf0c73c5a7251c9e1f087665c7936fb39a0ee7641cae20cd4b18955a32ed099",
+          "size": 72
+        },
+        {
+          "path": "source/src/styles/tailwind.css",
+          "sha256": "c7dddb734b0c9e3cfaa6698cd725f018b8a5e41f847ae42fd9b0269d44ee9ff4",
+          "size": 98
+        },
+        {
+          "path": "source/src/styles/theme.css",
+          "sha256": "bbebb4cd280d5c3a3e808233670b18e7ce72c08da66823522d2b5ca3166acde7",
+          "size": 5448
+        }
+      ],
+      "notes": "ユーザー判断でスコープを推薦理由UI関連ファイルに限定した (App.tsx + Recommend*.tsx + package.json + styles/*.css + guidelines/Guidelines.md)。意図的にスキップ: shadcn/ui コンポーネント一式 (src/app/components/ui/*.tsx、汎用ライブラリでshadcn CLIから再取得可能)、imports 配下のsvg-*.ts/tsx (SVGパスデータ、視覚情報はスクリーンショットで代替)、Aica.tsx/FooterButtons.tsx/探すポジション詳細*.tsx/11求人詳細*.tsx (推薦理由UIと直接関係しない画面のインポート)、ATTRIBUTIONS.md、default_shadcn_theme.css、postcss.config.mjs、pnpm-workspace.yaml、vite.config.ts。推薦理由UIの設計意図は source/src/app/App.tsx と source/src/app/components/Recommend*.tsx に集約されており、後続フェーズはこれらを主参照とする。"
+    }
+  ]
+}
