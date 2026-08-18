@@ -3,7 +3,7 @@
   "issue_no": 109,
   "feature_slug": "recommendation-reason-display",
   "phase": "brainstorm",
-  "status": "in_progress",
+  "status": "awaiting_brainstorm_answer",
   "base_branch": "feature/109/base",
   "design": {
     "attachments": {
@@ -23,8 +23,8 @@
     "subissue_id": 123,
     "pr": null,
     "wip_branch": "wip/109/brainstorm",
-    "pause_rounds": 3,
-    "pause_comment_watermark": 714
+    "pause_rounds": 4,
+    "pause_comment_watermark": 715
   },
   "plan": {
     "draft_iteration": 0,
@@ -57,6 +57,6 @@
     "date_request_comment_id": null,
     "date_request_reservation": null
   },
-  "updated_at": "2026-08-18T05:30:33Z",
+  "updated_at": "2026-08-18T07:31:49Z",
   "updated_by": "sei.li@miidas.jp"
 }
