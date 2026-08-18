@@ -20,8 +20,9 @@
     "ignored_required_attachments": []
   },
   "brainstorm": {
-    "pause_rounds": 2,
-    "pause_comment_watermark": 711
+    "subissue_id": 123,
+    "pr": null,
+    "wip_branch": "wip/109/brainstorm"
   },
   "plan": {
     "draft_iteration": 0,
@@ -54,6 +55,6 @@
     "date_request_comment_id": null,
     "date_request_reservation": null
   },
-  "updated_at": "2026-08-18T04:42:31Z",
+  "updated_at": "2026-08-18T04:42:41Z",
   "updated_by": "sei.li@miidas.jp"
 }
