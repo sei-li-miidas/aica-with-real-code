@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.env.osx": {
+    "REDMINE_BASE_URL": "http://localhost:3000",
+    "REDMINE_API_KEY": "7b29efc6c6471b6faba9233fb0e84ec7c5bd4887"
+  }
+}
