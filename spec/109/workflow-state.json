@@ -3,7 +3,7 @@
   "issue_no": 109,
   "feature_slug": "recommendation-reason-display",
   "phase": "brainstorm",
-  "status": "awaiting_brainstorm_answer",
+  "status": "in_progress",
   "base_branch": "feature/109/base",
   "design": {
     "attachments": {
@@ -24,7 +24,7 @@
     "pr": null,
     "wip_branch": "wip/109/brainstorm",
     "pause_rounds": 2,
-    "pause_comment_watermark": 711
+    "pause_comment_watermark": 712
   },
   "plan": {
     "draft_iteration": 0,
@@ -49,7 +49,7 @@
     "impl_branch": null,
     "impl_pr": null
   },
-  "pending_brainstorm_answer": null,
+  "pending_brainstorm_answer": "現状では、message_id LIKE 'wf_position_change_analyze_summary_%'のレコードは多くても１個だけですか？また、見つからなかった場合どうしますか？",
   "release": {
     "release_date": null,
     "branch": null,
@@ -57,6 +57,6 @@
     "date_request_comment_id": null,
     "date_request_reservation": null
   },
-  "updated_at": "2026-08-18T04:43:15Z",
+  "updated_at": "2026-08-18T05:05:17Z",
   "updated_by": "sei.li@miidas.jp"
 }
