@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T15:56:33.148522Z",
+  "generated_at": "2026-08-18T13:18:45.564075+00:00",
   "references": [
     {
       "reference_id": "sp-design",
@@ -9,17 +9,54 @@
       "node_id": "682-29044",
       "kind": "figma",
       "purpose": "design",
-      "status": "unsupported",
-      "reason": "tool_unavailable",
-      "required_tools": [
-        "get_design_context",
-        "get_screenshot"
+      "status": "success",
+      "files": [
+        "sp-design/context.md",
+        "sp-design/screenshots/682-29044-overview.png",
+        "sp-design/screenshots/677-18830.png",
+        "sp-design/screenshots/680-23455.png",
+        "sp-design/screenshots/680-24323.png",
+        "sp-design/screenshots/677-18721.png",
+        "sp-design/screenshots/677-18723.png"
       ],
-      "missing": [
-        "context.md",
-        "screenshots/682-29044.png"
+      "screens": [
+        {
+          "id": "677:18830",
+          "name": "01.あなただけの注目ポイントを準備中",
+          "width": 375,
+          "height": 800,
+          "file": "sp-design/screenshots/677-18830.png"
+        },
+        {
+          "id": "680:23455",
+          "name": "02.ここに注目！（キラキラ表示）",
+          "width": 375,
+          "height": 800,
+          "file": "sp-design/screenshots/680-23455.png"
+        },
+        {
+          "id": "680:24323",
+          "name": "03.ここに注目",
+          "width": 375,
+          "height": 800,
+          "file": "sp-design/screenshots/680-24323.png"
+        },
+        {
+          "id": "677:18721",
+          "name": "04.ここに注目_モーダル表示(開いている状態)",
+          "width": 375,
+          "height": 1857,
+          "file": "sp-design/screenshots/677-18721.png"
+        },
+        {
+          "id": "677:18723",
+          "name": "05.ここに注目_モーダル表示(閉じている状態)",
+          "width": 375,
+          "height": 800,
+          "file": "sp-design/screenshots/677-18723.png"
+        }
       ],
-      "files": []
+      "overview_file": "sp-design/screenshots/682-29044-overview.png"
     },
     {
       "reference_id": "pc-design",
@@ -29,17 +66,54 @@
       "node_id": "682-29045",
       "kind": "figma",
       "purpose": "design",
-      "status": "unsupported",
-      "reason": "tool_unavailable",
-      "required_tools": [
-        "get_design_context",
-        "get_screenshot"
+      "status": "success",
+      "files": [
+        "pc-design/context.md",
+        "pc-design/screenshots/682-29045-overview.png",
+        "pc-design/screenshots/681-25667.png",
+        "pc-design/screenshots/681-26439.png",
+        "pc-design/screenshots/681-28280.png",
+        "pc-design/screenshots/681-28021.png",
+        "pc-design/screenshots/681-28208.png"
       ],
-      "missing": [
-        "context.md",
-        "screenshots/682-29045.png"
+      "screens": [
+        {
+          "id": "681:25667",
+          "name": "01.あなただけの注目ポイントを準備中",
+          "width": 1920,
+          "height": 1100,
+          "file": "pc-design/screenshots/681-25667.png"
+        },
+        {
+          "id": "681:26439",
+          "name": "02.ここに注目！（キラキラ表示）",
+          "width": 1920,
+          "height": 1100,
+          "file": "pc-design/screenshots/681-26439.png"
+        },
+        {
+          "id": "681:28280",
+          "name": "03.ここに注目",
+          "width": 1920,
+          "height": 1100,
+          "file": "pc-design/screenshots/681-28280.png"
+        },
+        {
+          "id": "681:28021",
+          "name": "04.ここに注目_モーダル表示(開いている状態)",
+          "width": 1920,
+          "height": 1100,
+          "file": "pc-design/screenshots/681-28021.png"
+        },
+        {
+          "id": "681:28208",
+          "name": "05.ここに注目_モーダル表示(閉じている状態)",
+          "width": 1920,
+          "height": 1100,
+          "file": "pc-design/screenshots/681-28208.png"
+        }
       ],
-      "files": []
+      "overview_file": "pc-design/screenshots/682-29045-overview.png"
     },
     {
       "reference_id": "prototype",
