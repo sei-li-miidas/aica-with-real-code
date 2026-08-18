@@ -22,7 +22,9 @@
   "brainstorm": {
     "subissue_id": 123,
     "pr": null,
-    "wip_branch": "wip/109/brainstorm"
+    "wip_branch": "wip/109/brainstorm",
+    "pause_rounds": 2,
+    "pause_comment_watermark": 711
   },
   "plan": {
     "draft_iteration": 0,
@@ -55,6 +57,6 @@
     "date_request_comment_id": null,
     "date_request_reservation": null
   },
-  "updated_at": "2026-08-18T04:42:41Z",
+  "updated_at": "2026-08-18T04:43:15Z",
   "updated_by": "sei.li@miidas.jp"
 }
