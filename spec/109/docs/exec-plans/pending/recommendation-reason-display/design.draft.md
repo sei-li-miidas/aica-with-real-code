@@ -15,8 +15,8 @@ Issue #109: ユーザーがポジション詳細チャットを開いたら、�
 ## 既存コードベースの調査結果
 
 ### ポジション詳細チャットフロー
-1. フロントエンドが `position_id` と `current_page = PageName.POSITION_DETAIL` を付けた WebSocket メッセージを送信
-2. `chat_service._prepare_for_chat_turn` が `POSITION_DETAIL` ページを検知し、POSITION_GUIDE エージェントのクローンを作成
+1. フロントエンドが `position_id` と `current_page = PageName.PositionDetail`（TS: `PageName.PositionDetail` / Python: `PageName.POSITION_DETAIL`、実際に送信される値は `"PositionDetail"`）を付けた WebSocket メッセージを送信
+2. `chat_service._prepare_for_chat_turn` が `PositionDetail` ページを検知し（Python では `PageName.POSITION_DETAIL`）、POSITION_GUIDE エージェントのクローンを作成
 3. 初回メッセージ時: API から position_detail / company_detail / business_detail を取得
 4. `POSITION_DETAIL_INQUIRY_START_PROMPT` に求人データを埋め込んで `DEVELOPER` ロールのメッセージとして会話コンテキストにセット
 
